@@ -1,0 +1,79 @@
+<StyleCopSettings Version="105">
+  <GlobalSettings>
+    <CollectionProperty Name="RecognizedWords">
+      <Value>behaviour</Value>
+      <Value>coroutine</Value>
+      <Value>coroutines</Value>
+      <Value>deinit</Value>
+      <Value>deinitialize</Value>
+      <Value>deinitialized</Value>
+      <Value>deinitializes</Value>
+      <Value>deinitializing</Value>
+      <Value>dequeue</Value>
+      <Value>dequeued</Value>
+      <Value>despawn</Value>
+      <Value>despawned</Value>
+      <Value>despawns</Value>
+      <Value>enum</Value>
+      <Value>fader</Value>
+      <Value>initializable</Value>
+      <Value>initializables</Value>
+      <Value>interpupillary</Value>
+      <Value>Manipulable</Value>
+      <Value>mecanim</Value>
+      <Value>php</Value>
+      <Value>rect</Value>
+      <Value>rrInterval</Value>
+      <Value>shader</Value>
+      <Value>spawner</Value>
+      <Value>spawners</Value>
+      <Value>startables</Value>
+      <Value>Unschedules</Value>
+      <Value>xaml</Value>
+    </CollectionProperty>
+  </GlobalSettings>
+  <Parsers>
+    <Parser ParserId="StyleCop.CSharp.CsParser">
+      <ParserSettings>
+        <CollectionProperty Name="GeneratedFileFilters">
+          <Value>\.g\.cs$</Value>
+          <Value>\.generated\.cs$</Value>
+          <Value>\.g\.i\.cs$</Value>
+          <Value>TemporaryGeneratedFile_.*\.cs$</Value>
+        </CollectionProperty>
+      </ParserSettings>
+    </Parser>
+  </Parsers>
+  <Analyzers>
+    <Analyzer AnalyzerId="StyleCop.CSharp.OrderingRules">
+      <Rules>
+        <Rule Name="SystemUsingDirectivesMustBePlacedBeforeOtherUsingDirectives">
+          <RuleSettings>
+            <BooleanProperty Name="Enabled">False</BooleanProperty>
+          </RuleSettings>
+        </Rule>
+      </Rules>
+      <AnalyzerSettings />
+    </Analyzer>
+    <Analyzer AnalyzerId="StyleCop.CSharp.ReadabilityRules">
+      <Rules>
+        <Rule Name="BlockStatementsMustNotContainEmbeddedComments">
+          <RuleSettings>
+            <BooleanProperty Name="Enabled">False</BooleanProperty>
+          </RuleSettings>
+        </Rule>
+      </Rules>
+      <AnalyzerSettings />
+    </Analyzer>
+    <Analyzer AnalyzerId="StyleCop.CSharp.NamingRules">
+      <AnalyzerSettings>
+        <CollectionProperty Name="Hungarian">
+          <Value>at</Value>
+          <Value>rr</Value>
+          <Value>un</Value>
+          <Value>xz</Value>
+        </CollectionProperty>
+      </AnalyzerSettings>
+    </Analyzer>
+  </Analyzers>
+</StyleCopSettings>
