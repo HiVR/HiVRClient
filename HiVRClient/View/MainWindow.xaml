@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HiVRClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        xmlns:p="clr-namespace:HiVRClient.Properties"
+        Title="{x:Static p:Strings.title_main}" SizeToContent="WidthAndHeight">
     <Grid>
     </Grid>
 </Window>
