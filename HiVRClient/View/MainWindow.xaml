@@ -4,9 +4,32 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HiVRClient"
+        xmlns:View="clr-namespace:HiVRClient.View"
+        xmlns:Properties="clr-namespace:HiVRClient.Properties"
         mc:Ignorable="d"
-        xmlns:p="clr-namespace:HiVRClient.Properties"
-        Title="{x:Static p:Strings.title_main}" SizeToContent="WidthAndHeight">
+
+        Title="{x:Static Properties:Strings.title_main}"
+        WindowState="Maximized"
+        MinWidth="300"
+        MinHeight="200">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Properties/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
     <Grid>
+        <Border
+            CornerRadius="5"
+            Background="Gray"
+            Padding="{StaticResource DefaultPadding}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Width="200"
+            Height="Auto">
+            <View:ConnectControl />
+        </Border>
     </Grid>
 </Window>

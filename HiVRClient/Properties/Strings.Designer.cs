@@ -61,6 +61,33 @@ namespace HiVRClient.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Connect.
+        /// </summary>
+        public static string label_connect {
+            get {
+                return ResourceManager.GetString("label_connect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Host:.
+        /// </summary>
+        public static string label_host {
+            get {
+                return ResourceManager.GetString("label_host", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Port:.
+        /// </summary>
+        public static string label_port {
+            get {
+                return ResourceManager.GetString("label_port", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to HiVRClient.
         /// </summary>
         public static string title_main {
