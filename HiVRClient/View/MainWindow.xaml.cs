@@ -1,7 +1,7 @@
 ﻿// <copyright file="MainWindow.xaml.cs" company="HiVR">
 // Copyright (c) 2016 HiVR All Rights Reserved
 // </copyright>
-namespace HiVRClient
+namespace HiVRClient.View
 {
     using System.Windows;
 

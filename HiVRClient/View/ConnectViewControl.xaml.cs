@@ -1,22 +1,21 @@
-﻿// <copyright file="ConnectControl.xaml.cs" company="HiVR">
+﻿// <copyright file="ConnectViewControl.xaml.cs" company="HiVR">
 // Copyright (c) 2016 HiVR All Rights Reserved
 // </copyright>
 namespace HiVRClient.View
 {
-    using System.Windows;
     using System.Windows.Controls;
 
     /// <summary>
-    /// Interaction logic for ConnectControl.xaml
+    /// Interaction logic for ConnectViewControl.xaml
     /// </summary>
-    public partial class ConnectControl : UserControl
+    public partial class ConnectViewControl : UserControl
     {
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConnectControl" /> class
+        /// Initializes a new instance of the <see cref="ConnectViewControl" /> class
         /// </summary>
-        public ConnectControl()
+        public ConnectViewControl()
         {
             this.InitializeComponent();
         }

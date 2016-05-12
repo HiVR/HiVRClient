@@ -3,10 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:HiVRClient.View"
-             xmlns:Properties="clr-namespace:HiVRClient.Properties"
+             xmlns:properties="clr-namespace:HiVRClient.Properties"
              mc:Ignorable="d">
-
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -32,7 +30,7 @@
             Grid.Column="0"
             HorizontalAlignment="Right"
             Margin="{StaticResource DefaultMargin}"
-            Text="{x:Static Properties:Strings.label_host}" />
+            Text="{x:Static properties:Strings.label_host}" />
 
         <TextBox
             Name="textBoxHost"
@@ -45,7 +43,7 @@
             Grid.Column="0"
             HorizontalAlignment="Right"
             Margin="{StaticResource DefaultMargin}"
-            Text="{x:Static Properties:Strings.label_port}" />
+            Text="{x:Static properties:Strings.label_port}" />
 
         <TextBox
             Name="textBoxPort"
@@ -58,6 +56,7 @@
             Grid.Row="2"
             Grid.Column="1"
             Margin="{StaticResource DefaultMargin}"
-            Content="{x:Static Properties:Strings.label_connect}" />
+            Content="{x:Static properties:Strings.label_connect}"
+            Command="{Binding ConnectCommand}" />
     </Grid>
 </UserControl>

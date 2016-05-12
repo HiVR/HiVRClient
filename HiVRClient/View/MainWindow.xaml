@@ -1,35 +1,32 @@
-﻿<Window x:Class="HiVRClient.MainWindow"
+﻿<Window x:Class="HiVRClient.View.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:HiVRClient"
-        xmlns:View="clr-namespace:HiVRClient.View"
-        xmlns:Properties="clr-namespace:HiVRClient.Properties"
+        xmlns:view="clr-namespace:HiVRClient.View"
+        xmlns:viewmodel="clr-namespace:HiVRClient.ViewModel"
+        xmlns:properties="clr-namespace:HiVRClient.Properties"
         mc:Ignorable="d"
 
-        Title="{x:Static Properties:Strings.title_main}"
+        Title="{x:Static properties:Strings.title_main}"
         WindowState="Maximized"
         MinWidth="300"
         MinHeight="200">
+    <Window.DataContext>
+        <viewmodel:MainViewModel />
+    </Window.DataContext>
+
     <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Properties/Styles.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+        <DataTemplate DataType="{x:Type viewmodel:ConnectControlViewModel}">
+            <view:ConnectViewControl />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodel:MapViewModel}">
+            <view:MapViewControl />
+        </DataTemplate>
     </Window.Resources>
 
-    <Grid>
-        <Border
-            CornerRadius="5"
-            Background="Gray"
-            Padding="{StaticResource DefaultPadding}"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Width="200"
-            Height="Auto">
-            <View:ConnectControl />
-        </Border>
-    </Grid>
+    <ContentControl
+        Name="MainContentHolder"
+        Content="{Binding CurrentView}" />
 </Window>
