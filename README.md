@@ -7,8 +7,9 @@ This repository consists of a GUI program to display a 2D map of an Unity VR env
 This program is being developed for CleVR.
 
 ## Installation
-To run the project you need Visual Studio and several plugins.
+To run the project you need Visual Studio and several plugins.  
 Install:
+
 | Name | Version | Link |
 | ---- | ------- | ---- |
 | Visual Studio Community Edition | 2015 | https://www.visualstudio.com/post-download-vs?sku=community&clcid=0x409 |
