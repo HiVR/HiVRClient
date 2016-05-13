@@ -4,6 +4,7 @@
 namespace HiVRClient
 {
     using System.Windows;
+    using View;
 
     /// <summary>
     /// The main WPF application class
