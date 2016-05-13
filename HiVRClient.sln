@@ -5,6 +5,11 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiVRClient", "HiVRClient\HiVRClient.csproj", "{03D19F57-2CCA-4855-A608-8B23BD415B9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiVRClient.Test", "HiVRClient.Test\HiVRClient.Test.csproj", "{067456C0-086C-46A8-B37F-1405717B7BFC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{03D19F57-2CCA-4855-A608-8B23BD415B9D} = {03D19F57-2CCA-4855-A608-8B23BD415B9D}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{03D19F57-2CCA-4855-A608-8B23BD415B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03D19F57-2CCA-4855-A608-8B23BD415B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03D19F57-2CCA-4855-A608-8B23BD415B9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
