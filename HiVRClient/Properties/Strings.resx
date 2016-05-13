@@ -120,11 +120,17 @@
   <data name="label_connect" xml:space="preserve">
     <value>Connect</value>
   </data>
+  <data name="label_connect_please" xml:space="preserve">
+    <value>Please connect to the environment:</value>
+  </data>
   <data name="label_host" xml:space="preserve">
     <value>Host:</value>
   </data>
   <data name="label_port" xml:space="preserve">
     <value>Port:</value>
+  </data>
+  <data name="label_welcome" xml:space="preserve">
+    <value>Welcome to the CleVRET Control Panel</value>
   </data>
   <data name="title_main" xml:space="preserve">
     <value>HiVRClient</value>

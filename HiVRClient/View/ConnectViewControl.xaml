@@ -5,16 +5,43 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:view="clr-namespace:HiVRClient.View"
              xmlns:viewmodel="clr-namespace:HiVRClient.ViewModel"
+             xmlns:properties="clr-namespace:HiVRClient.Properties"
              mc:Ignorable="d">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Properties/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <BitmapImage x:Key="logo" UriSource="/HiVRClient;component/Resources/logo.png" />
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid>
+    <StackPanel
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+        <Image
+            Margin="{StaticResource DefaultMargin}"
+            Stretch="None"
+            Source="{StaticResource logo}" />
+
+        <TextBlock
+            Text="{x:Static properties:Strings.label_welcome}"
+            FontSize="14"
+            FontFamily="Trebuchet MS"
+            FontWeight="Bold"
+            Margin="{StaticResource DefaultMargin}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+
+        <TextBlock
+            Text="{x:Static properties:Strings.label_connect_please}"
+            FontSize="12"
+            FontFamily="Trebuchet MS"
+            FontWeight="DemiBold"
+            Margin="{StaticResource DefaultMargin}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" />
+
         <Border
             CornerRadius="5"
             Background="Gray"
@@ -25,5 +52,5 @@
             Height="Auto">
             <view:ConnectControl />
         </Border>
-    </Grid>
+    </StackPanel>
 </UserControl>

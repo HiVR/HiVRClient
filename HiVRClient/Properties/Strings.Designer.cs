@@ -70,6 +70,15 @@ namespace HiVRClient.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please connect to the environment:.
+        /// </summary>
+        public static string label_connect_please {
+            get {
+                return ResourceManager.GetString("label_connect_please", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Host:.
         /// </summary>
         public static string label_host {
@@ -84,6 +93,15 @@ namespace HiVRClient.Properties {
         public static string label_port {
             get {
                 return ResourceManager.GetString("label_port", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome to the CleVRET Control Panel.
+        /// </summary>
+        public static string label_welcome {
+            get {
+                return ResourceManager.GetString("label_welcome", resourceCulture);
             }
         }
         
