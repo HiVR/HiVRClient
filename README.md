@@ -1,4 +1,4 @@
-# HiVR | CleVR-map
+# HiVR | HiVRClient
 Health Informatics Context project 2016, TU Delft  
 http://hivr.nl/
 
