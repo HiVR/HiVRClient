@@ -3,6 +3,7 @@
 // </copyright>
 namespace HiVRClient
 {
+    using Model.Network;
     using System;
 
     /// <summary>
@@ -19,6 +20,7 @@ namespace HiVRClient
         [STAThread]
         public static void Main(string[] args)
         {
+            NetworkManager.CreateConnection();
             HiVRClient app = new HiVRClient();
             app.Run();
         }
