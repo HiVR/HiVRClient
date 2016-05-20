@@ -10,8 +10,8 @@
 
         Title="{x:Static properties:Strings.title_main}"
         WindowState="Maximized"
-        MinWidth="300"
-        MinHeight="200">
+        MinWidth="640"
+        MinHeight="480">
     <Window.DataContext>
         <viewmodel:MainViewModel />
     </Window.DataContext>
