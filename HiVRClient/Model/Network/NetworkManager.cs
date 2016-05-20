@@ -19,12 +19,6 @@ namespace HiVRClient.Model.Network
         private const int BYTESIZE = 1024 * 1024;
 
         /// <summary>
-        /// Port that the server will listen to
-        /// Editable in Unity
-        /// </summary>
-        private const int PORT = 25565;
-
-        /// <summary>
         /// Contains the active client object
         /// </summary>
         private static TcpClient server;
@@ -36,9 +30,11 @@ namespace HiVRClient.Model.Network
         /// <summary>
         /// Create a connection to the Unity Environment and send and receive a test message
         /// </summary>
-        public static void CreateConnection()
+        /// <param name="ip">IP to connect to</param>
+        /// <param name="port">Port to connect to</param>
+        public static void CreateConnection(string ip, int port)
         {
-            server = new TcpClient("127.0.0.1", PORT); // Create a new connection
+            server = new TcpClient(ip, port); // Create a new connection
             NetworkStream stream = server.GetStream();
 
             byte[] messageBytes = System.Text.Encoding.Unicode.GetBytes("TEST");
