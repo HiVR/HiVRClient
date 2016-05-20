@@ -34,19 +34,28 @@ namespace HiVRClient.Model.Network
         /// <param name="port">Port to connect to</param>
         public static void CreateConnection(string ip, int port)
         {
-            server = new TcpClient(ip, port); // Create a new connection
-            NetworkStream stream = server.GetStream();
+            try
+            {
+                byte[] writeBytes;
+                byte[] readBytes = new byte[BYTESIZE];
 
-            byte[] messageBytes = System.Text.Encoding.Unicode.GetBytes("TEST");
-            stream.Write(messageBytes, 0, messageBytes.Length); // Write the bytes
+                server = new TcpClient(ip, port); // Create a new connection
+                Console.WriteLine("Connected to Unity Server at " + server.Client.LocalEndPoint.ToString());
 
-            Console.WriteLine("Connected to Unity Server at " + server.Client.LocalEndPoint.ToString());
+                NetworkStream stream = server.GetStream();
 
-            messageBytes = new byte[BYTESIZE]; // Clear the message
+                // Send test message/command to Unity
+                writeBytes = System.Text.Encoding.Unicode.GetBytes("TEST");
+                stream.Write(writeBytes, 0, writeBytes.Length);
 
-            // Receive the stream of bytes
-            stream.Read(messageBytes, 0, BYTESIZE);
-            Console.WriteLine("[UNITY] " + CleanMessage(messageBytes));
+                // Receive the first accept message from the environment
+                stream.Read(readBytes, 0, BYTESIZE);
+                Console.WriteLine("[UNITY] " + CleanMessage(readBytes));
+            }
+            catch (SocketException e)
+            {
+                Console.WriteLine("[ERROR] SocketException!");
+            }
         }
 
         /// <summary>
