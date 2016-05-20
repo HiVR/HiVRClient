@@ -57,6 +57,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Network\NetworkManager.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />
     <Compile Include="View\MapViewControl.xaml.cs">
       <DependentUpon>MapViewControl.xaml</DependentUpon>
