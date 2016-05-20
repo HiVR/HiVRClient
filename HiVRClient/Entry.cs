@@ -3,6 +3,7 @@
 // </copyright>
 namespace HiVRClient
 {
+    using Model.Network;
     using System;
 
     /// <summary>

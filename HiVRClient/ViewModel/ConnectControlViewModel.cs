@@ -35,6 +35,16 @@ namespace HiVRClient.ViewModel
             get { return this.connectCommand ?? (this.connectCommand = new RelayCommand(param => this.Connect())); }
         }
 
+        /// <summary>
+        /// Gets or sets the host to connect to
+        /// </summary>
+        public string Host { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Gets or sets the port to connect to
+        /// </summary>
+        public int Port { get; set; } = 25565;
+
         #endregion Properties
 
         #region Methods
@@ -52,6 +62,8 @@ namespace HiVRClient.ViewModel
         /// </summary>
         private void Connect()
         {
+            Model.Network.NetworkManager.CreateConnection(this.Host, this.Port);
+
             // Actual connection logic here. The OnConnectionAttempted method should provide parameters to provide whether the connection was successful or not
             this.OnConnectionAttempted();
         }

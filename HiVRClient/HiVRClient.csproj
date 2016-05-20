@@ -57,6 +57,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Network\NetworkManager.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />
     <Compile Include="View\MapViewControl.xaml.cs">
       <DependentUpon>MapViewControl.xaml</DependentUpon>
@@ -140,9 +141,7 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
