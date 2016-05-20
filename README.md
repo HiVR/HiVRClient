@@ -1,6 +1,8 @@
-# HiVR | CleVR-map
+# HiVR | HiVRClient
 Health Informatics Context project 2016, TU Delft  
 http://hivr.nl/
+
+Build status:[![Build Status](https://jenkins.hivr.nl/buildStatus/icon?job=0010-master-build)](https://jenkins.hivr.nl/job/0010-master-build/)
 
 ## Description
 This repository consists of a GUI program to display a 2D map of an Unity VR environment.  
