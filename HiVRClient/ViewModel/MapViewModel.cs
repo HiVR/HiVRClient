@@ -4,7 +4,7 @@
 namespace HiVRClient.ViewModel
 {
     /// <summary>
-    /// Contains the view model of the actual map
+    /// Contains the view model of the actual map.
     /// </summary>
     public class MapViewModel : BaseViewModel
     {

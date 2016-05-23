@@ -9,7 +9,7 @@ using System;
 namespace HiVRClient.Test.ViewModel
 {
     /// <summary>
-    /// Test <see cref="RelayCommand" /> class
+    /// Test <see cref="RelayCommand" /> class.
     /// </summary>
     [TestFixture]
     public class RelayCommandTest
@@ -17,7 +17,7 @@ namespace HiVRClient.Test.ViewModel
         #region Methods
 
         /// <summary>
-        /// Test <see cref="RelayCommand.Execute" /> method
+        /// Test <see cref="RelayCommand.Execute" /> method.
         /// </summary>
         [Test]
         public void TestExecute()
@@ -31,7 +31,7 @@ namespace HiVRClient.Test.ViewModel
         }
 
         /// <summary>
-        /// Test <see cref="RelayCommand.CanExecute" /> method
+        /// Test <see cref="RelayCommand.CanExecute" /> method.
         /// </summary>
         [Test]
         public void TestCanExecute()

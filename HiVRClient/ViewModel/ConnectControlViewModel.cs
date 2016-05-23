@@ -7,19 +7,19 @@ namespace HiVRClient.ViewModel
     using System.Windows.Input;
 
     /// <summary>
-    /// This class implements the view model of the ConnectControl
+    /// This class implements the view model of the ConnectControl.
     /// </summary>
     public class ConnectControlViewModel : BaseViewModel
     {
         #region Fields
 
         /// <summary>
-        /// Private instance of property below
+        /// Private instance of property below.
         /// </summary>
         private ICommand connectCommand;
 
         /// <summary>
-        /// Is called when a connection is attempted
+        /// Is called when a connection is attempted.
         /// </summary>
         public event EventHandler ConnectionAttempted;
 
@@ -28,7 +28,7 @@ namespace HiVRClient.ViewModel
         #region Properties
 
         /// <summary>
-        /// Gets command interface that connects to the button in the view
+        /// Gets command interface that connects to the button in the view.
         /// </summary>
         public ICommand ConnectCommand
         {
@@ -36,12 +36,12 @@ namespace HiVRClient.ViewModel
         }
 
         /// <summary>
-        /// Gets or sets the host to connect to
+        /// Gets or sets the host to connect to.
         /// </summary>
         public string Host { get; set; } = string.Empty;
 
         /// <summary>
-        /// Gets or sets the port to connect to
+        /// Gets or sets the port to connect to.
         /// </summary>
         public int Port { get; set; } = 25565;
 
@@ -58,13 +58,13 @@ namespace HiVRClient.ViewModel
         }
 
         /// <summary>
-        /// Attempts a connection and calls the OnConnectionAttempted method with the results
+        /// Attempts a connection and calls the OnConnectionAttempted method with the results.
         /// </summary>
         private void Connect()
         {
             Model.Network.NetworkManager.CreateConnection(this.Host, this.Port);
 
-            // Actual connection logic here. The OnConnectionAttempted method should provide parameters to provide whether the connection was successful or not
+            // Actual connection logic here. The OnConnectionAttempted method should provide parameters to provide whether the connection was successful or not.
             this.OnConnectionAttempted();
         }
 

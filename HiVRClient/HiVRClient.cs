@@ -7,16 +7,16 @@ namespace HiVRClient
     using View;
 
     /// <summary>
-    /// The main WPF application class
+    /// The main WPF application class.
     /// </summary>
     public class HiVRClient : Application
     {
         #region Methods
 
         /// <summary>
-        /// Override the Application startup event to show a window
+        /// Override the Application startup event to show a window.
         /// </summary>
-        /// <param name="e">The startup event arguments</param>
+        /// <param name="e">the startup event arguments</param>
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
