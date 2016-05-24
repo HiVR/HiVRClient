@@ -57,6 +57,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Network\Network.cs" />
     <Compile Include="Model\Network\NetworkManager.cs" />
     <Compile Include="Model\Network\Serializable\SerializableTransformObject.cs" />
     <Compile Include="Model\Network\Serializable\SerializableVector3.cs" />
