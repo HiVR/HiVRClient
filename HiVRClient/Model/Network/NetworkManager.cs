@@ -44,8 +44,8 @@ namespace HiVRClient.Model.Network
 
                 NetworkStream stream = server.GetStream();
 
-                // Send test message/command to Unity
-                writeBytes = System.Text.Encoding.Unicode.GetBytes("TEST");
+                // Send test message/command to Unity.
+                writeBytes = System.Text.Encoding.ASCII.GetBytes("TEST");
                 stream.Write(writeBytes, 0, writeBytes.Length);
 
                 // Receive the first accept message from the environment
@@ -65,18 +65,7 @@ namespace HiVRClient.Model.Network
         /// <returns>String that contains ASCII message</returns>
         private static string CleanMessage(byte[] bytes)
         {
-            string message = System.Text.Encoding.ASCII.GetString(bytes);
-
-            string res = string.Empty;
-            foreach (char nullChar in message)
-            {
-                if (nullChar != '\0')
-                {
-                    res += nullChar;
-                }
-            }
-
-            return res;
+            return System.Text.Encoding.ASCII.GetString(bytes);
         }
 
         #endregion Methods
