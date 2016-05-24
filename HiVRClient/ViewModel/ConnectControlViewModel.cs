@@ -38,7 +38,7 @@ namespace HiVRClient.ViewModel
         /// <summary>
         /// Gets or sets the host to connect to
         /// </summary>
-        public string Host { get; set; } = string.Empty;
+        public string Host { get; set; } = "127.0.0.1";
 
         /// <summary>
         /// Gets or sets the port to connect to
