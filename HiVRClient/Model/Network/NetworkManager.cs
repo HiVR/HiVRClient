@@ -5,6 +5,9 @@ namespace HiVRClient.Model.Network
 {
     using System;
     using System.Net.Sockets;
+    using System.Runtime.Serialization.Formatters.Binary;
+    using Serializable;
+    using System.Collections.Generic;
 
     /// <summary>
     /// This class is responsible for communicating with our Unity environment
@@ -36,47 +39,24 @@ namespace HiVRClient.Model.Network
         {
             try
             {
-                byte[] writeBytes;
-                byte[] readBytes = new byte[BYTESIZE];
-
                 server = new TcpClient(ip, port); // Create a new connection
                 Console.WriteLine("Connected to Unity Server at " + server.Client.LocalEndPoint.ToString());
 
                 NetworkStream stream = server.GetStream();
 
-                // Send test message/command to Unity
-                writeBytes = System.Text.Encoding.Unicode.GetBytes("TEST");
-                stream.Write(writeBytes, 0, writeBytes.Length);
+                BinaryFormatter formatter = new BinaryFormatter();
+                List<SerializableTransformObject> list = formatter.Deserialize(stream) as List<SerializableTransformObject>;
 
-                // Receive the first accept message from the environment
-                stream.Read(readBytes, 0, BYTESIZE);
-                Console.WriteLine("[UNITY] " + CleanMessage(readBytes));
+                foreach (SerializableTransformObject staticObject in list)
+                {
+                    Console.Write("Static Object id: " + staticObject.id);
+                }
+
             }
             catch (SocketException e)
             {
                 Console.WriteLine("[ERROR] SocketException!");
             }
-        }
-
-        /// <summary>
-        /// This method is responsible for receiving a buffer and converting it to a ASCII message
-        /// </summary>
-        /// <param name="bytes">Buffer with the client message</param>
-        /// <returns>String that contains ASCII message</returns>
-        private static string CleanMessage(byte[] bytes)
-        {
-            string message = System.Text.Encoding.ASCII.GetString(bytes);
-
-            string res = string.Empty;
-            foreach (char nullChar in message)
-            {
-                if (nullChar != '\0')
-                {
-                    res += nullChar;
-                }
-            }
-
-            return res;
         }
 
         #endregion Methods

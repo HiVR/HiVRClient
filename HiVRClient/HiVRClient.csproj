@@ -58,6 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Network\NetworkManager.cs" />
+    <Compile Include="Model\Network\Serializable\SerializableTransformObject.cs" />
+    <Compile Include="Model\Network\Serializable\SerializableVector3.cs" />
+    <Compile Include="Model\Network\Serializable\SerializableVector4.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />
     <Compile Include="View\MapViewControl.xaml.cs">
       <DependentUpon>MapViewControl.xaml</DependentUpon>
@@ -141,9 +144,7 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\logo.png" />
   </ItemGroup>
