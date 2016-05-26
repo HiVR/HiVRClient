@@ -13,15 +13,21 @@ namespace HiVRClient.ViewModel
     {
         #region Constructors
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MapViewModel"/> class
+        /// </summary>
         public MapViewModel()
         {
-            Drawables = new ObservableCollection<DrawableControl>() { new DrawableControl(new Building(0, 100, 100, 100)) };
+            this.Drawables = new ObservableCollection<DrawableControl>() { new DrawableControl(new Building(0, 100, 100, 100)) };
         }
 
         #endregion Constructors
 
         #region Properties
 
+        /// <summary>
+        /// Gets or sets the collection of draw
+        /// </summary>
         public ObservableCollection<DrawableControl> Drawables { get; set; }
 
         #endregion Properties
