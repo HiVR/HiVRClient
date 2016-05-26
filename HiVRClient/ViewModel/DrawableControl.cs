@@ -6,14 +6,14 @@ namespace HiVRClient.ViewModel
     using Model;
 
     /// <summary>
-    /// This class implements the view model for the <see cref="Drawable"/> class
+    /// This class implements the view model for the <see cref="Drawable"/> class.
     /// </summary>
     public class DrawableControl : BaseViewModel
     {
         #region Fields
 
         /// <summary>
-        /// Contains the drawable for this view model
+        /// Contains the drawable for this view model.
         /// </summary>
         private Drawable drawable;
 
@@ -22,9 +22,9 @@ namespace HiVRClient.ViewModel
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DrawableControl"/> class
+        /// Initializes a new instance of the <see cref="DrawableControl"/> class.
         /// </summary>
-        /// <param name="drawable">The drawable this class is a view model for</param>
+        /// <param name="drawable">the drawable this class is a view model for</param>
         public DrawableControl(Drawable drawable)
         {
             this.drawable = drawable;
@@ -35,12 +35,12 @@ namespace HiVRClient.ViewModel
         #region Properties
 
         /// <summary>
-        /// Gets the <see cref="DrawableType"/> for the view
+        /// Gets the <see cref="DrawableType"/> for the view.
         /// </summary>
         public DrawableType DrawableType => this.drawable.DrawableType;
 
         /// <summary>
-        /// Gets or sets the x location of the drawable
+        /// Gets or sets the x location of the drawable.
         /// </summary>
         public double XLocation
         {
@@ -49,7 +49,7 @@ namespace HiVRClient.ViewModel
         }
 
         /// <summary>
-        /// Gets or sets the y location of the drawable
+        /// Gets or sets the y location of the drawable.
         /// </summary>
         public double YLocation
         {
@@ -58,7 +58,7 @@ namespace HiVRClient.ViewModel
         }
 
         /// <summary>
-        /// Gets or sets the z location of the drawable
+        /// Gets or sets the z location of the drawable.
         /// </summary>
         public double ZLocation
         {
@@ -67,7 +67,7 @@ namespace HiVRClient.ViewModel
         }
 
         /// <summary>
-        /// Gets or sets the x rotation of the drawable
+        /// Gets or sets the x rotation of the drawable.
         /// </summary>
         public double XRotation
         {
@@ -76,7 +76,7 @@ namespace HiVRClient.ViewModel
         }
 
         /// <summary>
-        /// Gets or sets the y rotation of the drawable
+        /// Gets or sets the y rotation of the drawable.
         /// </summary>
         public double YRotation
         {
@@ -85,7 +85,7 @@ namespace HiVRClient.ViewModel
         }
 
         /// <summary>
-        /// Gets or sets the z location of the drawable
+        /// Gets or sets the z location of the drawable.
         /// </summary>
         public double ZRotation
         {
@@ -94,7 +94,7 @@ namespace HiVRClient.ViewModel
         }
 
         /// <summary>
-        /// Gets or sets the x scale of the drawable
+        /// Gets or sets the x scale of the drawable.
         /// </summary>
         public double XScale
         {
@@ -103,7 +103,7 @@ namespace HiVRClient.ViewModel
         }
 
         /// <summary>
-        /// Gets or sets the y scale of the drawable
+        /// Gets or sets the y scale of the drawable.
         /// </summary>
         public double YScale
         {
@@ -112,7 +112,7 @@ namespace HiVRClient.ViewModel
         }
 
         /// <summary>
-        /// Gets or sets the z scale of the drawable
+        /// Gets or sets the z scale of the drawable.
         /// </summary>
         public double ZScale
         {

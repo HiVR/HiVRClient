@@ -4,12 +4,12 @@
 namespace HiVRClient.Model
 {
     /// <summary>
-    /// This enumeration contains drawable types for the view to determine how to draw
+    /// This enumeration contains drawable types for the view to determine how to draw.
     /// </summary>
     public enum DrawableType
     {
         /// <summary>
-        /// The building type
+        /// The building type.
         /// </summary>
         Building,
     }
