@@ -37,7 +37,7 @@ namespace HiVRClient.Test.ViewModel
         public void TestCanExecute()
         {
             RelayCommand relayCommand = new RelayCommand(null);
-            Assert.IsTrue(relayCommand.CanExecute(null));
+            Assert.That(relayCommand.CanExecute(null), Is.True);
         }
 
         #endregion Methods
