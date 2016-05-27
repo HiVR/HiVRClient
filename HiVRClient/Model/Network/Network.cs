@@ -6,10 +6,10 @@ namespace HiVRClient.Model.Network
 {
     using Map;
     using SerializedObjects;
-    using System.Net.Sockets;
-    using System.Threading;
     using System;
     using System.Net;
+    using System.Net.Sockets;
+    using System.Threading;
 
     /// <summary>
     /// Contains all the logic for the network layer.
@@ -21,7 +21,7 @@ namespace HiVRClient.Model.Network
         /// <summary>
         /// Event class to notify thread about activity.
         /// </summary>
-        ManualResetEvent allDone = new ManualResetEvent(false);
+        private ManualResetEvent allDone = new ManualResetEvent(false);
 
         #endregion Fields
 
@@ -30,29 +30,32 @@ namespace HiVRClient.Model.Network
         /// <summary>
         /// Event class to notify thread about activity.
         /// </summary>
+        /// <param name="ip">IP used for making a connection</param>
+        /// <param name="port">port used for making a connection</param>
         public void Connect(string ip, int port)
         {
             while (true)
             {
                 Console.Out.WriteLine("Client: Connecting...");
-                
+
                 // Reset the event notifier.
-                allDone.Reset();
+                this.allDone.Reset();
 
                 // Setup receiving socket.
                 Socket receiver = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-                // Initiate the connection, once connected call the callback function "Connect"
-                receiver.BeginConnect(new IPEndPoint(IPAddress.Parse(ip), port), Connect, receiver);
+                // Initiate the connection, once connected call the callback function "Connect".
+                receiver.BeginConnect(new IPEndPoint(IPAddress.Parse(ip), port), this.Connect, receiver);
 
                 // Wait until packet is received.
-                allDone.WaitOne();
+                this.allDone.WaitOne();
             }
         }
 
         /// <summary>
-        /// Starts when the connection was accepted by the remote hosts and prepares to receive data
-        /// </summary>        
+        /// Starts when the connection was accepted by the remote hosts and prepares to receive data.
+        /// </summary>
+        /// <param name="result">contains the connection to the remote host</param>
         public void Connect(IAsyncResult result)
         {
             Console.Out.WriteLine("Client: Connected");
@@ -66,14 +69,14 @@ namespace HiVRClient.Model.Network
             // End "connect" phase.
             serializableTransform.Socket.EndConnect(result);
 
-            // Start "receive" phase. Once data starts flowing in, call the callback function "Receive"
-            serializableTransform.Socket.BeginReceive(serializableTransform.buffer, 0, serializableTransform.buffer.Length, SocketFlags.None, Receive, serializableTransform);
+            // Start "receive" phase. Once data starts flowing in, call the callback function "Receive".
+            serializableTransform.Socket.BeginReceive(serializableTransform.buffer, 0, serializableTransform.buffer.Length, SocketFlags.None, this.Receive, serializableTransform);
         }
-
 
         /// <summary>
         /// Receives the data, puts it in a buffer and checks if we need to receive again.
-        /// </summary>            
+        /// </summary>
+        /// <param name="result">contains the connection to the remote host</param>
         public void Receive(IAsyncResult result)
         {
             // Retrieve SerializableTransformObject from result.
@@ -85,7 +88,7 @@ namespace HiVRClient.Model.Network
             // If it's more then zero, we actually received something!
             if (read > 0)
             {
-                // Collect all received data and put it in the TransmissionBuffer
+                // Collect all received data and put it in the TransmissionBuffer.
                 for (int i = 0; i < read; i++)
                 {
                     serializableTransform.TransmissionBuffer.Add(serializableTransform.buffer[i]);
@@ -95,39 +98,41 @@ namespace HiVRClient.Model.Network
                 if (read == serializableTransform.buffer.Length)
                 {
                     // Start receiving again.
-                    serializableTransform.Socket.BeginReceive(serializableTransform.buffer, 0, serializableTransform.buffer.Length, SocketFlags.None, Receive, serializableTransform);
+                    serializableTransform.Socket.BeginReceive(serializableTransform.buffer, 0, serializableTransform.buffer.Length, SocketFlags.None, this.Receive, serializableTransform);
                 }
                 else
                 {
-                    // Done reading, process SerializableTransformObject
-                    Done(serializableTransform);
+                    // Done reading, process SerializableTransformObject.
+                    this.Done(serializableTransform);
                 }
             }
             else
             {
-                // Done reading, process SerializableTransformObject
-                Done(serializableTransform);
+                // Done reading, process SerializableTransformObject.
+                this.Done(serializableTransform);
             }
         }
 
         /// <summary>
-        /// Deserializes and outputs the received object
-        /// </summary>            
+        /// De-serializes and outputs the received object.
+        /// </summary>
+        /// <param name="serializableTransform">contains an Unity object that been serialized</param>
         public void Done(SerializableTransformObject serializableTransform)
         {
             SerializableTransformObject received = serializableTransform.DeSerialize();
-            Console.Out.WriteLine("Received transformobject with id: " + received.id);
+            Console.Out.WriteLine("Received transform-object with id: " + received.id);
 
             if (received.isStatic)
             {
                 ObjectTracker.AddStaticObject(received);
-            } else
+            }
+            else
             {
                 ObjectTracker.AddDynamicObject(received);
             }
 
             // Signal thread to continue, it will jump back to the first while loop and starts waiting for a connection again.
-            allDone.Set(); 
+            this.allDone.Set();
         }
 
         #endregion Methods

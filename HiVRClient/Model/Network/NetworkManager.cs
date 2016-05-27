@@ -13,9 +13,9 @@ namespace HiVRClient.Model.Network
         #region Fields
 
         /// <summary>
-        /// An instance of the Network class. 
+        /// An instance of the Network class.
         /// </summary>
-        static Network network = new Network();
+        private static Network network = new Network();
 
         #endregion Fields
 
@@ -26,7 +26,6 @@ namespace HiVRClient.Model.Network
         /// </summary>
         /// <param name="ip">IP to connect to</param>
         /// <param name="port">port to connect to</param>
-        /// <returns>true if connection success</returns>
         public static void CreateConnection(string ip, int port)
         {
             Task.Run(() => network.Connect(ip, port));
