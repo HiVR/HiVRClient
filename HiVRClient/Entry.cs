@@ -7,16 +7,16 @@ namespace HiVRClient
     using System;
 
     /// <summary>
-    /// Class containing the entry point of the application
+    /// Class containing the entry point of the application.
     /// </summary>
     public static class Entry
     {
         #region Methods
 
         /// <summary>
-        /// The entry point of the application
+        /// The entry point of the application.
         /// </summary>
-        /// <param name="args">The arguments passed to the program</param>
+        /// <param name="args">the arguments passed to the program</param>
         [STAThread]
         public static void Main(string[] args)
         {

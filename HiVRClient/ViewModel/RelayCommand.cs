@@ -7,14 +7,14 @@ namespace HiVRClient.ViewModel
     using System.Windows.Input;
 
     /// <summary>
-    /// Implements ICommand to provide commands from a view to a view model
+    /// Implements ICommand to provide commands from a view to a view model.
     /// </summary>
     public class RelayCommand : ICommand
     {
         #region Fields
 
         /// <summary>
-        /// Contains the actual command action
+        /// Contains the actual command action.
         /// </summary>
         private readonly Action<object> action;
 
@@ -23,9 +23,9 @@ namespace HiVRClient.ViewModel
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RelayCommand" /> class
+        /// Initializes a new instance of the <see cref="RelayCommand" /> class.
         /// </summary>
-        /// <param name="action">The action that should be executed when this command is called</param>
+        /// <param name="action">the action that should be executed when this command is called</param>
         public RelayCommand(Action<object> action)
         {
             this.action = action;
@@ -36,7 +36,7 @@ namespace HiVRClient.ViewModel
         #region Events
 
         /// <summary>
-        /// Is called when the CanExecute state changes
+        /// Is called when the CanExecute state changes.
         /// </summary>
         public event EventHandler CanExecuteChanged;
 
@@ -45,19 +45,19 @@ namespace HiVRClient.ViewModel
         #region Methods
 
         /// <summary>
-        /// Executes the command
+        /// Executes the command.
         /// </summary>
-        /// <param name="parameter">The command parameters</param>
+        /// <param name="parameter">the command parameters</param>
         public void Execute(object parameter)
         {
             this.action(parameter);
         }
 
         /// <summary>
-        /// Returns whether the command can be executed or not
+        /// Returns whether the command can be executed or not.
         /// </summary>
-        /// <param name="parameter">The command parameters</param>
-        /// <returns>Whether the command can be executed or not</returns>
+        /// <param name="parameter">the command parameters</param>
+        /// <returns>Whether the command can be executed or not.</returns>
         public bool CanExecute(object parameter)
         {
             return true;

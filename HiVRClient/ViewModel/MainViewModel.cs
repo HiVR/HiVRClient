@@ -4,14 +4,14 @@
 namespace HiVRClient.ViewModel
 {
     /// <summary>
-    /// Implements the main view model of the window and contains logic to switch the content
+    /// Implements the main view model of the window and contains logic to switch the content.
     /// </summary>
     public class MainViewModel : BaseViewModel
     {
         #region Fields
 
         /// <summary>
-        /// Contains the current view in the content control
+        /// Contains the current view in the content control.
         /// </summary>
         private BaseViewModel currentView;
 
@@ -20,7 +20,7 @@ namespace HiVRClient.ViewModel
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MainViewModel" /> class
+        /// Initializes a new instance of the <see cref="MainViewModel" /> class.
         /// </summary>
         public MainViewModel()
         {
@@ -34,7 +34,7 @@ namespace HiVRClient.ViewModel
         #region Properties
 
         /// <summary>
-        /// Gets or sets the current view in the content control
+        /// Gets or sets the current view in the content control.
         /// </summary>
         public BaseViewModel CurrentView
         {
@@ -55,7 +55,7 @@ namespace HiVRClient.ViewModel
         #region Methods
 
         /// <summary>
-        /// Switches the content to the map view after a connection has been made
+        /// Switches the content to the map view after a connection has been made.
         /// </summary>
         public void SwitchContent()
         {

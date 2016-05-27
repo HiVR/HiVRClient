@@ -6,14 +6,14 @@ namespace HiVRClient.ViewModel
     using System.ComponentModel;
 
     /// <summary>
-    /// Is the base of every view model. It implements the INotifyPropertyChanged interface to provide an event handler for view events
+    /// Is the base of every view model. It implements the INotifyPropertyChanged interface to provide an event handler for view events.
     /// </summary>
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
         #region Events
 
         /// <summary>
-        /// Is called every time the view changes
+        /// Is called every time the view changes.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -22,9 +22,9 @@ namespace HiVRClient.ViewModel
         #region Methods
 
         /// <summary>
-        /// Invokes the event handler when a property has changed
+        /// Invokes the event handler when a property has changed.
         /// </summary>
-        /// <param name="propertyName">The name of the property that changed</param>
+        /// <param name="propertyName">the name of the property that changed</param>
         protected void OnPropertyChanged(string propertyName)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
