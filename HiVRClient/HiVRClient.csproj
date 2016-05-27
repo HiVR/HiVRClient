@@ -58,6 +58,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Building.cs" />
+    <Compile Include="Model\Car.cs" />
+    <Compile Include="Model\Bench.cs" />
+    <Compile Include="Model\Actor.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\Tree.cs" />
     <Compile Include="Model\Drawable.cs" />
     <Compile Include="Model\DrawableType.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />

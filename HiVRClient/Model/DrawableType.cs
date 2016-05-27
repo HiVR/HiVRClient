@@ -12,5 +12,26 @@ namespace HiVRClient.Model
         /// The building type
         /// </summary>
         Building,
+        /// <summary>
+        /// The Car type
+        /// </summary>
+        Car,
+        /// <summary>
+        /// The Tree type
+        /// </summary>
+        Tree,
+        /// <summary>
+        /// The Bench type
+        /// </summary>
+        Bench,
+        /// <summary>
+        /// The Actor type
+        /// </summary>
+        Actor,
+        /// <summary>
+        /// The User type
+        /// </summary>
+        User
+
     }
 }

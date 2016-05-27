@@ -8,6 +8,9 @@
         <Path
             Name="path" />
         <DataTemplate.Triggers>
+
+            <!--These are Triggers for each static Object-->
+            <!--Building 300x300-->
             <DataTrigger
                 Binding="{Binding DrawableType}"
                 Value="{x:Static model:DrawableType.Building}">
@@ -16,7 +19,7 @@
                     Property="Path.Data">
                     <Setter.Value>
                         <RectangleGeometry
-                            Rect="0,0,100,100" />
+                            Rect="0,0,300,300" />
                     </Setter.Value>
                 </Setter>
 
@@ -29,6 +32,216 @@
                             <Setter
                                 Property="Fill"
                                 Value="Gray" />
+                        </Style>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter
+                    TargetName="path"
+                    Property="Path.RenderTransform">
+                    <Setter.Value>
+                        <TransformGroup>
+                            <ScaleTransform
+                                        ScaleX="{Binding XScale}"
+                                        ScaleY="{Binding YScale}" />
+                            <TranslateTransform
+                                        X="{Binding XLocation}"
+                                        Y="{Binding YLocation}" />
+                        </TransformGroup>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+            <!--Car 100x60-->
+            <DataTrigger
+                Binding="{Binding DrawableType}"
+                Value="{x:Static model:DrawableType.Car}">
+                <Setter
+                    TargetName="path"
+                    Property="Path.Data">
+                    <Setter.Value>
+                        <RectangleGeometry
+                            Rect="0,0,85,160"
+                            RadiusX="10"
+                            RadiusY="10" />
+                    </Setter.Value>
+                </Setter>
+
+                <Setter
+                    TargetName="path"
+                    Property="Path.Style">
+                    <Setter.Value>
+                        <Style
+                            TargetType="Path">
+                            <Setter
+                                Property="Fill"
+                                Value="Blue" />
+                        </Style>
+                    </Setter.Value>
+                </Setter>
+                <Setter
+                    TargetName="path"
+                    Property="Path.RenderTransform">
+                    <Setter.Value>
+                        <TransformGroup>
+                            <ScaleTransform
+                                        ScaleX="{Binding XScale}"
+                                        ScaleY="{Binding YScale}" />
+                            <TranslateTransform
+                                        X="{Binding XLocation}"
+                                        Y="{Binding YLocation}" />
+                        </TransformGroup>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+            <!--Benches 50x25-->
+            <DataTrigger
+                Binding="{Binding DrawableType}"
+                Value="{x:Static model:DrawableType.Bench}">
+                <Setter
+                    TargetName="path"
+                    Property="Path.Data">
+                    <Setter.Value>
+                        <RectangleGeometry
+                            Rect="0,0,35,95" />
+                    </Setter.Value>
+                </Setter>
+
+                <Setter
+                    TargetName="path"
+                    Property="Path.Style">
+                    <Setter.Value>
+                        <Style
+                            TargetType="Path">
+                            <Setter
+                                Property="Fill"
+                                Value="Orange" />
+                        </Style>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter
+                    TargetName="path"
+                    Property="Path.RenderTransform">
+                    <Setter.Value>
+                        <TransformGroup>
+                            <ScaleTransform
+                                        ScaleX="{Binding XScale}"
+                                        ScaleY="{Binding YScale}" />
+                            <TranslateTransform
+                                        X="{Binding XLocation}"
+                                        Y="{Binding YLocation}" />
+                        </TransformGroup>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+            <!--Tree 120x120 -->
+            <DataTrigger
+                Binding="{Binding DrawableType}"
+                Value="{x:Static model:DrawableType.Tree}">
+                <Setter
+                    TargetName="path"
+                    Property="Path.Data">
+                    <Setter.Value>
+                        <RectangleGeometry
+                            Rect="0,0,200,200" />
+                    </Setter.Value>
+                </Setter>
+
+                <Setter
+                    TargetName="path"
+                    Property="Path.Style">
+                    <Setter.Value>
+                        <Style
+                            TargetType="Path">
+                            <Setter
+                                Property="Fill"
+                                Value="Green" />
+                        </Style>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter
+                    TargetName="path"
+                    Property="Path.RenderTransform">
+                    <Setter.Value>
+                        <TransformGroup>
+                            <ScaleTransform
+                                        ScaleX="{Binding XScale}"
+                                        ScaleY="{Binding YScale}" />
+                            <TranslateTransform
+                                        X="{Binding XLocation}"
+                                        Y="{Binding YLocation}" />
+                        </TransformGroup>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+            <!--Actors-->
+            <DataTrigger
+                Binding="{Binding DrawableType}"
+                Value="{x:Static model:DrawableType.Actor}">
+                <Setter
+                    TargetName="path"
+                    Property="Path.Data">
+                    <Setter.Value>
+                        <RectangleGeometry
+                            Rect="0,0,45,45"
+                            RadiusX="45"
+                            RadiusY="45" />
+                    </Setter.Value>
+                </Setter>
+
+                <Setter
+                    TargetName="path"
+                    Property="Path.Style">
+                    <Setter.Value>
+                        <Style
+                            TargetType="Path">
+                            <Setter
+                                Property="Fill"
+                                Value="LightBlue" />
+                        </Style>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter
+                    TargetName="path"
+                    Property="Path.RenderTransform">
+                    <Setter.Value>
+                        <TransformGroup>
+                            <ScaleTransform
+                                        ScaleX="{Binding XScale}"
+                                        ScaleY="{Binding YScale}" />
+                            <TranslateTransform
+                                        X="{Binding XLocation}"
+                                        Y="{Binding YLocation}" />
+                        </TransformGroup>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+            <!--User-->
+            <DataTrigger
+                Binding="{Binding DrawableType}"
+                Value="{x:Static model:DrawableType.User}">
+                <Setter
+                    TargetName="path"
+                    Property="Path.Data">
+                    <Setter.Value>
+                        <RectangleGeometry
+                            Rect="0,0,45,45"
+                            RadiusX="45"
+                            RadiusY="45" />
+                    </Setter.Value>
+                </Setter>
+
+                <Setter
+                    TargetName="path"
+                    Property="Path.Style">
+                    <Setter.Value>
+                        <Style
+                            TargetType="Path">
+                            <Setter
+                                Property="Fill"
+                                Value="DarkGreen" />
                         </Style>
                     </Setter.Value>
                 </Setter>
