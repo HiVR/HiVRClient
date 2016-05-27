@@ -1,4 +1,4 @@
-﻿// <copyright file="'DrawableTest.cs" company="HiVR">
+﻿// <copyright file="DrawableTest.cs" company="HiVR">
 // Copyright (c) 2016 HiVR All Rights Reserved
 // </copyright>
 using HiVRClient.Model;
