@@ -57,6 +57,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Actor.cs" />
     <Compile Include="Model\Building.cs" />
     <Compile Include="Model\Drawable.cs" />
     <Compile Include="Model\DrawableType.cs" />

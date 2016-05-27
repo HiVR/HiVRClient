@@ -12,5 +12,6 @@ namespace HiVRClient.Model
         /// The building type.
         /// </summary>
         Building,
+        Actor
     }
 }
