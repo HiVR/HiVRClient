@@ -46,6 +46,8 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ViewModel\ConnectControlViewModelTest.cs" />
+    <Compile Include="ViewModel\MainViewModelTest.cs" />
     <Compile Include="ViewModel\RelayCommandTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
