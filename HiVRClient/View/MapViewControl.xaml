@@ -3,11 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:viewmodel="clr-namespace:HiVRClient.ViewModel"
              mc:Ignorable="d">
-    <UserControl.DataContext>
-        <viewmodel:MapViewModel />
-    </UserControl.DataContext>
-    <Grid>
-    </Grid>
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="DrawableTemplate.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <ItemsControl
+        ItemsSource="{Binding Drawables}"
+        ItemTemplate="{StaticResource DrawableTemplate}">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <Canvas
+                    IsItemsHost="True" />
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+    </ItemsControl>
 </UserControl>

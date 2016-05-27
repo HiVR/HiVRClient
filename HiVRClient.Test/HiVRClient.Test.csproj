@@ -48,6 +48,10 @@
   <ItemGroup>
     <Compile Include="ViewModel\ConnectControlViewModelTest.cs" />
     <Compile Include="ViewModel\MainViewModelTest.cs" />
+    <Compile Include="Model\BuildingTest.cs" />
+    <Compile Include="Model\DrawableControlTest.cs" />
+    <Compile Include="Model\DrawableTest.cs" />
+    <Compile Include="ViewModel\MapViewModelTest.cs" />
     <Compile Include="ViewModel\RelayCommandTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -60,6 +64,7 @@
       <Name>HiVRClient</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

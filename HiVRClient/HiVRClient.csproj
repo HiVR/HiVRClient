@@ -64,7 +64,11 @@
     <Compile Include="Model\Network\Network.cs" />
     <Compile Include="Model\Network\NetworkManager.cs" />
     <Compile Include="Utilities\ConcurrentHashSet.cs" />
+    <Compile Include="Model\Building.cs" />
+    <Compile Include="Model\Drawable.cs" />
+    <Compile Include="Model\DrawableType.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />
+    <Compile Include="ViewModel\DrawableControl.cs" />
     <Compile Include="View\MapViewControl.xaml.cs">
       <DependentUpon>MapViewControl.xaml</DependentUpon>
     </Compile>
@@ -77,6 +81,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ConnectViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DrawableTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -148,9 +156,12 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup />
+<<<<<<< HEAD
   <ItemGroup>
     <Resource Include="Resources\logo.png" />
   </ItemGroup>
+=======
+>>>>>>> enhancement/render_map
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
