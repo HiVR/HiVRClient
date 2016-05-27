@@ -7,7 +7,7 @@ namespace HiVRClient.ViewModel
     using System.Windows.Input;
 
     /// <summary>
-    /// This class implements the view model of the ConnectControl
+    /// This class implements the view model of the ConnectControl.
     /// </summary>
     public class ConnectControlViewModel : BaseViewModel
     {
@@ -58,10 +58,11 @@ namespace HiVRClient.ViewModel
         }
 
         /// <summary>
-        /// Attempts a connection and calls the OnConnectionAttempted method with the results
+        /// Attempts a connection and calls the OnConnectionAttempted method with the results.
         /// </summary>
         private void Connect()
         {
+            // Create a connection to the specified address.
             Model.Network.NetworkManager.CreateConnection(this.Host, this.Port);
 
             // Actual connection logic here. The OnConnectionAttempted method should provide parameters to provide whether the connection was successful or not

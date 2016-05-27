@@ -39,6 +39,9 @@
     <StartupObject>HiVRClient.Entry</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SerializedObjects">
+      <HintPath>.\SerializedObjects.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -57,7 +60,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Map\ObjectTracker.cs" />
+    <Compile Include="Model\Network\Network.cs" />
     <Compile Include="Model\Network\NetworkManager.cs" />
+    <Compile Include="Utilities\ConcurrentHashSet.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />
     <Compile Include="View\MapViewControl.xaml.cs">
       <DependentUpon>MapViewControl.xaml</DependentUpon>
@@ -141,9 +147,7 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\logo.png" />
   </ItemGroup>
