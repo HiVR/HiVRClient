@@ -14,7 +14,7 @@
 
     <ItemsControl
         ItemsSource="{Binding Drawables}"
-        ItemTemplate="{StaticResource DrawableTemplate}">
+        ItemTemplate="{Binding}">
         <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
                 <Canvas

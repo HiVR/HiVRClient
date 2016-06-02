@@ -48,8 +48,7 @@
   <ItemGroup>
     <Compile Include="ViewModel\ConnectControlViewModelTest.cs" />
     <Compile Include="ViewModel\MainViewModelTest.cs" />
-    <Compile Include="Model\BuildingTest.cs" />
-    <Compile Include="Model\DrawableControlTest.cs" />
+    <Compile Include="ViewModel\DrawableControlTest.cs" />
     <Compile Include="Model\DrawableTest.cs" />
     <Compile Include="ViewModel\MapViewModelTest.cs" />
     <Compile Include="ViewModel\RelayCommandTest.cs" />
