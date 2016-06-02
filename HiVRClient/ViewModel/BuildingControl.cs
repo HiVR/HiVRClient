@@ -15,7 +15,7 @@ namespace HiVRClient.ViewModel
         /// <summary>
         /// Initializes a new instance of the <see cref="BuildingControl"/> class.
         /// </summary>
-        /// <param name="building">he building model</param>
+        /// <param name="building">The building model</param>
         public BuildingControl(Building building) : base(building)
         {
         }

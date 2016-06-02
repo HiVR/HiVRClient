@@ -28,4 +28,31 @@
             </Path.RenderTransform>
         </Path>
     </DataTemplate>
+    <DataTemplate
+        DataType="{x:Type viewmodel:ActorControl}">
+        <Path>
+            <Path.Data>
+                <RectangleGeometry
+                    Rect="0,0,100,100" />
+            </Path.Data>
+            <Path.Style>
+                <Style
+                    TargetType="Path">
+                    <Setter
+                        Property="Fill"
+                        Value="Blue" />
+                </Style>
+            </Path.Style>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform
+                        ScaleX="{Binding XScale}"
+                        ScaleY="{Binding YScale}" />
+                    <TranslateTransform
+                        X="{Binding DisplayedXLocation,UpdateSourceTrigger=PropertyChanged}"
+                        Y="{Binding DisplayedYLocation,UpdateSourceTrigger=PropertyChanged}" />
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+    </DataTemplate>
 </ResourceDictionary>

@@ -63,7 +63,7 @@ namespace HiVRClient.ViewModel
         private void Connect()
         {
             // Create a connection to the specified address.
-            Model.Network.NetworkManager.CreateConnection(this.Host, this.Port);
+            //Model.Network.NetworkManager.CreateConnection(this.Host, this.Port);
 
             // Actual connection logic here. The OnConnectionAttempted method should provide parameters to provide whether the connection was successful or not.
             this.OnConnectionAttempted();
