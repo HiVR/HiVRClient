@@ -8,7 +8,7 @@ namespace HiVRClient.ViewModel
     /// <summary>
     /// This class implements the view model for the <see cref="Drawable"/> class.
     /// </summary>
-    public class DrawableControl : BaseViewModel
+    public abstract class DrawableControl : BaseViewModel
     {
         #region Fields
 
@@ -25,7 +25,7 @@ namespace HiVRClient.ViewModel
         /// Initializes a new instance of the <see cref="DrawableControl"/> class.
         /// </summary>
         /// <param name="drawable">the drawable this class is a view model for</param>
-        public DrawableControl(Drawable drawable)
+        protected DrawableControl(Drawable drawable)
         {
             this.drawable = drawable;
         }
@@ -33,11 +33,6 @@ namespace HiVRClient.ViewModel
         #endregion Constructors
 
         #region Properties
-
-        /// <summary>
-        /// Gets the <see cref="DrawableType"/> for the view.
-        /// </summary>
-        public DrawableType DrawableType => this.drawable.DrawableType;
 
         /// <summary>
         /// Gets or sets the x location of the drawable.

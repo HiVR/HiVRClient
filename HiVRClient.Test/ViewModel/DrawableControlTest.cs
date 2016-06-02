@@ -1,11 +1,12 @@
 ﻿// <copyright file="DrawableControlTest.cs" company="HiVR">
 // Copyright (c) 2016 HiVR All Rights Reserved
 // </copyright>
+
 using HiVRClient.Model;
 using HiVRClient.ViewModel;
 using NUnit.Framework;
 
-namespace HiVRClient.Test.Model
+namespace HiVRClient.Test.ViewModel
 {
     /// <summary>
     /// Test <see cref="DrawableControl"/> class.
@@ -20,11 +21,6 @@ namespace HiVRClient.Test.Model
         /// </summary>
         private DrawableControl drawableControl;
 
-        /// <summary>
-        /// Contains same drawable instance for each test.
-        /// </summary>
-        private Drawable drawable;
-
         #endregion Fields
 
         #region Methods
@@ -35,8 +31,8 @@ namespace HiVRClient.Test.Model
         [SetUp]
         public void Setup()
         {
-            this.drawable = new Building(1, 2, 3, 4);
-            this.drawableControl = new DrawableControl(this.drawable);
+            var drawable = new Building(1, 2, 3, 4);
+            this.drawableControl = new BuildingControl(drawable);
         }
 
         /// <summary>
@@ -45,17 +41,7 @@ namespace HiVRClient.Test.Model
         [TearDown]
         public void TearDown()
         {
-            this.drawable = null;
             this.drawableControl = null;
-        }
-
-        /// <summary>
-        /// Test <see cref="DrawableControl.DrawableType"/> property.
-        /// </summary>
-        [Test]
-        public void TestGetDrawableType()
-        {
-            Assert.That(this.drawableControl.DrawableType, Is.EqualTo(DrawableType.Building));
         }
 
         /// <summary>

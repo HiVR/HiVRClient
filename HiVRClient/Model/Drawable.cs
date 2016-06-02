@@ -14,14 +14,12 @@ namespace HiVRClient.Model
         /// Initializes a new instance of the <see cref="Drawable"/> class.
         /// </summary>
         /// <param name="id">the id of the drawable object</param>
-        /// <param name="type">the type of the drawable object (this is necessary for the view to determine what to draw)</param>
         /// <param name="xlocation">the x coordinate of the object</param>
         /// <param name="ylocation">the y coordinate of the object</param>
         /// <param name="zlocation">the z coordinate of the object</param>
-        protected Drawable(int id, DrawableType type, double xlocation, double ylocation, double zlocation)
+        protected Drawable(int id, double xlocation, double ylocation, double zlocation)
         {
             this.Id = id;
-            this.DrawableType = type;
             this.XLocation = xlocation;
             this.YLocation = ylocation;
             this.ZLocation = zlocation;
@@ -35,11 +33,6 @@ namespace HiVRClient.Model
         /// Gets the id of the drawable.
         /// </summary>
         public int Id { get; }
-
-        /// <summary>
-        /// Gets the type of the drawable.
-        /// </summary>
-        public DrawableType DrawableType { get; }
 
         /// <summary>
         /// Gets or sets the x coordinate of the drawable.

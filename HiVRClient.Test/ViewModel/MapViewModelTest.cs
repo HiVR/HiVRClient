@@ -58,7 +58,7 @@ namespace HiVRClient.Test.ViewModel
         [Test]
         public void TestSetDrawables()
         {
-            var collection = new ObservableCollection<DrawableControl>() { new DrawableControl(new Building(1, 2, 3, 4)) };
+            var collection = new ObservableCollection<DrawableControl>() { new BuildingControl(new Building(1, 2, 3, 4)) };
             this.mapViewModel.Drawables = collection;
             Assert.That(this.mapViewModel.Drawables, Is.EqualTo(collection));
         }
