@@ -20,8 +20,41 @@ namespace HiVRClient.ViewModel
         /// </summary>
         public MapViewModel()
         {
-            this.Drawables = new ObservableCollection<DrawableControl>() {
-                new BuildingControl(new Model.Building(0, 200, 200, 0)),
+            var bottomBuilding = new Model.Building(0, 815, 675, 0);
+            var topLeftBuilding = new Model.Building(1, 115, 50, 0);
+            var lowerLeftBuilding = new Model.Building(2, 0, 600, 0);
+            var topRightBuilding = new Model.Building(3, 830, 70, 0);
+
+            bottomBuilding.XScale = 2.88;
+            bottomBuilding.YScale = 1;
+            topLeftBuilding.XScale = 0.716;
+            topLeftBuilding.YScale = 1.2;
+            topRightBuilding.XScale = 3.1;
+            topRightBuilding.YScale = 0.7;
+            lowerLeftBuilding.XScale = 1.5;
+            lowerLeftBuilding.YScale = 3.1;
+
+            var car1 = new Model.Car(4, 720, 830, 0);
+            var car2 = new Model.Car(5, 350, 70, 0);
+            var tree = new Model.Tree(6, 1310, 385, 0);
+
+            var bench1 = new Model.Bench(6, 1253, 385, 0);
+            var bench2 = new Model.Bench(7, 1253, 492, 0);
+            var bench3 = new Model.Bench(8, 1540, 385, 0);
+            var bench4 = new Model.Bench(9, 1540, 492, 0);            
+
+            this.Drawables = new ObservableCollection<DrawableControl>() {                
+                new BuildingControl(topLeftBuilding),
+                new BuildingControl(bottomBuilding),
+                new BuildingControl(lowerLeftBuilding),
+                new BuildingControl(topRightBuilding),
+                new CarControl(car1),
+                new CarControl(car2),
+                new TreeControl(tree),
+                new BenchControl(bench1),
+                new BenchControl(bench2),
+                new BenchControl(bench3),
+                new BenchControl(bench4),
                 new ActorControl(new Model.Actor(1, 400, 400, 400))
             };
 

@@ -7,7 +7,7 @@
         <Path>
             <Path.Data>
                 <RectangleGeometry
-                    Rect="0,0,100,100" />
+                    Rect="0,0,300,300" />
             </Path.Data>
             <Path.Style>
                 <Style
@@ -35,7 +35,7 @@
         <Path>
             <Path.Data>
                 <RectangleGeometry
-                    Rect="0,0,50,25"
+                    Rect="0,0,50,100"
                     RadiusX="10"
                     RadiusY="10" />   
             </Path.Data>
@@ -65,7 +65,7 @@
         <Path>
             <Path.Data>
                 <RectangleGeometry
-                    Rect="0,0,100,100"
+                    Rect="0,0,200,200"
                     />
             </Path.Data>
             <Path.Style>
@@ -94,7 +94,7 @@
         <Path>
             <Path.Data>
                 <RectangleGeometry
-                    Rect="0,0,50,25" />
+                    Rect="0,0,25,50" />
             </Path.Data>
             <Path.Style>
                 <Style
