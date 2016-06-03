@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿// <copyright file="Actor.cs" company="HiVR">
+// Copyright (c) 2016 HiVR All Rights Reserved
+// </copyright>
 namespace HiVRClient.Model
 {
     /// <summary>
@@ -21,6 +18,5 @@ namespace HiVRClient.Model
         public Actor(int id, double xlocation, double ylocation, double zlocation) : base(id, xlocation, ylocation, zlocation)
         {
         }
-
     }
 }

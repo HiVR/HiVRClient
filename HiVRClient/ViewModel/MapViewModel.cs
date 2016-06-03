@@ -3,10 +3,10 @@
 // </copyright>
 namespace HiVRClient.ViewModel
 {
-    using System.Collections.ObjectModel;
     using System.Windows.Threading;
-    using System;
     using System.Windows;
+    using System;
+    using System.Collections.ObjectModel;
 
     /// <summary>
     /// Contains the view model of the actual map.
@@ -31,7 +31,7 @@ namespace HiVRClient.ViewModel
             dispatcherTimer.Interval = new TimeSpan(0, 0, 5);
             dispatcherTimer.Start();
 
-            //for testing
+            ////for testing
             DispatcherTimer otherTimer = new DispatcherTimer();
 
             otherTimer.Tick += new EventHandler(otherTimer_Tick);
@@ -50,33 +50,33 @@ namespace HiVRClient.ViewModel
 
         #endregion Properties
 
+        /// <summary>
+        /// dispatcherTimer_Tick
+        /// </summary>
         private void dispatcherTimer_Tick(object sender, EventArgs e)
-        {
-            
+        {            
             foreach (DrawableControl dc in Drawables)
             {
-                if(dc is ActorControl)
-                {
-                    
+                if (dc is ActorControl)
+                {                    
                     ((ActorControl)dc).UpdateMapPosition();
-                }
-                
+                }                
             }
         }
 
+        /// <summary>
+        /// otherTimer_Tick
+        /// </summary>
         private void otherTimer_Tick(object sender, EventArgs e)
         {
             Random rd = new Random();
-
 
             foreach (DrawableControl dc in Drawables)
             {
                 if (dc is ActorControl)
                 {
-
                     ((ActorControl)dc).UpdatePosition(dc.XLocation + rd.Next(-30, 30), dc.YLocation + rd.Next(-30, 30));
-                }
-                
+                }                
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿// <copyright file="DrawableTest.cs" company="HiVR">
 // Copyright (c) 2016 HiVR All Rights Reserved
-// </copyright>
+// </copyright>  
 using HiVRClient.Model;
 using NUnit.Framework;
 

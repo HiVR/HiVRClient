@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:viewmodel="clr-namespace:HiVRClient.ViewModel">
+    <!--Buildings 300x300.-->
     <DataTemplate
         DataType="{x:Type viewmodel:BuildingControl}">
         <Path>
@@ -28,19 +29,109 @@
             </Path.RenderTransform>
         </Path>
     </DataTemplate>
+    <!--Cars 50 x 25-->
     <DataTemplate
-        DataType="{x:Type viewmodel:ActorControl}">
+        DataType="{x:Type viewmodel:CarControl}">
         <Path>
             <Path.Data>
                 <RectangleGeometry
-                    Rect="0,0,100,100" />
+                    Rect="0,0,50,25"
+                    RadiusX="10"
+                    RadiusY="10" />   
             </Path.Data>
             <Path.Style>
                 <Style
                     TargetType="Path">
                     <Setter
                         Property="Fill"
-                        Value="Blue" />
+                        Value="Red" />
+                </Style>
+            </Path.Style>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform
+                        ScaleX="{Binding XScale}"
+                        ScaleY="{Binding YScale}" />
+                    <TranslateTransform
+                        X="{Binding XLocation}"
+                        Y="{Binding YLocation}" />
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+    </DataTemplate>
+    <!--Trees 100x100-->
+    <DataTemplate
+        DataType="{x:Type viewmodel:TreeControl}">
+        <Path>
+            <Path.Data>
+                <RectangleGeometry
+                    Rect="0,0,100,100"
+                    />
+            </Path.Data>
+            <Path.Style>
+                <Style
+                    TargetType="Path">
+                    <Setter
+                        Property="Fill"
+                        Value="Green" />
+                </Style>
+            </Path.Style>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform
+                        ScaleX="{Binding XScale}"
+                        ScaleY="{Binding YScale}" />
+                    <TranslateTransform
+                        X="{Binding XLocation}"
+                        Y="{Binding YLocation}" />
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+    </DataTemplate>
+    <!--Benches 50x25.-->
+    <DataTemplate
+        DataType="{x:Type viewmodel:BenchControl}">
+        <Path>
+            <Path.Data>
+                <RectangleGeometry
+                    Rect="0,0,50,25" />
+            </Path.Data>
+            <Path.Style>
+                <Style
+                    TargetType="Path">
+                    <Setter
+                        Property="Fill"
+                        Value="Orange" />
+                </Style>
+            </Path.Style>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform
+                        ScaleX="{Binding XScale}"
+                        ScaleY="{Binding YScale}" />
+                    <TranslateTransform
+                        X="{Binding XLocation}"
+                        Y="{Binding YLocation}" />
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+    </DataTemplate>
+    <!--Actors 50x50.-->
+    <DataTemplate
+        DataType="{x:Type viewmodel:ActorControl}">
+        <Path>
+            <Path.Data>
+                <RectangleGeometry
+                    Rect="0,0,50,50"
+                    RadiusX="45"
+                    RadiusY="45" />
+            </Path.Data>
+            <Path.Style>
+                <Style
+                    TargetType="Path">
+                    <Setter
+                        Property="Fill"
+                        Value="Green" />
                 </Style>
             </Path.Style>
             <Path.RenderTransform>
