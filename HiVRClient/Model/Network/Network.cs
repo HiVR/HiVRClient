@@ -66,11 +66,22 @@ namespace HiVRClient.Model.Network
             // Receive socket from result.
             serializableTransform.Socket = (Socket)result.AsyncState;
 
-            // End "connect" phase.
-            serializableTransform.Socket.EndConnect(result);
+            try
+            {
+                // End "connect" phase.
+                serializableTransform.Socket.EndConnect(result);
 
-            // Start "receive" phase. Once data starts flowing in, call the callback function "Receive".
-            serializableTransform.Socket.BeginReceive(serializableTransform.buffer, 0, serializableTransform.buffer.Length, SocketFlags.None, this.Receive, serializableTransform);
+                // Start "receive" phase. Once data starts flowing in, call the callback function "Receive".
+                serializableTransform.Socket.BeginReceive(serializableTransform.buffer, 0, serializableTransform.buffer.Length, SocketFlags.None, this.Receive, serializableTransform);
+            }
+            catch (SocketException e)
+            {
+                Console.Out.WriteLine("Client: Socket exception occured while connected. " + e.Message);
+
+                Console.Out.WriteLine("Client: Trying to reconnect.");
+                // Signal to start new connection.
+                this.allDone.Set();
+            }
         }
 
         /// <summary>
@@ -79,26 +90,34 @@ namespace HiVRClient.Model.Network
         /// <param name="result">contains the connection to the remote host</param>
         public void Receive(IAsyncResult result)
         {
-            // Retrieve SerializableTransformObject from result.
-            SerializableTransformObject serializableTransform = (SerializableTransformObject)result.AsyncState;
-
-            // Get amount of data received.
-            int read = serializableTransform.Socket.EndReceive(result);
-
-            // If it's more then zero, we actually received something!
-            if (read > 0)
+            try
             {
-                // Collect all received data and put it in the TransmissionBuffer.
-                for (int i = 0; i < read; i++)
-                {
-                    serializableTransform.TransmissionBuffer.Add(serializableTransform.buffer[i]);
-                }
+                // Retrieve SerializableTransformObject from result.
+                SerializableTransformObject serializableTransform = (SerializableTransformObject)result.AsyncState;
 
-                // If the amount read is equal to the buffer size, try to receive more data, because we don't know if their is.
-                if (read == serializableTransform.buffer.Length)
+                // Get amount of data received.
+                int read = serializableTransform.Socket.EndReceive(result);
+
+                // If it's more then zero, we actually received something!
+                if (read > 0)
                 {
-                    // Start receiving again.
-                    serializableTransform.Socket.BeginReceive(serializableTransform.buffer, 0, serializableTransform.buffer.Length, SocketFlags.None, this.Receive, serializableTransform);
+                    // Collect all received data and put it in the TransmissionBuffer.
+                    for (int i = 0; i < read; i++)
+                    {
+                        serializableTransform.TransmissionBuffer.Add(serializableTransform.buffer[i]);
+                    }
+
+                    // If the amount read is equal to the buffer size, try to receive more data, because we don't know if their is.
+                    if (read == serializableTransform.buffer.Length)
+                    {
+                        // Start receiving again.
+                        serializableTransform.Socket.BeginReceive(serializableTransform.buffer, 0, serializableTransform.buffer.Length, SocketFlags.None, this.Receive, serializableTransform);
+                    }
+                    else
+                    {
+                        // Done reading, process SerializableTransformObject.
+                        this.Done(serializableTransform);
+                    }
                 }
                 else
                 {
@@ -106,10 +125,13 @@ namespace HiVRClient.Model.Network
                     this.Done(serializableTransform);
                 }
             }
-            else
+            catch(SocketException e)
             {
-                // Done reading, process SerializableTransformObject.
-                this.Done(serializableTransform);
+                Console.Out.WriteLine("Socket exception occured while receiving. " + e.Message);
+
+                Console.Out.WriteLine("Trying to reconnect.");
+                // Signal to start new connection.
+                this.allDone.Set();
             }
         }
 
