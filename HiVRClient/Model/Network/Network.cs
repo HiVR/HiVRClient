@@ -142,7 +142,8 @@ namespace HiVRClient.Model.Network
         public void Done(SerializableTransformObject serializableTransform)
         {
             SerializableTransformObject received = serializableTransform.DeSerialize();
-            Console.Out.WriteLine("Received transform-object with id: " + received.id);
+            Console.Out.WriteLine("Received transform-object with id: " + received.id + " of type: " + received.type);
+
 
             if (received.isStatic)
             {

@@ -2,6 +2,7 @@
 // Copyright (c) 2016 HiVR All Rights Reserved
 // </copyright>
 using HiVRClient.Model;
+using HiVRClient.Utilities;
 using HiVRClient.ViewModel;
 using NUnit.Framework;
 using System.Collections.ObjectModel;
@@ -58,7 +59,7 @@ namespace HiVRClient.Test.ViewModel
         [Test]
         public void TestSetDrawables()
         {
-            var collection = new ObservableCollection<DrawableControl>() { new BuildingControl(new Building(1, 2, 3, 4)) };
+            var collection = new ObservableCollection<DrawableControl>() { new BuildingControl(new Building(1, new Vector3(1D, 2D, 3D), new Vector3(4D, 5D, 6D), new Vector3(7D, 8D, 9D))) };
             this.mapViewModel.Drawables = collection;
             Assert.That(this.mapViewModel.Drawables, Is.EqualTo(collection));
         }

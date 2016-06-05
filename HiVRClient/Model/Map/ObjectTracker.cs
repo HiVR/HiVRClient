@@ -4,6 +4,7 @@
 namespace HiVRClient.Model.Map
 {
     using SerializedObjects;
+    using System.Collections.Concurrent;
     using Utilities;
 
     /// <summary>
@@ -14,14 +15,14 @@ namespace HiVRClient.Model.Map
         #region Fields
 
         /// <summary>
-        /// The HashSet of static objects.
+        /// The ConcurrentDictionary of static objects.
         /// </summary>
-        private static ConcurrentHashSet<SerializableTransformObject> staticObjects = new ConcurrentHashSet<SerializableTransformObject>();
+        private static ConcurrentDictionary<int, SerializableTransformObject> staticObjects = new ConcurrentDictionary<int, SerializableTransformObject>();
 
         /// <summary>
-        /// The HashSet of dynamic objects.
+        /// The ConcurrentDictionary of dynamic objects.
         /// </summary>
-        private static ConcurrentHashSet<SerializableTransformObject> dynamicObjects = new ConcurrentHashSet<SerializableTransformObject>();
+        private static ConcurrentDictionary<int, SerializableTransformObject> dynamicObjects = new ConcurrentDictionary<int, SerializableTransformObject>();
 
         #endregion Fields
 
@@ -33,23 +34,24 @@ namespace HiVRClient.Model.Map
         /// <param name="staticObject">the object that is added to the HashSet</param>
         public static void AddStaticObject(SerializableTransformObject staticObject)
         {
-            staticObjects.Add(staticObject);
+            staticObjects.AddOrUpdate(staticObject.id, staticObject, (key, existingVal) => { return staticObject; } );
         }
 
         /// <summary>
         /// Removes a static object from the tracking HashSet.
         /// </summary>
         /// <param name="staticObject">the object that is removed from the HashSet</param>
-        public static void RemoveStaticObject(SerializableTransformObject staticObject)
+        public static bool RemoveStaticObject(SerializableTransformObject staticObject)
         {
-            staticObjects.Remove(staticObject);
+            SerializableTransformObject removedStaticObject;
+            return staticObjects.TryRemove(staticObject.id, out removedStaticObject);
         }
 
         /// <summary>
         /// Returns a HashSet of all static objects.
         /// </summary>
         /// <returns>returns the HashSet with all the static objects</returns>
-        public static ConcurrentHashSet<SerializableTransformObject> GetStaticObjects()
+        public static ConcurrentDictionary<int, SerializableTransformObject> GetStaticObjects()
         {
             return staticObjects;
         }
@@ -60,23 +62,24 @@ namespace HiVRClient.Model.Map
         /// <param name="dynamicObject">the dynamic object that is added to the HashSet</param>
         public static void AddDynamicObject(SerializableTransformObject dynamicObject)
         {
-            dynamicObjects.Add(dynamicObject);
+            dynamicObjects.AddOrUpdate(dynamicObject.id, dynamicObject, (key, existingVal) => { return dynamicObject; });
         }
 
         /// <summary>
         /// Removes a dynamic object from the tracking HashSet.
         /// </summary>
         /// <param name="dynamicObject">the dynamic object that is removed from the HashSet</param>
-        public static void RemoveDynamicObject(SerializableTransformObject dynamicObject)
+        public static bool RemoveDynamicObject(SerializableTransformObject dynamicObject)
         {
-            dynamicObjects.Remove(dynamicObject);
+            SerializableTransformObject removedDynamicObject;
+            return dynamicObjects.TryRemove(dynamicObject.id, out removedDynamicObject);
         }
 
         /// <summary>
         /// Returns a HashSet of all dynamic objects.
         /// </summary>
         /// <returns>returns the HashSet with all the dynamic objects</returns>
-        public static ConcurrentHashSet<SerializableTransformObject> GetDynamicObjects()
+        public static ConcurrentDictionary<int, SerializableTransformObject> GetDynamicObjects()
         {
             return dynamicObjects;
         }

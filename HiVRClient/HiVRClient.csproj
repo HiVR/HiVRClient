@@ -60,12 +60,14 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Car.cs" />
     <Compile Include="Model\Map\ObjectTracker.cs" />
     <Compile Include="Model\Network\Network.cs" />
     <Compile Include="Model\Network\NetworkManager.cs" />
     <Compile Include="Utilities\ConcurrentHashSet.cs" />
     <Compile Include="Model\Building.cs" />
     <Compile Include="Model\Drawable.cs" />
+    <Compile Include="Utilities\Vector3.cs" />
     <Compile Include="ViewModel\BuildingControl.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />
     <Compile Include="ViewModel\DrawableControl.cs" />

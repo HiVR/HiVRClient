@@ -3,6 +3,8 @@
 // </copyright>
 namespace HiVRClient.Model
 {
+    using Utilities;
+
     /// <summary>
     /// This class implements the model of a drawable object.
     /// </summary>
@@ -14,15 +16,15 @@ namespace HiVRClient.Model
         /// Initializes a new instance of the <see cref="Drawable"/> class.
         /// </summary>
         /// <param name="id">the id of the drawable object</param>
-        /// <param name="xlocation">the x coordinate of the object</param>
-        /// <param name="ylocation">the y coordinate of the object</param>
-        /// <param name="zlocation">the z coordinate of the object</param>
-        protected Drawable(int id, double xlocation, double ylocation, double zlocation)
+        /// <param name="position">the position of the object</param>
+        /// <param name="rotation">the rotation of the object</param>
+        /// <param name="scale">the scale of the object</param>
+        protected Drawable(int id, Vector3 position, Vector3 rotation, Vector3 scale)
         {
-            this.Id = id;
-            this.XLocation = xlocation;
-            this.YLocation = ylocation;
-            this.ZLocation = zlocation;
+            this.id = id;
+            this.position = position;
+            this.rotation = rotation;
+            this.scale = scale;
         }
 
         #endregion Constructors
@@ -32,52 +34,22 @@ namespace HiVRClient.Model
         /// <summary>
         /// Gets the id of the drawable.
         /// </summary>
-        public int Id { get; }
+        public int id { get; }
 
         /// <summary>
-        /// Gets or sets the x coordinate of the drawable.
+        /// Gets the position of this drawable.
         /// </summary>
-        public double XLocation { get; set; }
+        public Vector3 position { get; set; }
 
         /// <summary>
-        /// Gets or sets the y coordinate of the drawable.
+        /// Gets the rotation of this drawable.
         /// </summary>
-        public double YLocation { get; set; }
+        public Vector3 rotation { get; set; }
 
         /// <summary>
-        /// Gets or sets the z coordinate of the drawable.
+        /// Gets the scale of this drawable.
         /// </summary>
-        public double ZLocation { get; set; }
-
-        /// <summary>
-        /// Gets or sets the x rotation of the drawable.
-        /// </summary>
-        public double XRotation { get; set; } = 0;
-
-        /// <summary>
-        /// Gets or sets the y rotation of the drawable.
-        /// </summary>
-        public double YRotation { get; set; } = 0;
-
-        /// <summary>
-        /// Gets or sets the z rotation of the drawable.
-        /// </summary>
-        public double ZRotation { get; set; } = 0;
-
-        /// <summary>
-        /// Gets or sets the x scale of the drawable.
-        /// </summary>
-        public double XScale { get; set; } = 1;
-
-        /// <summary>
-        /// Gets or sets the y scale of the drawable.
-        /// </summary>
-        public double YScale { get; set; } = 1;
-
-        /// <summary>
-        /// Gets or sets the z scale of the drawable.
-        /// </summary>
-        public double ZScale { get; set; } = 1;
+        public Vector3 scale { get; set; }
 
         #endregion Properties
     }
