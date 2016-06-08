@@ -31,6 +31,14 @@ namespace HiVRClient.Model.Network
             Task.Run(() => network.Connect(ip, port));
         }
 
+        /// <summary>
+        /// Disconnect gracefully from the environment.
+        /// </summary>
+        public static void StopConnection()
+        {
+            // Stop the connection here.
+        }
+
         #endregion Methods
     }
 }
