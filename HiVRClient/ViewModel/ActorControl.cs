@@ -37,7 +37,7 @@ namespace HiVRClient.ViewModel
         /// <summary>
         /// Sets or gets the rate (between 0 and 1), indicating how fast the position displayed on the map catches up with the real position from the server
         /// </summary>
-        public double UpdateRate { get; set; }
+        public double UpdateRate { get; set; } = 0.05;
 
         /// <summary>
         /// Updates the position of the object in the XY coordinates of the map
@@ -59,7 +59,7 @@ namespace HiVRClient.ViewModel
         {
             this.XLocation = xLoc;
             this.YLocation = yLoc;
-            UpdateMapPosition();
+            //UpdateMapPosition();
         }
     }
 }

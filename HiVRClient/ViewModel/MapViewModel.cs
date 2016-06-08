@@ -58,17 +58,17 @@ namespace HiVRClient.ViewModel
                 new ActorControl(new Model.Actor(1, 400, 400, 400))
             };
 
-            DispatcherTimer dispatcherTimer = new DispatcherTimer();
+            DispatcherTimer updateLocationTimer = new DispatcherTimer();
 
-            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 5);
-            dispatcherTimer.Start();
+            updateLocationTimer.Tick += new EventHandler(updateLocationTimerTimer_Tick);
+            updateLocationTimer.Interval = new TimeSpan(0, 0, 0, 2, 0);
+            updateLocationTimer.Start();
 
             ////for testing
             DispatcherTimer otherTimer = new DispatcherTimer();
 
             otherTimer.Tick += new EventHandler(otherTimer_Tick);
-            otherTimer.Interval = new TimeSpan(0, 0, 1);
+            otherTimer.Interval = new TimeSpan(0, 0, 0, 0, 100);
             otherTimer.Start();
         }
 
@@ -86,7 +86,7 @@ namespace HiVRClient.ViewModel
         /// <summary>
         /// dispatcherTimer_Tick
         /// </summary>
-        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        private void otherTimer_Tick(object sender, EventArgs e)
         {            
             foreach (DrawableControl dc in Drawables)
             {
@@ -100,7 +100,7 @@ namespace HiVRClient.ViewModel
         /// <summary>
         /// otherTimer_Tick
         /// </summary>
-        private void otherTimer_Tick(object sender, EventArgs e)
+        private void updateLocationTimerTimer_Tick(object sender, EventArgs e)
         {
             Random rd = new Random();
 
