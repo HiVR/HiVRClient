@@ -12,22 +12,21 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid>
-        <DockPanel>
-            <Menu
+    <DockPanel>
+        <Menu
+            DockPanel.Dock="Top"
             IsMainMenu="True">
-                <MenuItem
+            <MenuItem
                 Header="_File">
-                    <MenuItem
+                <MenuItem
                     Header="_Disconnect"
                     Command="{Binding DisconnectCommand}" />
-                </MenuItem>
-            </Menu>
-        </DockPanel>
+            </MenuItem>
+        </Menu>
 
         <ItemsControl
-        ItemsSource="{Binding Drawables}"
-        ItemTemplate="{Binding}">
+            ItemsSource="{Binding Drawables}"
+            ItemTemplate="{Binding}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <Canvas
@@ -35,5 +34,5 @@
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
         </ItemsControl>
-    </Grid>
+    </DockPanel>
 </UserControl>
