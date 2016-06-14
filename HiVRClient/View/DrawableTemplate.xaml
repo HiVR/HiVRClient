@@ -19,11 +19,11 @@
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform
-                        ScaleX="{Binding XScale}"
-                        ScaleY="{Binding YScale}" />
+                        ScaleX="{Binding Scale.X}"
+                        ScaleY="{Binding Scale.Y}" />
                     <TranslateTransform
-                        X="{Binding XLocation}"
-                        Y="{Binding YLocation}" />
+                        X="{Binding Position.X}"
+                        Y="{Binding Position.Y}" />
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>

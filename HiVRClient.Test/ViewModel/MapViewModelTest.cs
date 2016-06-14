@@ -5,6 +5,7 @@ using HiVRClient.Model;
 using HiVRClient.ViewModel;
 using NUnit.Framework;
 using System.Collections.ObjectModel;
+using System.Windows.Media.Media3D;
 
 namespace HiVRClient.Test.ViewModel
 {
@@ -58,7 +59,7 @@ namespace HiVRClient.Test.ViewModel
         [Test]
         public void TestSetDrawables()
         {
-            var collection = new ObservableCollection<DrawableControl>() { new BuildingControl(new Building(1, 2, 3, 4)) };
+            var collection = new ObservableCollection<DrawableControl>() { new BuildingControl(new Building(1, new Vector3D(1D, 2D, 3D), new Vector3D(4D, 5D, 6D), new Vector3D(7D, 8D, 9D))) };
             this.mapViewModel.Drawables = collection;
             Assert.That(this.mapViewModel.Drawables, Is.EqualTo(collection));
         }

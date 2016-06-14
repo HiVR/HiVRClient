@@ -4,6 +4,7 @@
 namespace HiVRClient.ViewModel
 {
     using Model;
+    using System.Windows.Media.Media3D;
 
     /// <summary>
     /// This class implements the view model for the <see cref="Drawable"/> class.
@@ -35,84 +36,30 @@ namespace HiVRClient.ViewModel
         #region Properties
 
         /// <summary>
-        /// Gets or sets the x location of the drawable.
+        /// Gets or sets the position of the drawable.
         /// </summary>
-        public double XLocation
+        public Vector3D Position
         {
-            get { return this.drawable.XLocation; }
-            set { this.drawable.XLocation = value; }
+            get { return this.drawable.Position; }
+            set { this.drawable.Position = value; }
         }
 
         /// <summary>
-        /// Gets or sets the y location of the drawable.
+        /// Gets or sets the rotation of the drawable.
         /// </summary>
-        public double YLocation
+        public Vector3D Rotation
         {
-            get { return this.drawable.YLocation; }
-            set { this.drawable.YLocation = value; }
+            get { return this.drawable.Rotation; }
+            set { this.drawable.Rotation = value; }
         }
 
         /// <summary>
-        /// Gets or sets the z location of the drawable.
+        /// Gets or sets the scale of the drawable.
         /// </summary>
-        public double ZLocation
+        public Vector3D Scale
         {
-            get { return this.drawable.ZLocation; }
-            set { this.drawable.ZLocation = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets the x rotation of the drawable.
-        /// </summary>
-        public double XRotation
-        {
-            get { return this.drawable.XRotation; }
-            set { this.drawable.XRotation = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets the y rotation of the drawable.
-        /// </summary>
-        public double YRotation
-        {
-            get { return this.drawable.YRotation; }
-            set { this.drawable.YRotation = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets the z location of the drawable.
-        /// </summary>
-        public double ZRotation
-        {
-            get { return this.drawable.ZRotation; }
-            set { this.drawable.ZRotation = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets the x scale of the drawable.
-        /// </summary>
-        public double XScale
-        {
-            get { return this.drawable.XScale; }
-            set { this.drawable.XScale = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets the y scale of the drawable.
-        /// </summary>
-        public double YScale
-        {
-            get { return this.drawable.YScale; }
-            set { this.drawable.YScale = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets the z scale of the drawable.
-        /// </summary>
-        public double ZScale
-        {
-            get { return this.drawable.ZScale; }
-            set { this.drawable.ZScale = value; }
+            get { return this.drawable.Scale; }
+            set { this.drawable.Scale = value; }
         }
 
         #endregion Properties

@@ -1,8 +1,10 @@
 ﻿// <copyright file="DrawableTest.cs" company="HiVR">
 // Copyright (c) 2016 HiVR All Rights Reserved
 // </copyright>
+
 using HiVRClient.Model;
 using NUnit.Framework;
+using System.Windows.Media.Media3D;
 
 namespace HiVRClient.Test.Model
 {
@@ -29,7 +31,7 @@ namespace HiVRClient.Test.Model
         [SetUp]
         public void Setup()
         {
-            this.drawable = new Building(1, 2, 3, 4);
+            this.drawable = new Building(1, new Vector3D(1D, 2D, 3D), new Vector3D(4D, 5D, 6D), new Vector3D(7D, 8D, 9D));
         }
 
         /// <summary>
@@ -51,174 +53,60 @@ namespace HiVRClient.Test.Model
         }
 
         /// <summary>
-        /// Test <see cref="Drawable.XLocation"/> get property.
+        /// Test <see cref="Drawable.Position"/> get property.
         /// </summary>
         [Test]
-        public void TestGetXLocation()
+        public void TestGetPosition()
         {
-            Assert.That(this.drawable.XLocation, Is.EqualTo(2));
+            Assert.That(this.drawable.Position, Is.EqualTo(new Vector3D(1D, 2D, 3D)));
         }
 
         /// <summary>
-        /// Test <see cref="Drawable.XLocation"/> set property.
+        /// Test <see cref="Drawable.Position"/> set property.
         /// </summary>
         [Test]
-        public void TestSetXLocation()
+        public void TestSetPosition()
         {
-            this.drawable.XLocation = 20;
-            Assert.That(this.drawable.XLocation, Is.EqualTo(20));
+            this.drawable.Position = new Vector3D(10D, 20D, 30D);
+            Assert.That(this.drawable.Position, Is.EqualTo(new Vector3D(10D, 20D, 30D)));
         }
 
         /// <summary>
-        /// Test <see cref="Drawable.YLocation"/> get property.
+        /// Test <see cref="Drawable.Rotation"/> get property.
         /// </summary>
         [Test]
-        public void TestGetYLocation()
+        public void TestGetRotation()
         {
-            Assert.That(this.drawable.YLocation, Is.EqualTo(3));
+            Assert.That(this.drawable.Rotation, Is.EqualTo(new Vector3D(4D, 5D, 6D)));
         }
 
         /// <summary>
-        /// Test <see cref="Drawable.YLocation"/> set property.
+        /// Test <see cref="Drawable.Rotation"/> set property.
         /// </summary>
         [Test]
-        public void TestSetYLocation()
+        public void TestSetRotation()
         {
-            this.drawable.YLocation = 30;
-            Assert.That(this.drawable.YLocation, Is.EqualTo(30));
+            this.drawable.Rotation = new Vector3D(40D, 50D, 60D);
+            Assert.That(this.drawable.Rotation, Is.EqualTo(new Vector3D(40D, 50D, 60D)));
         }
 
         /// <summary>
-        /// Test <see cref="Drawable.ZLocation"/> get property.
+        /// Test <see cref="Drawable.Scale"/> get property.
         /// </summary>
         [Test]
-        public void TestGetZLocation()
+        public void TestGetScale()
         {
-            Assert.That(this.drawable.ZLocation, Is.EqualTo(4));
+            Assert.That(this.drawable.Scale, Is.EqualTo(new Vector3D(7D, 8D, 9D)));
         }
 
         /// <summary>
-        /// Test <see cref="Drawable.ZLocation"/> set property.
+        /// Test <see cref="Drawable.Scale"/> set property.
         /// </summary>
         [Test]
-        public void TestSetZLocation()
+        public void TestSetScale()
         {
-            this.drawable.ZLocation = 40;
-            Assert.That(this.drawable.ZLocation, Is.EqualTo(40));
-        }
-
-        /// <summary>
-        /// Test <see cref="Drawable.XRotation"/> get property.
-        /// </summary>
-        [Test]
-        public void TestGetXRotation()
-        {
-            Assert.That(this.drawable.XRotation, Is.EqualTo(0));
-        }
-
-        /// <summary>
-        /// Test <see cref="Drawable.XRotation"/> set property.
-        /// </summary>
-        [Test]
-        public void TestSetXRotation()
-        {
-            this.drawable.XRotation = 90;
-            Assert.That(this.drawable.XRotation, Is.EqualTo(90));
-        }
-
-        /// <summary>
-        /// Test <see cref="Drawable.YRotation"/> get property.
-        /// </summary>
-        [Test]
-        public void TestGetYRotation()
-        {
-            Assert.That(this.drawable.YRotation, Is.EqualTo(0));
-        }
-
-        /// <summary>
-        /// Test <see cref="Drawable.YRotation"/> set property.
-        /// </summary>
-        [Test]
-        public void TestSetYRotation()
-        {
-            this.drawable.YRotation = 90;
-            Assert.That(this.drawable.YRotation, Is.EqualTo(90));
-        }
-
-        /// <summary>
-        /// Test <see cref="Drawable.ZRotation"/> get property.
-        /// </summary>
-        [Test]
-        public void TestGetZRotation()
-        {
-            Assert.That(this.drawable.ZRotation, Is.EqualTo(0));
-        }
-
-        /// <summary>
-        /// Test <see cref="Drawable.ZRotation"/> set property.
-        /// </summary>
-        [Test]
-        public void TestSetZRotation()
-        {
-            this.drawable.ZRotation = 90;
-            Assert.That(this.drawable.ZRotation, Is.EqualTo(90));
-        }
-
-        /// <summary>
-        /// Test <see cref="Drawable.XScale"/> get property.
-        /// </summary>
-        [Test]
-        public void TestGetXScale()
-        {
-            Assert.That(this.drawable.XScale, Is.EqualTo(1));
-        }
-
-        /// <summary>
-        /// Test <see cref="Drawable.XScale"/> set property.
-        /// </summary>
-        [Test]
-        public void TestSetXScale()
-        {
-            this.drawable.XScale = 2;
-            Assert.That(this.drawable.XScale, Is.EqualTo(2));
-        }
-
-        /// <summary>
-        /// Test <see cref="Drawable.YScale"/> get property.
-        /// </summary>
-        [Test]
-        public void TestGetYScale()
-        {
-            Assert.That(this.drawable.YScale, Is.EqualTo(1));
-        }
-
-        /// <summary>
-        /// Test <see cref="Drawable.YScale"/> set property.
-        /// </summary>
-        [Test]
-        public void TestSetYScale()
-        {
-            this.drawable.YScale = 2;
-            Assert.That(this.drawable.YScale, Is.EqualTo(2));
-        }
-
-        /// <summary>
-        /// Test <see cref="Drawable.ZScale"/> get property.
-        /// </summary>
-        [Test]
-        public void TestGetZScale()
-        {
-            Assert.That(this.drawable.ZScale, Is.EqualTo(1));
-        }
-
-        /// <summary>
-        /// Test <see cref="Drawable.ZScale"/> set property.
-        /// </summary>
-        [Test]
-        public void TestSetZScale()
-        {
-            this.drawable.ZScale = 2;
-            Assert.That(this.drawable.ZScale, Is.EqualTo(2));
+            this.drawable.Scale = new Vector3D(70D, 80D, 90D);
+            Assert.That(this.drawable.Scale, Is.EqualTo(new Vector3D(70D, 80D, 90D)));
         }
 
         #endregion Methods

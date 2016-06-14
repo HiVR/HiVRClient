@@ -3,21 +3,42 @@
 // </copyright>
 namespace HiVRClient.Model
 {
+    using System.Windows.Media.Media3D;
+
     /// <summary>
     /// This class implements a Building.
     /// </summary>
     public class Building : Drawable
     {
+        #region Fields
+
+        /// <summary>
+        /// Gets the position of this Building.
+        /// </summary>
+        public static readonly Vector3D DefaultPosition = new Vector3D(0D, 3D, 0D);
+
+        /// <summary>
+        /// Gets the rotation of this Building.
+        /// </summary>
+        public static readonly Vector3D DefaultRotation = new Vector3D(0D, 0D, 0D);
+
+        /// <summary>
+        /// Gets the scale of this Building.
+        /// </summary>
+        public static readonly Vector3D DefaultScale = new Vector3D(6D, 6D, 12D);
+
+        #endregion Fields
+
         #region Constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Building"/> class.
         /// </summary>
-        /// <param name="id">the id of the drawable building</param>
-        /// <param name="xlocation">the x coordinate of the building</param>
-        /// <param name="ylocation">the y coordinate of the building</param>
-        /// <param name="zlocation">the z coordinate of the building</param>
-        public Building(int id, double xlocation, double ylocation, double zlocation) : base(id, xlocation, ylocation, zlocation)
+        /// <param name="id">the id of the drawable Building</param>
+        /// <param name="position">the position of the Building</param>
+        /// <param name="rotation">the rotation of the Building</param>
+        /// <param name="scale">the scale coordinate of the Building</param>
+        public Building(int id, Vector3D position, Vector3D rotation, Vector3D scale) : base(id, position, rotation, scale)
         {
         }
 
