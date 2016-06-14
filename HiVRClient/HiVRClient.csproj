@@ -68,7 +68,7 @@
     <Compile Include="Model\Network\NetworkManager.cs" />
     <Compile Include="Model\Building.cs" />
     <Compile Include="Model\Drawable.cs" />
-    <Compile Include="Model\TV.cs" />
+    <Compile Include="Model\Television.cs" />
     <Compile Include="ViewModel\BuildingControl.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />
     <Compile Include="ViewModel\DrawableControl.cs" />
