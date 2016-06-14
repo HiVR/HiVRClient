@@ -47,8 +47,11 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\BenchTest.cs" />
     <Compile Include="Model\BuildingTest.cs" />
     <Compile Include="Model\CarTest.cs" />
+    <Compile Include="Model\GardenTest.cs" />
+    <Compile Include="Model\TVTest.cs" />
     <Compile Include="ViewModel\ConnectControlViewModelTest.cs" />
     <Compile Include="ViewModel\MainViewModelTest.cs" />
     <Compile Include="ViewModel\DrawableControlTest.cs" />
