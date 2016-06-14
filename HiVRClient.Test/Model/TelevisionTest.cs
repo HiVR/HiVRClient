@@ -1,4 +1,4 @@
-﻿// <copyright file="TVTest.cs" company="HiVR">
+﻿// <copyright file="TelevisionTest.cs" company="HiVR">
 // Copyright (c) 2016 HiVR All Rights Reserved
 // </copyright>
 using HiVRClient.Model;
@@ -8,38 +8,38 @@ using System.Windows.Media.Media3D;
 namespace HiVRClient.Test.Model
 {
     /// <summary>
-    /// Test <see cref="TV"/> class.
+    /// Test <see cref="Television"/> class.
     /// </summary>
     [TestFixture]
-    public class TVTest
+    public class TelevisionTest
     {
         #region Methods
 
         /// <summary>
-        /// Test <see cref="TV.DefaultPosition"/> field.
+        /// Test <see cref="Television.DefaultPosition"/> field.
         /// </summary>
         [Test]
         public void TestDefaultPosition()
         {
-            Assert.That(TV.DefaultPosition, Is.EqualTo(new Vector3D(0D, 0D, 0D)));
+            Assert.That(Television.DefaultPosition, Is.EqualTo(new Vector3D(0D, 0D, 0D)));
         }
 
         /// <summary>
-        /// Test <see cref="TV.DefaultRotation"/> field.
+        /// Test <see cref="Television.DefaultRotation"/> field.
         /// </summary>
         [Test]
         public void TestDefaultRotation()
         {
-            Assert.That(TV.DefaultRotation, Is.EqualTo(new Vector3D(0D, 180D, 0D)));
+            Assert.That(Television.DefaultRotation, Is.EqualTo(new Vector3D(0D, 180D, 0D)));
         }
 
         /// <summary>
-        /// Test <see cref="TV.DefaultScale"/> field.
+        /// Test <see cref="Television.DefaultScale"/> field.
         /// </summary>
         [Test]
         public void TestDefaultScale()
         {
-            Assert.That(TV.DefaultScale, Is.EqualTo(new Vector3D(1.6D, 0.9D, 1D)));
+            Assert.That(Television.DefaultScale, Is.EqualTo(new Vector3D(1.6D, 0.9D, 1D)));
         }
 
         /// <summary>
@@ -48,8 +48,8 @@ namespace HiVRClient.Test.Model
         [Test]
         public void TestConstructor()
         {
-            var tv = new TV(1, new Vector3D(), new Vector3D(), new Vector3D());
-            Assert.That(tv, Is.InstanceOf<TV>());
+            var television = new Television(1, new Vector3D(), new Vector3D(), new Vector3D());
+            Assert.That(television, Is.InstanceOf<Television>());
         }
 
         #endregion Methods
