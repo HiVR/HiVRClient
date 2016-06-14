@@ -20,7 +20,7 @@ namespace HiVRClient.Model
         /// <summary>
         /// Gets the rotation of this TV.
         /// </summary>
-        public static readonly Vector3D DefaultRotation = new Vector3D(0D, -180D, 0D);
+        public static readonly Vector3D DefaultRotation = new Vector3D(0D, 180D, 0D);
 
         /// <summary>
         /// Gets the scale of this TV.
