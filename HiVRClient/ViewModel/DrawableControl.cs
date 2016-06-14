@@ -4,7 +4,7 @@
 namespace HiVRClient.ViewModel
 {
     using Model;
-    using Utilities;
+    using System.Windows.Media.Media3D;
 
     /// <summary>
     /// This class implements the view model for the <see cref="Drawable"/> class.
@@ -38,7 +38,7 @@ namespace HiVRClient.ViewModel
         /// <summary>
         /// Gets or sets the position of the drawable.
         /// </summary>
-        public Vector3 position
+        public Vector3D position
         {
             get { return this.drawable.position; }
             set { this.drawable.position = value; }
@@ -47,7 +47,7 @@ namespace HiVRClient.ViewModel
         /// <summary>
         /// Gets or sets the rotation of the drawable.
         /// </summary>
-        public Vector3 rotation
+        public Vector3D rotation
         {
             get { return this.drawable.rotation; }
             set { this.drawable.rotation = value; }
@@ -56,7 +56,7 @@ namespace HiVRClient.ViewModel
         /// <summary>
         /// Gets or sets the scale of the drawable.
         /// </summary>
-        public Vector3 scale
+        public Vector3D scale
         {
             get { return this.drawable.scale; }
             set { this.drawable.scale = value; }

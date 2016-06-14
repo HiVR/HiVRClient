@@ -1,9 +1,10 @@
 ﻿// <copyright file="Drawable.cs" company="HiVR">
 // Copyright (c) 2016 HiVR All Rights Reserved
 // </copyright>
+
 namespace HiVRClient.Model
 {
-    using Utilities;
+    using System.Windows.Media.Media3D;
 
     /// <summary>
     /// This class implements the model of a drawable object.
@@ -19,7 +20,7 @@ namespace HiVRClient.Model
         /// <param name="position">the position of the object</param>
         /// <param name="rotation">the rotation of the object</param>
         /// <param name="scale">the scale of the object</param>
-        protected Drawable(int id, Vector3 position, Vector3 rotation, Vector3 scale)
+        protected Drawable(int id, Vector3D position, Vector3D rotation, Vector3D scale)
         {
             this.id = id;
             this.position = position;
@@ -39,17 +40,17 @@ namespace HiVRClient.Model
         /// <summary>
         /// Gets the position of this drawable.
         /// </summary>
-        public Vector3 position { get; set; }
+        public Vector3D position { get; set; }
 
         /// <summary>
         /// Gets the rotation of this drawable.
         /// </summary>
-        public Vector3 rotation { get; set; }
+        public Vector3D rotation { get; set; }
 
         /// <summary>
         /// Gets the scale of this drawable.
         /// </summary>
-        public Vector3 scale { get; set; }
+        public Vector3D scale { get; set; }
 
         #endregion Properties
     }

@@ -5,7 +5,6 @@ namespace HiVRClient.Model.Map
 {
     using SerializedObjects;
     using System.Collections.Concurrent;
-    using Utilities;
 
     /// <summary>
     /// Static class which keeps track of all relevant objects in the Unity world.
@@ -34,7 +33,7 @@ namespace HiVRClient.Model.Map
         /// <param name="staticObject">the object that is added to the HashSet</param>
         public static void AddStaticObject(SerializableTransformObject staticObject)
         {
-            staticObjects.AddOrUpdate(staticObject.id, staticObject, (key, existingVal) => { return staticObject; } );
+            staticObjects.AddOrUpdate(staticObject.id, staticObject, (key, existingVal) => { return staticObject; });
         }
 
         /// <summary>

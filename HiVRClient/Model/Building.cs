@@ -3,7 +3,7 @@
 // </copyright>
 namespace HiVRClient.Model
 {
-    using Utilities;
+    using System.Windows.Media.Media3D;
 
     /// <summary>
     /// This class implements a Building.
@@ -15,17 +15,17 @@ namespace HiVRClient.Model
         /// <summary>
         /// Gets the position of this Building.
         /// </summary>
-        public readonly Vector3 defaultPosition = new Vector3(0D, 3D, 0D);
+        public readonly Vector3D defaultPosition = new Vector3D(0D, 3D, 0D);
 
         /// <summary>
         /// Gets the rotation of this Building.
         /// </summary>
-        public readonly Vector3 defaultRotation = new Vector3(0D, 0D, 0D);
+        public readonly Vector3D defaultRotation = new Vector3D(0D, 0D, 0D);
 
         /// <summary>
         /// Gets the scale of this Building.
         /// </summary>
-        public readonly Vector3 defaultScale = new Vector3(6D, 6D, 12D);
+        public readonly Vector3D defaultScale = new Vector3D(6D, 6D, 12D);
 
         #endregion Properties
 
@@ -38,7 +38,7 @@ namespace HiVRClient.Model
         /// <param name="position">the position of the Building</param>
         /// <param name="rotation">the rotation of the Building</param>
         /// <param name="scale">the scale coordinate of the Building</param>
-        public Building(int id, Vector3 position, Vector3 rotation, Vector3 scale) : base(id, position, rotation, scale)
+        public Building(int id, Vector3D position, Vector3D rotation, Vector3D scale) : base(id, position, rotation, scale)
         {
         }
 

@@ -1,11 +1,11 @@
 ﻿// <copyright file="DrawableControlTest.cs" company="HiVR">
 // Copyright (c) 2016 HiVR All Rights Reserved
 // </copyright>
+
 using HiVRClient.Model;
-using HiVRClient.Utilities;
 using HiVRClient.ViewModel;
 using NUnit.Framework;
-
+using System.Windows.Media.Media3D;
 
 namespace HiVRClient.Test.ViewModel
 {
@@ -32,7 +32,7 @@ namespace HiVRClient.Test.ViewModel
         [SetUp]
         public void Setup()
         {
-            var drawable = new Building(1, new Vector3(1D, 2D, 3D), new Vector3(4D, 5D, 6D), new Vector3(7D, 8D, 9D));
+            var drawable = new Building(1, new Vector3D(1D, 2D, 3D), new Vector3D(4D, 5D, 6D), new Vector3D(7D, 8D, 9D));
             this.drawableControl = new BuildingControl(drawable);
         }
 
@@ -51,7 +51,7 @@ namespace HiVRClient.Test.ViewModel
         [Test]
         public void TestGetPosition()
         {
-            Assert.That(this.drawableControl.position, Is.EqualTo(new Vector3(1D, 2D, 3D)));
+            Assert.That(this.drawableControl.position, Is.EqualTo(new Vector3D(1D, 2D, 3D)));
         }
 
         /// <summary>
@@ -60,8 +60,8 @@ namespace HiVRClient.Test.ViewModel
         [Test]
         public void TestSetPosition()
         {
-            this.drawableControl.position = new Vector3(10D, 20D, 30D);
-            Assert.That(this.drawableControl.position, Is.EqualTo(new Vector3(10D, 20D, 30D)));
+            this.drawableControl.position = new Vector3D(10D, 20D, 30D);
+            Assert.That(this.drawableControl.position, Is.EqualTo(new Vector3D(10D, 20D, 30D)));
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace HiVRClient.Test.ViewModel
         [Test]
         public void TestGetRotation()
         {
-            Assert.That(this.drawableControl.rotation, Is.EqualTo(new Vector3(4D, 5D, 6D)));
+            Assert.That(this.drawableControl.rotation, Is.EqualTo(new Vector3D(4D, 5D, 6D)));
         }
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace HiVRClient.Test.ViewModel
         [Test]
         public void TestSetRotation()
         {
-            this.drawableControl.rotation = new Vector3(40D, 50D, 60D);
-            Assert.That(this.drawableControl.rotation, Is.EqualTo(new Vector3(40D, 50D, 60D)));
+            this.drawableControl.rotation = new Vector3D(40D, 50D, 60D);
+            Assert.That(this.drawableControl.rotation, Is.EqualTo(new Vector3D(40D, 50D, 60D)));
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace HiVRClient.Test.ViewModel
         [Test]
         public void TestGetScale()
         {
-            Assert.That(this.drawableControl.scale, Is.EqualTo(new Vector3(7D, 8D, 9D)));
+            Assert.That(this.drawableControl.scale, Is.EqualTo(new Vector3D(7D, 8D, 9D)));
         }
 
         /// <summary>
@@ -98,8 +98,8 @@ namespace HiVRClient.Test.ViewModel
         [Test]
         public void TestSetScale()
         {
-            this.drawableControl.scale = new Vector3(70D, 80D, 90D);
-            Assert.That(this.drawableControl.scale, Is.EqualTo(new Vector3(70D, 80D, 90D)));
+            this.drawableControl.scale = new Vector3D(70D, 80D, 90D);
+            Assert.That(this.drawableControl.scale, Is.EqualTo(new Vector3D(70D, 80D, 90D)));
         }
 
         #endregion Methods
