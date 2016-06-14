@@ -15,17 +15,17 @@ namespace HiVRClient.Model
         /// <summary>
         /// Gets the position of this Car.
         /// </summary>
-        public readonly Vector3D defaultPosition = new Vector3D(0D, 0.75D, 0D);
+        public static readonly Vector3D DefaultPosition = new Vector3D(0D, 0.75D, 0D);
 
         /// <summary>
         /// Gets the rotation of this Car.
         /// </summary>
-        public readonly Vector3D defaultRotation = new Vector3D(0D, 0D, 0D);
+        public static readonly Vector3D DefaultRotation = new Vector3D(0D, 0D, 0D);
 
         /// <summary>
         /// Gets the scale of this Car.
         /// </summary>
-        public readonly Vector3D defaultScale = new Vector3D(2.5D, 1.5D, 4.5D);
+        public static readonly Vector3D DefaultScale = new Vector3D(2.5D, 1.5D, 4.5D);
 
         #endregion Properties
 

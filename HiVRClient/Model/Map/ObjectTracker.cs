@@ -40,6 +40,7 @@ namespace HiVRClient.Model.Map
         /// Removes a static object from the tracking HashSet.
         /// </summary>
         /// <param name="staticObject">the object that is removed from the HashSet</param>
+        /// <returns>whether the operation was successful</returns>
         public static bool RemoveStaticObject(SerializableTransformObject staticObject)
         {
             SerializableTransformObject removedStaticObject;
@@ -68,6 +69,7 @@ namespace HiVRClient.Model.Map
         /// Removes a dynamic object from the tracking HashSet.
         /// </summary>
         /// <param name="dynamicObject">the dynamic object that is removed from the HashSet</param>
+        /// <returns>whether the operation was successful or not</returns>
         public static bool RemoveDynamicObject(SerializableTransformObject dynamicObject)
         {
             SerializableTransformObject removedDynamicObject;

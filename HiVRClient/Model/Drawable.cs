@@ -22,10 +22,10 @@ namespace HiVRClient.Model
         /// <param name="scale">the scale of the object</param>
         protected Drawable(int id, Vector3D position, Vector3D rotation, Vector3D scale)
         {
-            this.id = id;
-            this.position = position;
-            this.rotation = rotation;
-            this.scale = scale;
+            this.Id = id;
+            this.Position = position;
+            this.Rotation = rotation;
+            this.Scale = scale;
         }
 
         #endregion Constructors
@@ -35,22 +35,22 @@ namespace HiVRClient.Model
         /// <summary>
         /// Gets the id of the drawable.
         /// </summary>
-        public int id { get; }
+        public int Id { get; }
 
         /// <summary>
-        /// Gets the position of this drawable.
+        /// Gets or sets the position of this drawable.
         /// </summary>
-        public Vector3D position { get; set; }
+        public Vector3D Position { get; set; }
 
         /// <summary>
-        /// Gets the rotation of this drawable.
+        /// Gets or sets the rotation of this drawable.
         /// </summary>
-        public Vector3D rotation { get; set; }
+        public Vector3D Rotation { get; set; }
 
         /// <summary>
-        /// Gets the scale of this drawable.
+        /// Gets or sets the scale of this drawable.
         /// </summary>
-        public Vector3D scale { get; set; }
+        public Vector3D Scale { get; set; }
 
         #endregion Properties
     }

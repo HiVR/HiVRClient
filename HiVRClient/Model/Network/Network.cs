@@ -79,6 +79,7 @@ namespace HiVRClient.Model.Network
                 Console.Out.WriteLine("Client: Socket exception occured while connected. " + e.Message);
 
                 Console.Out.WriteLine("Client: Trying to reconnect.");
+
                 // Signal to start new connection.
                 this.allDone.Set();
             }
@@ -125,11 +126,12 @@ namespace HiVRClient.Model.Network
                     this.Done(serializableTransform);
                 }
             }
-            catch(SocketException e)
+            catch (SocketException e)
             {
                 Console.Out.WriteLine("Socket exception occured while receiving. " + e.Message);
 
                 Console.Out.WriteLine("Trying to reconnect.");
+
                 // Signal to start new connection.
                 this.allDone.Set();
             }
@@ -143,7 +145,6 @@ namespace HiVRClient.Model.Network
         {
             SerializableTransformObject received = serializableTransform.DeSerialize();
             Console.Out.WriteLine("Received transform-object with id: " + received.id + " of type: " + received.type);
-
 
             if (received.isStatic)
             {
