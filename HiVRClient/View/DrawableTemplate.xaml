@@ -117,7 +117,7 @@
         <Path>
             <Path.Data>
                 <RectangleGeometry
-                    Rect="0,10,20,0" />
+                    Rect="0,0,10,20" />
             </Path.Data>
             <Path.Style>
                 <Style
