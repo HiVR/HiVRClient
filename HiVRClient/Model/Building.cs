@@ -10,25 +10,6 @@ namespace HiVRClient.Model
     /// </summary>
     public class Building : Drawable
     {
-        #region Fields
-
-        /// <summary>
-        /// Gets the position of this Building.
-        /// </summary>
-        public static readonly Vector3D DefaultPosition = new Vector3D(0D, 3D, 0D);
-
-        /// <summary>
-        /// Gets the rotation of this Building.
-        /// </summary>
-        public static readonly Vector3D DefaultRotation = new Vector3D(0D, 0D, 0D);
-
-        /// <summary>
-        /// Gets the scale of this Building.
-        /// </summary>
-        public static readonly Vector3D DefaultScale = new Vector3D(6D, 6D, 12D);
-
-        #endregion Fields
-
         #region Constructors
 
         /// <summary>

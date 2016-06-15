@@ -10,25 +10,6 @@ namespace HiVRClient.Model
     /// </summary>
     public class Car : Drawable
     {
-        #region Properties
-
-        /// <summary>
-        /// Gets the position of this Car.
-        /// </summary>
-        public static readonly Vector3D DefaultPosition = new Vector3D(0D, 0.75D, 0D);
-
-        /// <summary>
-        /// Gets the rotation of this Car.
-        /// </summary>
-        public static readonly Vector3D DefaultRotation = new Vector3D(0D, 0D, 0D);
-
-        /// <summary>
-        /// Gets the scale of this Car.
-        /// </summary>
-        public static readonly Vector3D DefaultScale = new Vector3D(2.5D, 1.5D, 4.5D);
-
-        #endregion Properties
-
         #region Constructors
 
         /// <summary>

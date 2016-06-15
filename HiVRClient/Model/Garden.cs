@@ -10,25 +10,6 @@ namespace HiVRClient.Model
     /// </summary>
     public class Garden : Drawable
     {
-        #region Properties
-
-        /// <summary>
-        /// Gets the position of this Garden.
-        /// </summary>
-        public static readonly Vector3D DefaultPosition = new Vector3D(0D, 0.2D, 0D);
-
-        /// <summary>
-        /// Gets the rotation of this Garden.
-        /// </summary>
-        public static readonly Vector3D DefaultRotation = new Vector3D(0D, 0D, 0D);
-
-        /// <summary>
-        /// Gets the scale of this Garden.
-        /// </summary>
-        public static readonly Vector3D DefaultScale = new Vector3D(2.5D, 0.4D, 2.5D);
-
-        #endregion Properties
-
         #region Constructors
 
         /// <summary>
