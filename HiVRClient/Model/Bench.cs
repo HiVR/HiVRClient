@@ -10,25 +10,6 @@ namespace HiVRClient.Model
     /// </summary>
     public class Bench : Drawable
     {
-        #region Properties
-
-        /// <summary>
-        /// Gets the position of this Bench.
-        /// </summary>
-        public static readonly Vector3D DefaultPosition = new Vector3D(0D, 0.2D, 0D);
-
-        /// <summary>
-        /// Gets the rotation of this Bench.
-        /// </summary>
-        public static readonly Vector3D DefaultRotation = new Vector3D(0D, 0D, 0D);
-
-        /// <summary>
-        /// Gets the scale of this Bench.
-        /// </summary>
-        public static readonly Vector3D DefaultScale = new Vector3D(0.45D, 0.4D, 1.8D);
-
-        #endregion Properties
-
         #region Constructors
 
         /// <summary>
