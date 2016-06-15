@@ -51,6 +51,8 @@
             </Path.Style>
             <Path.RenderTransform>
                 <TransformGroup>
+                    <RotateTransform
+                        Angle="{Binding Rotation.Y}" />
                     <ScaleTransform
                         ScaleX="{Binding Scale.X}"
                         ScaleY="{Binding Scale.Z}" />
@@ -79,6 +81,8 @@
             </Path.Style>
             <Path.RenderTransform>
                 <TransformGroup>
+                    <RotateTransform
+                        Angle="{Binding Rotation.Y}" />
                     <ScaleTransform
                         ScaleX="{Binding Scale.X}"
                         ScaleY="{Binding Scale.Z}" />
@@ -107,6 +111,8 @@
             </Path.Style>
             <Path.RenderTransform>
                 <TransformGroup>
+                    <RotateTransform
+                        Angle="{Binding Rotation.Y}" />
                     <ScaleTransform
                         ScaleX="{Binding Scale.X}"
                         ScaleY="{Binding Scale.Z}" />
@@ -135,6 +141,8 @@
             </Path.Style>
             <Path.RenderTransform>
                 <TransformGroup>
+                    <RotateTransform
+                        Angle="{Binding Rotation.Y}" />
                     <ScaleTransform
                         ScaleX="{Binding Scale.X}"
                         ScaleY="{Binding Scale.Z}" />
