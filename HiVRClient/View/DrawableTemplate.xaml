@@ -28,4 +28,115 @@
             </Path.RenderTransform>
         </Path>
     </DataTemplate>
+    <DataTemplate
+        DataType="{x:Type viewmodel:CarControl}">
+        <Path>
+            <Path.Data>
+                <RectangleGeometry
+                    Rect="0,0,50,100"
+                    RadiusX="10"
+                    RadiusY="10" />
+            </Path.Data>
+            <Path.Style>
+                <Style
+                    TargetType="Path">
+                    <Setter
+                        Property="Fill"
+                        Value="Red" />
+                </Style>
+            </Path.Style>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform
+                        ScaleX="{Binding XScale}"
+                        ScaleY="{Binding YScale}" />
+                    <TranslateTransform
+                        X="{Binding XLocation}"
+                        Y="{Binding YLocation}" />
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+    </DataTemplate>
+    <DataTemplate
+        DataType="{x:Type viewmodel:GardenControl}">
+        <Path>
+            <Path.Data>
+                <RectangleGeometry
+                    Rect="0,0,200,200"
+                    />
+            </Path.Data>
+            <Path.Style>
+                <Style
+                    TargetType="Path">
+                    <Setter
+                        Property="Fill"
+                        Value="Green" />
+                </Style>
+            </Path.Style>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform
+                        ScaleX="{Binding XScale}"
+                        ScaleY="{Binding YScale}" />
+                    <TranslateTransform
+                        X="{Binding XLocation}"
+                        Y="{Binding YLocation}" />
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+    </DataTemplate>
+    <DataTemplate
+        DataType="{x:Type viewmodel:BenchControl}">
+        <Path>
+            <Path.Data>
+                <RectangleGeometry
+                    Rect="0,0,25,50" />
+            </Path.Data>
+            <Path.Style>
+                <Style
+                    TargetType="Path">
+                    <Setter
+                        Property="Fill"
+                        Value="Orange" />
+                </Style>
+            </Path.Style>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform
+                        ScaleX="{Binding XScale}"
+                        ScaleY="{Binding YScale}" />
+                    <TranslateTransform
+                        X="{Binding XLocation}"
+                        Y="{Binding YLocation}" />
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+    </DataTemplate>
+    <DataTemplate
+        DataType="{x:Type viewmodel:TelevisionControl}">
+        <Path>
+            <Path.Data>
+                <RectangleGeometry
+                    Rect="0,0,10,20" />
+            </Path.Data>
+            <Path.Style>
+                <Style
+                    TargetType="Path">
+                    <Setter
+                        Property="Fill"
+                        Value="Black" />
+                </Style>
+            </Path.Style>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform
+                        ScaleX="{Binding XScale}"
+                        ScaleY="{Binding YScale}" />
+                    <TranslateTransform
+                        X="{Binding XLocation}"
+                        Y="{Binding YLocation}" />
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+    </DataTemplate>
 </ResourceDictionary>

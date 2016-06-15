@@ -69,6 +69,10 @@
     <Compile Include="Model\Building.cs" />
     <Compile Include="Model\Drawable.cs" />
     <Compile Include="Model\Television.cs" />
+    <Compile Include="ViewModel\TelevisionControl.cs" />
+    <Compile Include="ViewModel\CarControl.cs" />
+    <Compile Include="ViewModel\BenchControl.cs" />
+    <Compile Include="ViewModel\GardenControl.cs" />
     <Compile Include="ViewModel\BuildingControl.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />
     <Compile Include="ViewModel\DrawableControl.cs" />
