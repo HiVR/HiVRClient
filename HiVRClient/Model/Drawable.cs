@@ -1,7 +1,6 @@
 ﻿// <copyright file="Drawable.cs" company="HiVR">
 // Copyright (c) 2016 HiVR All Rights Reserved
 // </copyright>
-
 namespace HiVRClient.Model
 {
     using System.Windows.Media.Media3D;
@@ -53,5 +52,29 @@ namespace HiVRClient.Model
         public Vector3D Scale { get; set; }
 
         #endregion Properties
+
+        #region Methods
+
+        /// <summary>
+        /// Determines whether the specified object is equal to the current object.
+        /// </summary>
+        /// <param name="obj">the object to compare with the current object</param>
+        /// <returns>whether the objects are equal</returns>
+        public override bool Equals(object obj)
+        {
+            var drawable = obj as Drawable;
+            return this.Id == drawable?.Id;
+        }
+
+        /// <summary>
+        /// Serves as hash function.
+        /// </summary>
+        /// <returns>A semi unique identifier</returns>
+        public override int GetHashCode()
+        {
+            return this.Id;
+        }
+
+        #endregion Methods
     }
 }

@@ -19,12 +19,14 @@
             </Path.Style>
             <Path.RenderTransform>
                 <TransformGroup>
+                    <RotateTransform
+                        Angle="{Binding Rotation.Y}" />
                     <ScaleTransform
                         ScaleX="{Binding Scale.X}"
-                        ScaleY="{Binding Scale.Y}" />
+                        ScaleY="{Binding Scale.Z}" />
                     <TranslateTransform
                         X="{Binding Position.X}"
-                        Y="{Binding Position.Y}" />
+                        Y="{Binding Position.Z}" />
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
@@ -50,11 +52,11 @@
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform
-                        ScaleX="{Binding XScale}"
-                        ScaleY="{Binding YScale}" />
+                        ScaleX="{Binding Scale.X}"
+                        ScaleY="{Binding Scale.Z}" />
                     <TranslateTransform
-                        X="{Binding XLocation}"
-                        Y="{Binding YLocation}" />
+                        X="{Binding Position.X}"
+                        Y="{Binding Position.Z}" />
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
@@ -65,8 +67,7 @@
             RenderTransformOrigin="0.5, 0.5">
             <Path.Data>
                 <RectangleGeometry
-                    Rect="0,0,200,200"
-                    />
+                    Rect="0,0,200,200" />
             </Path.Data>
             <Path.Style>
                 <Style
@@ -79,11 +80,11 @@
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform
-                        ScaleX="{Binding XScale}"
-                        ScaleY="{Binding YScale}" />
+                        ScaleX="{Binding Scale.X}"
+                        ScaleY="{Binding Scale.Z}" />
                     <TranslateTransform
-                        X="{Binding XLocation}"
-                        Y="{Binding YLocation}" />
+                        X="{Binding Position.X}"
+                        Y="{Binding Position.Z}" />
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
@@ -107,11 +108,11 @@
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform
-                        ScaleX="{Binding XScale}"
-                        ScaleY="{Binding YScale}" />
+                        ScaleX="{Binding Scale.X}"
+                        ScaleY="{Binding Scale.Z}" />
                     <TranslateTransform
-                        X="{Binding XLocation}"
-                        Y="{Binding YLocation}" />
+                        X="{Binding Position.X}"
+                        Y="{Binding Position.Z}" />
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
@@ -135,11 +136,11 @@
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform
-                        ScaleX="{Binding XScale}"
-                        ScaleY="{Binding YScale}" />
+                        ScaleX="{Binding Scale.X}"
+                        ScaleY="{Binding Scale.Z}" />
                     <TranslateTransform
-                        X="{Binding XLocation}"
-                        Y="{Binding YLocation}" />
+                        X="{Binding Position.X}"
+                        Y="{Binding Position.Z}" />
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>

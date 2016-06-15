@@ -36,31 +36,24 @@ namespace HiVRClient.ViewModel
         #region Properties
 
         /// <summary>
+        /// Gets the id of the drawable.
+        /// </summary>
+        public int Id => this.drawable.Id;
+
+        /// <summary>
         /// Gets or sets the position of the drawable.
         /// </summary>
-        public Vector3D Position
-        {
-            get { return this.drawable.Position; }
-            set { this.drawable.Position = value; }
-        }
+        public Vector3D Position => this.drawable.Position;
 
         /// <summary>
         /// Gets or sets the rotation of the drawable.
         /// </summary>
-        public Vector3D Rotation
-        {
-            get { return this.drawable.Rotation; }
-            set { this.drawable.Rotation = value; }
-        }
+        public Vector3D Rotation => this.drawable.Rotation;
 
         /// <summary>
         /// Gets or sets the scale of the drawable.
         /// </summary>
-        public Vector3D Scale
-        {
-            get { return this.drawable.Scale; }
-            set { this.drawable.Scale = value; }
-        }
+        public Vector3D Scale => this.drawable.Scale;
 
         #endregion Properties
     }
