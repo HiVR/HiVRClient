@@ -37,7 +37,7 @@
             Grid.Row="0"
             Grid.Column="1"
             Margin="{StaticResource DefaultMargin}"
-            Text="{Binding Host}" />
+            Text="{Binding Host, UpdateSourceTrigger=PropertyChanged}" />
 
         <TextBlock
             Grid.Row="1"
@@ -51,7 +51,7 @@
             Grid.Row="1"
             Grid.Column="1"
             Margin="{StaticResource DefaultMargin}"
-            Text="{Binding Port}" />
+            Text="{Binding Port, UpdateSourceTrigger=PropertyChanged}" />
 
         <Button
             Name="buttonConnect"
@@ -59,6 +59,7 @@
             Grid.Column="1"
             Margin="{StaticResource DefaultMargin}"
             Content="{x:Static properties:Strings.label_connect}"
-            Command="{Binding ConnectCommand}" />
+            Command="{Binding ConnectCommand}"
+            IsDefault="True" />
     </Grid>
 </UserControl>
