@@ -67,16 +67,21 @@ namespace HiVRClient.Model.Network
                 Socket receiver = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
                 // Parse IP address
-                IPAddress ipAddress = ParseIP(ip);
+                IPAddress validAddress = this.ParseIP(ip);
 
                 // Initiate the connection, once connected call the callback function "Connect".
-                receiver.BeginConnect(new IPEndPoint(ipAddress, port), this.Connect, receiver);
+                receiver.BeginConnect(new IPEndPoint(validAddress, port), this.Connect, receiver);
 
                 // Wait until packet is received.
                 this.allDone.WaitOne();
             }
         }
 
+        /// <summary>
+        /// Method to transform a string ip or hostname to a valid IPAddress
+        /// </summary>
+        /// <param name="ip">string to transform</param>
+        /// <returns>valid IPAddress</returns>
         public IPAddress ParseIP(string ip)
         {
             IPAddress res;
