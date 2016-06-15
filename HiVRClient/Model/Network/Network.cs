@@ -66,12 +66,26 @@ namespace HiVRClient.Model.Network
                 // Setup receiving socket.
                 Socket receiver = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
+                // Parse IP address
+                IPAddress ipAddress = ParseIP(ip);
+
                 // Initiate the connection, once connected call the callback function "Connect".
-                receiver.BeginConnect(new IPEndPoint(IPAddress.Parse(ip), port), this.Connect, receiver);
+                receiver.BeginConnect(new IPEndPoint(ipAddress, port), this.Connect, receiver);
 
                 // Wait until packet is received.
                 this.allDone.WaitOne();
             }
+        }
+
+        public IPAddress ParseIP(string ip)
+        {
+            IPAddress res;
+            if (!IPAddress.TryParse(ip, out res))
+            {
+                res = Dns.GetHostAddresses(ip)[1];
+            }
+
+            return res;
         }
 
         /// <summary>
