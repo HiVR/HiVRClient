@@ -3,6 +3,8 @@
 // </copyright>
 namespace HiVRClient.ViewModel
 {
+    using Model.Network;
+
     /// <summary>
     /// Implements the main view model of the window and contains logic to switch the content.
     /// </summary>

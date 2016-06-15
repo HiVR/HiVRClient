@@ -55,16 +55,6 @@ namespace HiVRClient.Test.ViewModel
         }
 
         /// <summary>
-        /// Test <see cref="DrawableControl.Position"/> set property.
-        /// </summary>
-        [Test]
-        public void TestSetPosition()
-        {
-            this.drawableControl.Position = new Vector3D(10D, 20D, 30D);
-            Assert.That(this.drawableControl.Position, Is.EqualTo(new Vector3D(10D, 20D, 30D)));
-        }
-
-        /// <summary>
         /// Test <see cref="DrawableControl.Rotation"/> get property.
         /// </summary>
         [Test]
@@ -74,32 +64,12 @@ namespace HiVRClient.Test.ViewModel
         }
 
         /// <summary>
-        /// Test <see cref="DrawableControl.Rotation"/> set property.
-        /// </summary>
-        [Test]
-        public void TestSetRotation()
-        {
-            this.drawableControl.Rotation = new Vector3D(40D, 50D, 60D);
-            Assert.That(this.drawableControl.Rotation, Is.EqualTo(new Vector3D(40D, 50D, 60D)));
-        }
-
-        /// <summary>
         /// Test <see cref="DrawableControl.Scale"/> get property.
         /// </summary>
         [Test]
         public void TestGetScale()
         {
             Assert.That(this.drawableControl.Scale, Is.EqualTo(new Vector3D(7D, 8D, 9D)));
-        }
-
-        /// <summary>
-        /// Test <see cref="DrawableControl.Scale"/> set property.
-        /// </summary>
-        [Test]
-        public void TestSetScale()
-        {
-            this.drawableControl.Scale = new Vector3D(70D, 80D, 90D);
-            Assert.That(this.drawableControl.Scale, Is.EqualTo(new Vector3D(70D, 80D, 90D)));
         }
 
         #endregion Methods

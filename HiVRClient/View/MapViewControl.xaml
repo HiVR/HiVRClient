@@ -25,7 +25,7 @@
         </Menu>
 
         <ItemsControl
-            ItemsSource="{Binding Drawables}"
+            ItemsSource="{Binding Drawables.Values}"
             ItemTemplate="{Binding}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>

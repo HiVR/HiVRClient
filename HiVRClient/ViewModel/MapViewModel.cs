@@ -1,10 +1,13 @@
 ﻿// <copyright file="MapViewModel.cs" company="HiVR">
 // Copyright (c) 2016 HiVR All Rights Reserved
 // </copyright>
+
 namespace HiVRClient.ViewModel
 {
-    using System.Collections.ObjectModel;
+    using Model.Network;
+    using System.Collections.Concurrent;
     using System.Windows.Input;
+    using Utility;
 
     /// <summary>
     /// Contains the view model of the actual map.
@@ -27,7 +30,8 @@ namespace HiVRClient.ViewModel
         /// </summary>
         public MapViewModel()
         {
-            this.Drawables = new ObservableCollection<DrawableControl>();
+            this.Drawables = new ObservableConcurrentDictionary<int, DrawableControl>();
+            NetworkManager.NetworkInstance.ObjectReceived += this.AddObject;
         }
 
         #endregion Constructors
@@ -35,9 +39,9 @@ namespace HiVRClient.ViewModel
         #region Properties
 
         /// <summary>
-        /// Gets or sets the collection of draw.
+        /// Gets the collection of draw.
         /// </summary>
-        public ObservableCollection<DrawableControl> Drawables { get; set; }
+        public ObservableConcurrentDictionary<int, DrawableControl> Drawables { get; }
 
         /// <summary>
         /// Gets command interface to connect to the menu item in the view.
@@ -47,7 +51,24 @@ namespace HiVRClient.ViewModel
             get
             {
                 return this.diconnectCommand ??
-                       (this.diconnectCommand = new RelayCommand(param => Model.Network.NetworkManager.StopConnection()));
+                       (this.diconnectCommand = new RelayCommand(param => NetworkManager.NetworkInstance.CloseConnection()));
+            }
+        }
+
+        /// <summary>
+        /// Add a new object to the object tracker.
+        /// </summary>
+        /// <param name="sender">the sender of the object received event</param>
+        /// <param name="e">the object received event</param>
+        private void AddObject(object sender, ObjectReceivedEventArgs e)
+        {
+            if (e.SerializableTransformObject.IsStatic)
+            {
+                var drawableControl = SerializableConverter.CreateDrawableControlFromSerializableObject(e.SerializableTransformObject);
+                if (drawableControl != null)
+                {
+                    this.Drawables.Add(drawableControl.Id, drawableControl);
+                }
             }
         }
 
