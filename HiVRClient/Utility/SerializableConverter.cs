@@ -30,40 +30,40 @@ namespace HiVRClient.Utility
                     return new BuildingControl(
                         new Building(
                             serializableTransformObject.Id,
-                            ConvertSerializableVector3ToVector3D(serializableTransformObject.Position) * 10,
-                            new Vector3D(0D, 0D, 0D),
+                            ConvertSerializableVector3ToVector3D(serializableTransformObject.Position),
+                            ConvertSerializableVector3ToVector3D(serializableTransformObject.Rotation),
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Scale)));
 
                 case SerializableType.Car:
                     return new CarControl(
                         new Car(
                             serializableTransformObject.Id,
-                            ConvertSerializableVector3ToVector3D(serializableTransformObject.Position) * 10,
-                            new Vector3D(0D, 0D, 0D),
+                            ConvertSerializableVector3ToVector3D(serializableTransformObject.Position),
+                            ConvertSerializableVector3ToVector3D(serializableTransformObject.Rotation),
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Scale)));
 
                 case SerializableType.Garden:
                     return new GardenControl(
                         new Garden(
                             serializableTransformObject.Id,
-                            ConvertSerializableVector3ToVector3D(serializableTransformObject.Position) * 10,
-                            new Vector3D(0D, 0D, 0D),
+                            ConvertSerializableVector3ToVector3D(serializableTransformObject.Position),
+                            ConvertSerializableVector3ToVector3D(serializableTransformObject.Rotation),
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Scale)));
 
                 case SerializableType.Bench:
                     return new BenchControl(
                         new Bench(
                             serializableTransformObject.Id,
-                            ConvertSerializableVector3ToVector3D(serializableTransformObject.Position) * 10,
-                            new Vector3D(0D, 0D, 0D),
+                            ConvertSerializableVector3ToVector3D(serializableTransformObject.Position),
+                            ConvertSerializableVector3ToVector3D(serializableTransformObject.Rotation),
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Scale)));
 
                 case SerializableType.Television:
                     return new TelevisionControl(
                         new Television(
                             serializableTransformObject.Id,
-                            ConvertSerializableVector3ToVector3D(serializableTransformObject.Position) * 10,
-                            new Vector3D(0D, 0D, 0D),
+                            ConvertSerializableVector3ToVector3D(serializableTransformObject.Position),
+                            ConvertSerializableVector3ToVector3D(serializableTransformObject.Rotation),
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Scale)));
 
                 default:
