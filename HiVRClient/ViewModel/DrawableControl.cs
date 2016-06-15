@@ -48,7 +48,7 @@ namespace HiVRClient.ViewModel
         /// <summary>
         /// Gets or sets the rotation of the drawable.
         /// </summary>
-        public Vector3D Rotation => this.drawable.Rotation;
+        public Vector3D Rotation => new Vector3D(this.drawable.Rotation.X, -this.drawable.Rotation.Y, this.drawable.Rotation.Z);
 
         /// <summary>
         /// Gets or sets the scale of the drawable.

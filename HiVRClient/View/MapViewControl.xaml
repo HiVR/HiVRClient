@@ -30,7 +30,12 @@
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <Canvas
-                    IsItemsHost="True" />
+                        IsItemsHost="True"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Width="0"
+                        Height="0"
+                        RenderTransform="1 0 0 -1 0 0" />
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
         </ItemsControl>

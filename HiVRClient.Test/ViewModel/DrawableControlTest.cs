@@ -60,7 +60,7 @@ namespace HiVRClient.Test.ViewModel
         [Test]
         public void TestGetRotation()
         {
-            Assert.That(this.drawableControl.Rotation, Is.EqualTo(new Vector3D(4D, 5D, 6D)));
+            Assert.That(this.drawableControl.Rotation, Is.EqualTo(new Vector3D(4D, -5D, 6D)));
         }
 
         /// <summary>
