@@ -3,7 +3,8 @@
                     xmlns:viewmodel="clr-namespace:HiVRClient.ViewModel">
     <DataTemplate
         DataType="{x:Type viewmodel:BuildingControl}">
-        <Path>
+        <Path
+            RenderTransformOrigin="0.5, 0.5">
             <Path.Data>
                 <RectangleGeometry
                     Rect="0,0,100,100" />
@@ -30,7 +31,8 @@
     </DataTemplate>
     <DataTemplate
         DataType="{x:Type viewmodel:CarControl}">
-        <Path>
+        <Path
+            RenderTransformOrigin="0.5, 0.5">
             <Path.Data>
                 <RectangleGeometry
                     Rect="0,0,50,100"
@@ -59,7 +61,8 @@
     </DataTemplate>
     <DataTemplate
         DataType="{x:Type viewmodel:GardenControl}">
-        <Path>
+        <Path
+            RenderTransformOrigin="0.5, 0.5">
             <Path.Data>
                 <RectangleGeometry
                     Rect="0,0,200,200"
@@ -87,7 +90,8 @@
     </DataTemplate>
     <DataTemplate
         DataType="{x:Type viewmodel:BenchControl}">
-        <Path>
+        <Path
+            RenderTransformOrigin="0.5, 0.5">
             <Path.Data>
                 <RectangleGeometry
                     Rect="0,0,25,50" />
@@ -114,7 +118,8 @@
     </DataTemplate>
     <DataTemplate
         DataType="{x:Type viewmodel:TelevisionControl}">
-        <Path>
+        <Path
+            RenderTransformOrigin="0.5, 0.5">
             <Path.Data>
                 <RectangleGeometry
                     Rect="0,0,10,20" />
