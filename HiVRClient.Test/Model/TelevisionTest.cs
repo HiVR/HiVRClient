@@ -16,6 +16,33 @@ namespace HiVRClient.Test.Model
         #region Methods
 
         /// <summary>
+        /// Test <see cref="Television.DefaultPosition"/> field.
+        /// </summary>
+        [Test]
+        public void TestDefaultPosition()
+        {
+            Assert.That(Television.DefaultPosition, Is.EqualTo(new Vector3D(0D, 0D, 0D)));
+        }
+
+        /// <summary>
+        /// Test <see cref="Television.DefaultRotation"/> field.
+        /// </summary>
+        [Test]
+        public void TestDefaultRotation()
+        {
+            Assert.That(Television.DefaultRotation, Is.EqualTo(new Vector3D(0D, 180D, 0D)));
+        }
+
+        /// <summary>
+        /// Test <see cref="Television.DefaultScale"/> field.
+        /// </summary>
+        [Test]
+        public void TestDefaultScale()
+        {
+            Assert.That(Television.DefaultScale, Is.EqualTo(new Vector3D(1.6D, 0.9D, 1D)));
+        }
+
+        /// <summary>
         /// Test constructor.
         /// </summary>
         [Test]

@@ -10,6 +10,25 @@ namespace HiVRClient.Model
     /// </summary>
     public class Television : Drawable
     {
+        #region Properties
+
+        /// <summary>
+        /// Gets the position of this Television.
+        /// </summary>
+        public static readonly Vector3D DefaultPosition = new Vector3D(0D, 0D, 0D);
+
+        /// <summary>
+        /// Gets the rotation of this Television.
+        /// </summary>
+        public static readonly Vector3D DefaultRotation = new Vector3D(0D, 180D, 0D);
+
+        /// <summary>
+        /// Gets the scale of this Television.
+        /// </summary>
+        public static readonly Vector3D DefaultScale = new Vector3D(1.6D, 0.9D, 1D);
+
+        #endregion Properties
+
         #region Constructors
 
         /// <summary>

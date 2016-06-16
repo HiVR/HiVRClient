@@ -7,7 +7,7 @@
             RenderTransformOrigin="0.5, 0.5">
             <Path.Data>
                 <RectangleGeometry
-                    Rect="0, 0, 6, 12" />
+                    Rect="0,0,1,1" />
             </Path.Data>
             <Path.Style>
                 <Style
@@ -27,6 +27,7 @@
                     <TranslateTransform
                         X="{Binding Position.X}"
                         Y="{Binding Position.Z}" />
+
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
@@ -37,7 +38,7 @@
             RenderTransformOrigin="0.5, 0.5">
             <Path.Data>
                 <RectangleGeometry
-                    Rect="0, 0, 2.5, 4.5"
+                    Rect="0,0,1,1"
                     RadiusX="0.3"
                     RadiusY="0.3" />
             </Path.Data>
@@ -69,7 +70,7 @@
             RenderTransformOrigin="0.5, 0.5">
             <Path.Data>
                 <RectangleGeometry
-                    Rect="0, 0, 2.5, 2.5" />
+                    Rect="0,0,1,1" />
             </Path.Data>
             <Path.Style>
                 <Style
@@ -99,7 +100,7 @@
             RenderTransformOrigin="0.5, 0.5">
             <Path.Data>
                 <RectangleGeometry
-                    Rect="0, 0, 0.45, 1.8" />
+                    Rect="0,0,1,1" />
             </Path.Data>
             <Path.Style>
                 <Style
@@ -129,7 +130,7 @@
             RenderTransformOrigin="0.5, 0.5">
             <Path.Data>
                 <RectangleGeometry
-                    Rect="0, 0, 1.6, 1" />
+                    Rect="0,0,1,1" />
             </Path.Data>
             <Path.Style>
                 <Style
