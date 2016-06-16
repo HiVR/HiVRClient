@@ -60,6 +60,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\DrawableFactory.cs" />
     <Compile Include="Model\Bench.cs" />
     <Compile Include="Model\Car.cs" />
     <Compile Include="Model\Garden.cs" />
