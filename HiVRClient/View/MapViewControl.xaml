@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             mc:Ignorable="d">
+             xmlns:view="clr-namespace:HiVRClient.View"
+             mc:Ignorable="d"
+             FocusManager.FocusedElement="{Binding ElementName=Scroller}">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -24,20 +26,25 @@
             </MenuItem>
         </Menu>
 
-        <ItemsControl
+        <ScrollViewer
+            x:Name="Scroller"
+            VerticalScrollBarVisibility="Visible"
+            HorizontalScrollBarVisibility="Visible">
+            <ItemsControl
             ItemsSource="{Binding Drawables.Values}"
             ItemTemplate="{Binding}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <Canvas
-                        IsItemsHost="True"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Width="0"
-                        Height="0"
-                        RenderTransform="1 0 0 -1 0 0" />
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-        </ItemsControl>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas
+                            IsItemsHost="True"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Width="0"
+                            Height="0"
+                            RenderTransform="1 0 0 -1 0 0" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </ScrollViewer>
     </DockPanel>
 </UserControl>
