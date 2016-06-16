@@ -1,7 +1,8 @@
 ﻿// <copyright file="DrawableFactory.cs" company="HiVR">
 // Copyright (c) 2016 HiVR All Rights Reserved
 // </copyright>
-namespace HiVRClient.Model
+
+namespace HiVRClient.Model.DrawableModel
 {
     using System.Windows.Media.Media3D;
 
@@ -95,6 +96,40 @@ namespace HiVRClient.Model
             var correctedScale = this.MultiplyIndividuals(scale, Television.DefaultScale);
 
             return new Television(id, correctedPosition, correctedRotation, correctedScale);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Character"/> class.
+        /// </summary>
+        /// <param name="id">the id of the drawable Character</param>
+        /// <param name="position">the position of the Character</param>
+        /// <param name="rotation">the rotation of the Character</param>
+        /// <param name="scale">the scale coordinate of the Character</param>
+        /// <returns>the character instance</returns>
+        public Character GetCharacter(int id, Vector3D position, Vector3D rotation, Vector3D scale)
+        {
+            var correctedPosition = this.AddIndividuals(position, Character.DefaultPosition);
+            var correctedRotation = this.AddIndividuals(rotation, Character.DefaultRotation);
+            var correctedScale = this.MultiplyIndividuals(scale, Character.DefaultScale);
+
+            return new Character(id, correctedPosition, correctedRotation, correctedScale);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Patient"/> class.
+        /// </summary>
+        /// <param name="id">the id of the drawable Patient</param>
+        /// <param name="position">the position of the Patient</param>
+        /// <param name="rotation">the rotation of the Patient</param>
+        /// <param name="scale">the scale coordinate of the Patient</param>
+        /// <returns>the patient instance</returns>
+        public Patient GetPatient(int id, Vector3D position, Vector3D rotation, Vector3D scale)
+        {
+            var correctedPosition = this.AddIndividuals(position, Patient.DefaultPosition);
+            var correctedRotation = this.AddIndividuals(rotation, Patient.DefaultRotation);
+            var correctedScale = this.MultiplyIndividuals(scale, Patient.DefaultScale);
+
+            return new Patient(id, correctedPosition, correctedRotation, correctedScale);
         }
 
         /// <summary>

@@ -1,13 +1,12 @@
 ﻿// <copyright file="DrawableControlTest.cs" company="HiVR">
 // Copyright (c) 2016 HiVR All Rights Reserved
 // </copyright>
-
-using HiVRClient.Model;
-using HiVRClient.ViewModel;
+using HiVRClient.Model.DrawableModel;
+using HiVRClient.ViewModel.DrawableViewModel;
 using NUnit.Framework;
 using System.Windows.Media.Media3D;
 
-namespace HiVRClient.Test.ViewModel
+namespace HiVRClient.Test.ViewModel.DrawableViewModel
 {
     /// <summary>
     /// Test <see cref="DrawableControl"/> class.

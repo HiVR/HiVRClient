@@ -1,10 +1,11 @@
 ﻿// <copyright file="MapViewModel.cs" company="HiVR">
 // Copyright (c) 2016 HiVR All Rights Reserved
 // </copyright>
-
 namespace HiVRClient.ViewModel
 {
+    using DrawableViewModel;
     using Model.Network;
+    using System;
     using System.Collections.Concurrent;
     using System.Windows.Input;
     using Utility;
@@ -65,9 +66,22 @@ namespace HiVRClient.ViewModel
             if (e.SerializableTransformObject.IsStatic)
             {
                 var drawableControl = SerializableConverter.CreateDrawableControlFromSerializableObject(e.SerializableTransformObject);
-                if (drawableControl != null)
+                this.Drawables.Add(drawableControl.Id, drawableControl);
+            }
+            else
+            {
+                var drawableControl = SerializableConverter.CreateDrawableControlFromSerializableObject(e.SerializableTransformObject);
+                if (this.Drawables.ContainsKey(drawableControl.Id))
                 {
-                    this.Drawables.Add(drawableControl.Id, drawableControl);
+                    DrawableControl existing;
+                    if (this.Drawables.TryGetValue(drawableControl.Id, out existing))
+                    {
+                        existing.UpdatePositionRotation(drawableControl.Position, drawableControl.Rotation);
+                    }
+                    else
+                    {
+                        throw new ArgumentException("Invalid Id");
+                    }
                 }
             }
         }
