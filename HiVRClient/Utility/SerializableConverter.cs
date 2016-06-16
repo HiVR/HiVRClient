@@ -66,7 +66,7 @@ namespace HiVRClient.Utility
 
                 case SerializableType.Bench:
                     return new BenchControl(
-                        new Bench(
+                        drawableFactory.GetBench(
                             serializableTransformObject.Id,
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Position),
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Rotation),
