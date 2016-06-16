@@ -40,6 +40,16 @@ namespace HiVRClient.ViewModel
         #region Properties
 
         /// <summary>
+        /// Gets the size of the ground map from Unity along the x-axis.
+        /// </summary>
+        public double MapSizeX { get; } = 5000;
+
+        /// <summary>
+        /// Gets the size of the ground map from Unity along the y-axis.
+        /// </summary>
+        public double MapSizeY { get; } = 5000;
+
+        /// <summary>
         /// Gets the collection of draw.
         /// </summary>
         public ObservableConcurrentDictionary<int, DrawableControl> Drawables { get; }
