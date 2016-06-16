@@ -16,6 +16,33 @@ namespace HiVRClient.Test.Model
         #region Methods
 
         /// <summary>
+        /// Test <see cref="Bench.DefaultPosition"/> field.
+        /// </summary>
+        [Test]
+        public void TestDefaultPosition()
+        {
+            Assert.That(Bench.DefaultPosition, Is.EqualTo(new Vector3D(0D, 0.2D, 0D)));
+        }
+
+        /// <summary>
+        /// Test <see cref="Bench.DefaultRotation"/> field.
+        /// </summary>
+        [Test]
+        public void TestDefaultRotation()
+        {
+            Assert.That(Bench.DefaultRotation, Is.EqualTo(new Vector3D(0D, 0D, 0D)));
+        }
+
+        /// <summary>
+        /// Test <see cref="Bench.DefaultScale"/> field.
+        /// </summary>
+        [Test]
+        public void TestDefaultScale()
+        {
+            Assert.That(Bench.DefaultScale, Is.EqualTo(new Vector3D(0.45D, 0.4D, 1.8D)));
+        }
+
+        /// <summary>
         /// Test constructor.
         /// </summary>
         [Test]
