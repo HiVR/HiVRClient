@@ -1,6 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:viewmodel="clr-namespace:HiVRClient.ViewModel.DrawableViewModel">
+                    xmlns:viewmodel="clr-namespace:HiVRClient.ViewModel.DrawableViewModel"
+                    xmlns:converter="clr-namespace:HiVRClient.Converter">
+    <converter:ZoomConverter x:Key="ApplyZoom" />
     <DataTemplate
         DataType="{x:Type viewmodel:BuildingControl}">
         <Path
@@ -20,13 +22,13 @@
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform
-                        ScaleX="{Binding Scale.X}"
-                        ScaleY="{Binding Scale.Z}" />
+                        ScaleX="{Binding Scale.X, Converter={StaticResource ApplyZoom}}"
+                        ScaleY="{Binding Scale.Z, Converter={StaticResource ApplyZoom}}" />
                     <RotateTransform
                         Angle="{Binding Rotation.Y}" />
                     <TranslateTransform
-                        X="{Binding Position.X}"
-                        Y="{Binding Position.Z}" />
+                        X="{Binding Position.X, Converter={StaticResource ApplyZoom}}"
+                        Y="{Binding Position.Z, Converter={StaticResource ApplyZoom}}" />
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
@@ -52,13 +54,13 @@
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform
-                        ScaleX="{Binding Scale.X}"
-                        ScaleY="{Binding Scale.Z}" />
+                        ScaleX="{Binding Scale.X, Converter={StaticResource ApplyZoom}}"
+                        ScaleY="{Binding Scale.Z, Converter={StaticResource ApplyZoom}}" />
                     <RotateTransform
                         Angle="{Binding Rotation.Y}" />
                     <TranslateTransform
-                        X="{Binding Position.X}"
-                        Y="{Binding Position.Z}" />
+                        X="{Binding Position.X, Converter={StaticResource ApplyZoom}}"
+                        Y="{Binding Position.Z, Converter={StaticResource ApplyZoom}}" />
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
@@ -82,13 +84,13 @@
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform
-                        ScaleX="{Binding Scale.X}"
-                        ScaleY="{Binding Scale.Z}" />
+                        ScaleX="{Binding Scale.X, Converter={StaticResource ApplyZoom}}"
+                        ScaleY="{Binding Scale.Z, Converter={StaticResource ApplyZoom}}" />
                     <RotateTransform
                         Angle="{Binding Rotation.Y}" />
                     <TranslateTransform
-                        X="{Binding Position.X}"
-                        Y="{Binding Position.Z}" />
+                        X="{Binding Position.X, Converter={StaticResource ApplyZoom}}"
+                        Y="{Binding Position.Z, Converter={StaticResource ApplyZoom}}" />
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
@@ -112,13 +114,13 @@
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform
-                        ScaleX="{Binding Scale.X}"
-                        ScaleY="{Binding Scale.Z}" />
+                        ScaleX="{Binding Scale.X, Converter={StaticResource ApplyZoom}}"
+                        ScaleY="{Binding Scale.Z, Converter={StaticResource ApplyZoom}}" />
                     <RotateTransform
                         Angle="{Binding Rotation.Y}" />
                     <TranslateTransform
-                        X="{Binding Position.X}"
-                        Y="{Binding Position.Z}" />
+                        X="{Binding Position.X, Converter={StaticResource ApplyZoom}}"
+                        Y="{Binding Position.Z, Converter={StaticResource ApplyZoom}}" />
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
@@ -142,13 +144,13 @@
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform
-                        ScaleX="{Binding Scale.X}"
-                        ScaleY="{Binding Scale.Z}" />
+                        ScaleX="{Binding Scale.X, Converter={StaticResource ApplyZoom}}"
+                        ScaleY="{Binding Scale.Z, Converter={StaticResource ApplyZoom}}" />
                     <RotateTransform
                         Angle="{Binding Rotation.Y}" />
                     <TranslateTransform
-                        X="{Binding Position.X}"
-                        Y="{Binding Position.Z}" />
+                        X="{Binding Position.X, Converter={StaticResource ApplyZoom}}"
+                        Y="{Binding Position.Z, Converter={StaticResource ApplyZoom}}" />
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
