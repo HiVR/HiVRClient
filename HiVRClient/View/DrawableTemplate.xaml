@@ -155,4 +155,68 @@
             </Path.RenderTransform>
         </Path>
     </DataTemplate>
+    <DataTemplate
+        DataType="{x:Type viewmodel:CharacterControl}">
+        <Path
+            RenderTransformOrigin="0.5, 0.5">
+            <Path.Data>
+                <EllipseGeometry
+                    Center="0,0"
+                    RadiusX="1"
+                    RadiusY="1" />
+            </Path.Data>
+            <Path.Style>
+                <Style
+                    TargetType="Path">
+                    <Setter
+                        Property="Fill"
+                        Value="Purple" />
+                </Style>
+            </Path.Style>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform
+                        ScaleX="{Binding Scale.X, Converter={StaticResource ApplyZoom}}"
+                        ScaleY="{Binding Scale.Z, Converter={StaticResource ApplyZoom}}" />
+                    <RotateTransform
+                        Angle="{Binding Rotation.Y}" />
+                    <TranslateTransform
+                        X="{Binding Position.X, Converter={StaticResource ApplyZoom}}"
+                        Y="{Binding Position.Z, Converter={StaticResource ApplyZoom}}" />
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+    </DataTemplate>
+    <DataTemplate
+        DataType="{x:Type viewmodel:PatientControl}">
+        <Path
+            RenderTransformOrigin="0.5, 0.5">
+            <Path.Data>
+                <EllipseGeometry
+                    Center="0,0"
+                    RadiusX="1"
+                    RadiusY="1" />
+            </Path.Data>
+            <Path.Style>
+                <Style
+                    TargetType="Path">
+                    <Setter
+                        Property="Fill"
+                        Value="OrangeRed" />
+                </Style>
+            </Path.Style>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform
+                        ScaleX="{Binding Scale.X, Converter={StaticResource ApplyZoom}}"
+                        ScaleY="{Binding Scale.Z, Converter={StaticResource ApplyZoom}}" />
+                    <RotateTransform
+                        Angle="{Binding Rotation.Y}" />
+                    <TranslateTransform
+                        X="{Binding Position.X, Converter={StaticResource ApplyZoom}}"
+                        Y="{Binding Position.Z, Converter={StaticResource ApplyZoom}}" />
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+    </DataTemplate>
 </ResourceDictionary>
