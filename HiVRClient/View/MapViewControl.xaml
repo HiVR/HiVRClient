@@ -31,8 +31,10 @@
             VerticalScrollBarVisibility="Visible"
             HorizontalScrollBarVisibility="Visible">
             <ItemsControl
-            ItemsSource="{Binding Drawables.Values}"
-            ItemTemplate="{Binding}">
+                ItemsSource="{Binding Drawables.Values}"
+                ItemTemplate="{Binding}"
+                Width="{Binding MapSizeX}"
+                Height="{Binding MapSizeY}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <Canvas
