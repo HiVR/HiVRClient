@@ -80,9 +80,6 @@ namespace HiVRClient.Utility
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Rotation),
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Scale)));
 
-                case SerializableType.Ground:
-                    return null;
-
                 default:
                     throw new ArgumentOutOfRangeException();
             }

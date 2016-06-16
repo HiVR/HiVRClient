@@ -17,7 +17,7 @@ namespace HiVRClient.Converter
         /// <summary>
         /// The zoomfactor of the scaling and position of all the Drawables.
         /// </summary>
-        private const double Zoom = 15;
+        private const double Zoom = 6;
 
         #region Methods
         /// <summary>

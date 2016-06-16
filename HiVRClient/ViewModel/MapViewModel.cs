@@ -5,6 +5,7 @@ namespace HiVRClient.ViewModel
 {
     using DrawableViewModel;
     using Model.Network;
+    using SerializedObjects;
     using System;
     using System.Collections.Concurrent;
     using System.Windows.Input;
@@ -21,6 +22,11 @@ namespace HiVRClient.ViewModel
         /// Private instance of property below.
         /// </summary>
         private ICommand disconnectCommand;
+
+        /// <summary>
+        /// Scale factor of the map.
+        /// </summary>
+        private static double mapSize = 10D;
 
         #endregion Fields
 
@@ -42,12 +48,12 @@ namespace HiVRClient.ViewModel
         /// <summary>
         /// Gets the size of the ground map from Unity along the x-axis.
         /// </summary>
-        public double MapSizeX { get; } = 5000;
+        public double MapSizeX { get; set; }
 
         /// <summary>
         /// Gets the size of the ground map from Unity along the y-axis.
         /// </summary>
-        public double MapSizeY { get; } = 5000;
+        public double MapSizeY { get; set; }
 
         /// <summary>
         /// Gets the collection of draw.
@@ -73,6 +79,16 @@ namespace HiVRClient.ViewModel
         /// <param name="e">the object received event</param>
         private void AddObject(object sender, ObjectReceivedEventArgs e)
         {
+            if (e.SerializableTransformObject.Type == SerializableType.Ground)
+            {
+                this.MapSizeX = e.SerializableTransformObject.Scale.X * mapSize + 2 * Math.Abs(e.SerializableTransformObject.Position.X);
+                this.MapSizeY = e.SerializableTransformObject.Scale.Z * mapSize + 2 * Math.Abs(e.SerializableTransformObject.Position.Z);
+                this.OnPropertyChanged("MapSizeX");
+                this.OnPropertyChanged("MapSizeY");
+                return;
+            }
+
+
             if (e.SerializableTransformObject.IsStatic)
             {
                 var drawableControl = SerializableConverter.CreateDrawableControlFromSerializableObject(e.SerializableTransformObject);

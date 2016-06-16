@@ -33,8 +33,8 @@
             <ItemsControl
                 ItemsSource="{Binding Drawables.Values}"
                 ItemTemplate="{Binding}"
-                Width="{Binding MapSizeX}"
-                Height="{Binding MapSizeY}">
+                Width="{Binding MapSizeX, Converter={StaticResource ApplyZoom}}"
+                Height="{Binding MapSizeY, Converter={StaticResource ApplyZoom}}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <Canvas
