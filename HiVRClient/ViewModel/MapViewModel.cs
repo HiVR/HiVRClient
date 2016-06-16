@@ -19,7 +19,7 @@ namespace HiVRClient.ViewModel
         /// <summary>
         /// Private instance of property below.
         /// </summary>
-        private ICommand diconnectCommand;
+        private ICommand disconnectCommand;
 
         #endregion Fields
 
@@ -50,8 +50,8 @@ namespace HiVRClient.ViewModel
         {
             get
             {
-                return this.diconnectCommand ??
-                       (this.diconnectCommand = new RelayCommand(param => NetworkManager.NetworkInstance.CloseConnection()));
+                return this.disconnectCommand ??
+                       (this.disconnectCommand = new RelayCommand(param => NetworkManager.NetworkInstance.CloseConnection()));
             }
         }
 
