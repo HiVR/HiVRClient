@@ -15,6 +15,15 @@ namespace HiVRClient.Utility
     /// </summary>
     public static class SerializableConverter
     {
+        #region Fields
+
+        /// <summary>
+        /// The drawable factory used to create drawables.
+        /// </summary>
+        private static DrawableFactory drawableFactory;
+
+        #endregion Fields
+
         #region Methods
 
         /// <summary>
@@ -24,11 +33,16 @@ namespace HiVRClient.Utility
         /// <returns>the <see cref="DrawableControl"/> object</returns>
         public static DrawableControl CreateDrawableControlFromSerializableObject(SerializableTransformObject serializableTransformObject)
         {
+            if (drawableFactory == null)
+            {
+                drawableFactory = new DrawableFactory();
+            }
+
             switch (serializableTransformObject.Type)
             {
                 case SerializableType.Building:
                     return new BuildingControl(
-                        new Building(
+                        drawableFactory.GetBuilding(
                             serializableTransformObject.Id,
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Position),
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Rotation),
@@ -36,7 +50,7 @@ namespace HiVRClient.Utility
 
                 case SerializableType.Car:
                     return new CarControl(
-                        new Car(
+                        drawableFactory.GetCar(
                             serializableTransformObject.Id,
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Position),
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Rotation),
@@ -44,7 +58,7 @@ namespace HiVRClient.Utility
 
                 case SerializableType.Garden:
                     return new GardenControl(
-                        new Garden(
+                        drawableFactory.GetGarden(
                             serializableTransformObject.Id,
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Position),
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Rotation),
@@ -60,7 +74,7 @@ namespace HiVRClient.Utility
 
                 case SerializableType.Television:
                     return new TelevisionControl(
-                        new Television(
+                        drawableFactory.GetTelevision(
                             serializableTransformObject.Id,
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Position),
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Rotation),
