@@ -1,11 +1,11 @@
 ﻿// <copyright file="GardenTest.cs" company="HiVR">
 // Copyright (c) 2016 HiVR All Rights Reserved
 // </copyright>
-using HiVRClient.Model;
+using HiVRClient.Model.DrawableModel;
 using NUnit.Framework;
 using System.Windows.Media.Media3D;
 
-namespace HiVRClient.Test.Model
+namespace HiVRClient.Test.Model.DrawableModel
 {
     /// <summary>
     /// Test <see cref="Garden"/> class.

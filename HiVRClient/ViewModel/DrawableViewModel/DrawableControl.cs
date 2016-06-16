@@ -1,9 +1,9 @@
 ﻿// <copyright file="DrawableControl.cs" company="HiVR">
 // Copyright (c) 2016 HiVR All Rights Reserved
 // </copyright>
-namespace HiVRClient.ViewModel
+namespace HiVRClient.ViewModel.DrawableViewModel
 {
-    using Model;
+    using Model.DrawableModel;
     using System.Windows.Media.Media3D;
 
     /// <summary>
@@ -56,5 +56,25 @@ namespace HiVRClient.ViewModel
         public Vector3D Scale => this.drawable.Scale;
 
         #endregion Properties
+
+        #region Methods
+
+        /// <summary>
+        /// Update position and rotation of the drawable.
+        /// </summary>
+        /// <param name="position">the new position</param>
+        /// <param name="rotation">the new rotation</param>
+        public void UpdatePositionRotation(Vector3D position, Vector3D rotation)
+        {
+            if (!(this.Position.Equals(position) && this.Rotation.Equals(rotation)))
+            {
+                this.drawable.Position = position;
+                this.drawable.Rotation = rotation;
+                this.OnPropertyChanged("Position");
+                this.OnPropertyChanged("Rotation");
+            }
+        }
+
+        #endregion Methods
     }
 }

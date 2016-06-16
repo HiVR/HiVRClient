@@ -3,6 +3,7 @@
 // </copyright>
 
 using HiVRClient.ViewModel;
+using HiVRClient.ViewModel.DrawableViewModel;
 using NUnit.Framework;
 using System.Collections.Concurrent;
 

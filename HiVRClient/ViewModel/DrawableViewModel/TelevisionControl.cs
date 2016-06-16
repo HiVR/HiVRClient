@@ -1,9 +1,9 @@
 ﻿// <copyright file="TelevisionControl.cs" company="HiVR">
 // Copyright (c) 2016 HiVR All Rights Reserved
 // </copyright>
-namespace HiVRClient.ViewModel
+namespace HiVRClient.ViewModel.DrawableViewModel
 {
-    using Model;
+    using Model.DrawableModel;
 
     /// <summary>
     /// This class implements the view model for a bench.

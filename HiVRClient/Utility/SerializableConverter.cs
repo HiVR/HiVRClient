@@ -4,11 +4,11 @@
 
 namespace HiVRClient.Utility
 {
-    using Model;
+    using Model.DrawableModel;
     using SerializedObjects;
     using System;
     using System.Windows.Media.Media3D;
-    using ViewModel;
+    using ViewModel.DrawableViewModel;
 
     /// <summary>
     /// Contains methods to convert serializable objects to a format WPF can work with.

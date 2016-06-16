@@ -1,7 +1,7 @@
 ﻿// <copyright file="Car.cs" company="HiVR">
 // Copyright (c) 2016 HiVR All Rights Reserved
 // </copyright>
-namespace HiVRClient.Model
+namespace HiVRClient.Model.DrawableModel
 {
     using System.Windows.Media.Media3D;
 

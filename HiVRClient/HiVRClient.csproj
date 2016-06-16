@@ -60,25 +60,29 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\DrawableFactory.cs" />
-    <Compile Include="Model\Bench.cs" />
-    <Compile Include="Model\Car.cs" />
-    <Compile Include="Model\Garden.cs" />
+    <Compile Include="Model\DrawableModel\Bench.cs" />
+    <Compile Include="Model\DrawableModel\Building.cs" />
+    <Compile Include="Model\DrawableModel\Car.cs" />
+    <Compile Include="Model\DrawableModel\Character.cs" />
+    <Compile Include="Model\DrawableModel\Drawable.cs" />
+    <Compile Include="Model\DrawableModel\DrawableFactory.cs" />
+    <Compile Include="Model\DrawableModel\Garden.cs" />
+    <Compile Include="Model\DrawableModel\Patient.cs" />
+    <Compile Include="Model\DrawableModel\Television.cs" />
     <Compile Include="Model\Network\Network.cs" />
-    <Compile Include="Model\Building.cs" />
-    <Compile Include="Model\Drawable.cs" />
-    <Compile Include="Model\Television.cs" />
+    <Compile Include="ViewModel\DrawableViewModel\BenchControl.cs" />
+    <Compile Include="ViewModel\DrawableViewModel\BuildingControl.cs" />
+    <Compile Include="ViewModel\DrawableViewModel\CarControl.cs" />
+    <Compile Include="ViewModel\DrawableViewModel\CharacterControl.cs" />
+    <Compile Include="ViewModel\DrawableViewModel\DrawableControl.cs" />
+    <Compile Include="ViewModel\DrawableViewModel\GardenControl.cs" />
+    <Compile Include="ViewModel\DrawableViewModel\PatientControl.cs" />
+    <Compile Include="ViewModel\DrawableViewModel\TelevisionControl.cs" />
     <Compile Include="ViewModel\NetworkManager.cs" />
-    <Compile Include="ViewModel\TelevisionControl.cs" />
-    <Compile Include="ViewModel\CarControl.cs" />
-    <Compile Include="ViewModel\BenchControl.cs" />
-    <Compile Include="ViewModel\GardenControl.cs" />
     <Compile Include="Model\Network\ObjectReceivedEventArgs.cs" />
     <Compile Include="Utility\ObservableConcurrentDictionary.cs" />
     <Compile Include="Utility\SerializableConverter.cs" />
-    <Compile Include="ViewModel\BuildingControl.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />
-    <Compile Include="ViewModel\DrawableControl.cs" />
     <Compile Include="View\MapViewControl.xaml.cs">
       <DependentUpon>MapViewControl.xaml</DependentUpon>
     </Compile>
