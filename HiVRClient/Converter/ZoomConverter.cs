@@ -11,6 +11,7 @@ namespace HiVRClient.Converter
     /// <summary>
     /// Converts a Binding to apply a multiplication in order to zoom.
     /// </summary>
+    [ValueConversion(typeof(double), typeof(double))]
     public class ZoomConverter : IValueConverter
     {
         /// <summary>
