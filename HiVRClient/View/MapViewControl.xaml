@@ -17,6 +17,14 @@
     </UserControl.Resources>
 
     <DockPanel>
+        <DockPanel.InputBindings>
+            <KeyBinding
+            Key="J"
+            Command="{Binding ZoomInCommand}" />
+            <KeyBinding
+            Key="K"
+            Command="{Binding ZoomOutCommand}" />
+        </DockPanel.InputBindings>
         <Menu
             DockPanel.Dock="Top"
             IsMainMenu="True">
@@ -59,10 +67,10 @@
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.LayoutTransform>
                     <ScaleTransform
-                                    CenterX="0"
-                                    CenterY="0"
-                                    ScaleX="6"
-                                    ScaleY="6" />
+                        CenterX="0"
+                        CenterY="0"
+                        ScaleX="{Binding Zoom}"
+                        ScaleY="{Binding Zoom}" />
                 </ItemsControl.LayoutTransform>
             </ItemsControl>
         </ScrollViewer>

@@ -7,6 +7,7 @@ Build status:[![Build Status](https://jenkins.hivr.nl/buildStatus/icon?job=0010-
 ## Description
 This repository consists of a GUI program to display a 2D map of an Unity VR environment.  
 This program is being developed for CleVR.
+You can zoom with J and K.
 
 ## Installation
 To run the project you need Visual Studio and several plugins.  
