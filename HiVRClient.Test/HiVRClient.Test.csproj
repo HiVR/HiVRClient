@@ -44,6 +44,9 @@
       <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SerializedObjects">
+      <HintPath>..\HiVRClient\SerializedObjects.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +56,7 @@
     <Compile Include="Model\DrawableModel\DrawableTest.cs" />
     <Compile Include="Model\DrawableModel\GardenTest.cs" />
     <Compile Include="Model\DrawableModel\TelevisionTest.cs" />
+    <Compile Include="Model\Network\ObjectReceivedEventArgsTest.cs" />
     <Compile Include="ViewModel\ConnectControlViewModelTest.cs" />
     <Compile Include="ViewModel\DrawableViewModel\DrawableControlTest.cs" />
     <Compile Include="ViewModel\MainViewModelTest.cs" />
