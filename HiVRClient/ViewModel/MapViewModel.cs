@@ -135,7 +135,8 @@ namespace HiVRClient.ViewModel
                     {
                         throw new ArgumentException("Invalid Id");
                     }
-                } else
+                }
+                else
                 {
                     this.Drawables.Add(drawableControl.Id, drawableControl);
                 }
