@@ -126,7 +126,7 @@ namespace HiVRClient.Model.DrawableModel
         public Patient GetPatient(int id, Vector3D position, Vector3D rotation, Vector3D scale)
         {
             var correctedPosition = this.AddIndividuals(position, Patient.DefaultPosition);
-            var correctedRotation = this.AddIndividuals(rotation, Patient.DefaultRotation);
+            var correctedRotation = this.AddIndividuals(-rotation, Patient.DefaultRotation);
             var correctedScale = this.MultiplyIndividuals(scale, Patient.DefaultScale);
 
             return new Patient(id, correctedPosition, correctedRotation, correctedScale);
@@ -150,7 +150,7 @@ namespace HiVRClient.Model.DrawableModel
         /// <param name="second">the second vector</param>
         /// <returns>the added vector</returns>
         private Vector3D AddIndividuals(Vector3D first, Vector3D second)
-        {
+        {   
             return new Vector3D(first.X + second.X, first.Y + second.Y, first.Z + second.Z);
         }
 
