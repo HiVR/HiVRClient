@@ -72,12 +72,12 @@ namespace HiVRClient.Test.ViewModel
         }
 
         /// <summary>
-        /// Test <see cref="MainViewModel.SwitchContent"/> method.
+        /// Test <see cref="MainViewModel.SwitchContentToMap"/> method.
         /// </summary>
         [Test]
-        public void TestSwitchContent()
+        public void TestSwitchContentToMap()
         {
-            this.mainViewModel.SwitchContent();
+            this.mainViewModel.SwitchContentToMap();
             Assert.That(this.mainViewModel.CurrentView, Is.InstanceOf<MapViewModel>());
         }
 

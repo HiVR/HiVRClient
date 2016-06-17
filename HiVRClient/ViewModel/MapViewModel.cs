@@ -28,6 +28,11 @@ namespace HiVRClient.ViewModel
         /// </summary>
         private ICommand disconnectCommand;
 
+        /// <summary>
+        /// Is called when a connection is broken.
+        /// </summary>
+        public event EventHandler ConnectionBroken;
+
         #endregion Fields
 
         #region Constructors
@@ -88,9 +93,13 @@ namespace HiVRClient.ViewModel
             get
             {
                 return this.disconnectCommand ??
-                       (this.disconnectCommand = new RelayCommand(param => NetworkManager.NetworkInstance.CloseConnection()));
+                       (this.disconnectCommand = new RelayCommand(param => this.BreakConnection()));
             }
         }
+
+        #endregion Properties
+        
+        #region Methods
 
         /// <summary>
         /// Add a new object to the object tracker.
@@ -142,6 +151,18 @@ namespace HiVRClient.ViewModel
             }
         }
 
-        #endregion Properties
+        /// <summary>
+        /// Stops the connection and calls the OnConnectionBroken method.
+        /// </summary>
+        private void BreakConnection()
+        {
+            // Close the connection.
+            NetworkManager.NetworkInstance.CloseConnection();
+
+            // Actual disconnect logic here. Makes sure the ConnectionBroken Event exists and fires it.
+            this.ConnectionBroken?.Invoke(this, null);
+        }
+
+        #endregion Methods
     }
 }

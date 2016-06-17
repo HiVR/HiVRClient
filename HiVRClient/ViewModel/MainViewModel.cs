@@ -26,9 +26,7 @@ namespace HiVRClient.ViewModel
         /// </summary>
         public MainViewModel()
         {
-            var ccvm = new ConnectControlViewModel();
-            ccvm.ConnectionAttempted += (sender, args) => { SwitchContent(); };
-            this.CurrentView = ccvm;
+            this.SwitchContentToConnect();
         }
 
         #endregion Constructors
@@ -59,9 +57,21 @@ namespace HiVRClient.ViewModel
         /// <summary>
         /// Switches the content to the map view after a connection has been made.
         /// </summary>
-        public void SwitchContent()
+        public void SwitchContentToMap()
         {
-            this.CurrentView = new MapViewModel();
+            var mvm = new MapViewModel();
+            mvm.ConnectionBroken += (sender, args) => { this.SwitchContentToConnect(); };
+            this.CurrentView = mvm;
+        }
+
+        /// <summary>
+        /// Switches the content to the to the connect view.
+        /// </summary>
+        public void SwitchContentToConnect()
+        {
+            var ccvm = new ConnectControlViewModel();
+            ccvm.ConnectionAttempted += (sender, args) => { this.SwitchContentToMap(); };
+            this.CurrentView = ccvm;
         }
 
         #endregion Methods
