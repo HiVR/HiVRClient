@@ -24,9 +24,29 @@ namespace HiVRClient.ViewModel
         private static double mapSize = 10D;
 
         /// <summary>
+        /// Zoom factor to zoom in and out.
+        /// </summary>
+        private static double zoomFactor = 1.2;
+
+        /// <summary>
+        /// Private instance of property below.
+        /// </summary>
+        private double zoom = 5;
+
+        /// <summary>
         /// Private instance of property below.
         /// </summary>
         private ICommand disconnectCommand;
+
+        /// <summary>
+        /// Private instance of property below.
+        /// </summary>
+        private ICommand zoomInCommand;
+
+        /// <summary>
+        /// Private instance of property below.
+        /// </summary>
+        private ICommand zoomOutCommand;
 
         /// <summary>
         /// Is called when a connection is broken.
@@ -81,6 +101,23 @@ namespace HiVRClient.ViewModel
         public double BottomOffset { get; set; }
 
         /// <summary>
+        /// Gets or sets the zoom value.
+        /// </summary>
+        public double Zoom
+        {
+            get
+            {
+                return this.zoom;
+            }
+
+            set
+            {
+                this.zoom = value;
+                this.OnPropertyChanged("Zoom");
+            }
+        }
+
+        /// <summary>
         /// Gets the collection of draw.
         /// </summary>
         public ObservableConcurrentDictionary<int, DrawableControl> Drawables { get; }
@@ -97,8 +134,32 @@ namespace HiVRClient.ViewModel
             }
         }
 
+        /// <summary>
+        /// Gets command interface to zoom in.
+        /// </summary>
+        public ICommand ZoomInCommand
+        {
+            get
+            {
+                return this.zoomInCommand ??
+                    (this.zoomInCommand = new RelayCommand(param => this.ZoomAction(true)));
+            }
+        }
+
+        /// <summary>
+        /// Gets command interface to zoom in.
+        /// </summary>
+        public ICommand ZoomOutCommand
+        {
+            get
+            {
+                return this.zoomOutCommand ??
+                    (this.zoomOutCommand = new RelayCommand(param => this.ZoomAction(false)));
+            }
+        }
+
         #endregion Properties
-        
+
         #region Methods
 
         /// <summary>
@@ -162,6 +223,15 @@ namespace HiVRClient.ViewModel
 
             // Actual disconnect logic here. Makes sure the ConnectionBroken Event exists and fires it.
             this.ConnectionBroken?.Invoke(this, null);
+        }
+
+        /// <summary>
+        /// Zooms the map in and out.
+        /// </summary>
+        /// <param name="zoomIn">whether to zoom in or out</param>
+        private void ZoomAction(bool zoomIn)
+        {
+            this.Zoom = zoomIn ? this.Zoom * zoomFactor : this.Zoom / zoomFactor;
         }
 
         #endregion Methods
