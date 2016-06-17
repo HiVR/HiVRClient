@@ -26,11 +26,23 @@ namespace HiVRClient.Converter
         /// <returns>the thickness object</returns>
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            return new Thickness(
-                System.Convert.ToDouble(values[0]),
-                System.Convert.ToDouble(values[1]),
-                System.Convert.ToDouble(values[2]),
-                System.Convert.ToDouble(values[3]));
+            try
+            {
+                return new Thickness(
+                    System.Convert.ToDouble(values[0]),
+                    System.Convert.ToDouble(values[1]),
+                    System.Convert.ToDouble(values[2]),
+                    System.Convert.ToDouble(values[3]));
+            }
+
+            // Whenever we delete the MapViewModel, the Converter will try to continue updating the bindings for a short time which will trigger exceptions.
+            catch (InvalidCastException)
+            {
+                Console.WriteLine("Expected BindingException thrown after deletion MapViewControl");
+                
+                // Return arbitrary Thickness.
+                return new Thickness(0, 0, 0, 0);
+            }
         }
 
         /// <summary>
