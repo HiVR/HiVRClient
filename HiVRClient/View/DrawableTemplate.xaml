@@ -209,7 +209,7 @@
                         ScaleX="{Binding Scale.X}"
                         ScaleY="{Binding Scale.Z}" />
                     <RotateTransform
-                        Angle ="{Binding Rotation.Y}" />
+                        Angle="{Binding Rotation.Y}" />
                     <TranslateTransform
                         X="{Binding Position.X}"
                         Y="{Binding Position.Z}" />
