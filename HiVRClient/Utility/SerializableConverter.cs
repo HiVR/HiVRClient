@@ -80,6 +80,14 @@ namespace HiVRClient.Utility
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Rotation),
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Scale)));
 
+                case SerializableType.Character:
+                    return new CharacterControl(
+                        drawableFactory.GetCharacter(
+                            serializableTransformObject.Id,
+                            ConvertSerializableVector3ToVector3D(serializableTransformObject.Position),
+                            ConvertSerializableVector3ToVector3D(serializableTransformObject.Rotation),
+                            ConvertSerializableVector3ToVector3D(serializableTransformObject.Scale)));
+
                 default:
                     throw new ArgumentOutOfRangeException();
             }
