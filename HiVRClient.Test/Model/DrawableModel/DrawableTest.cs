@@ -108,6 +108,33 @@ namespace HiVRClient.Test.Model.DrawableModel
             Assert.That(this.drawable.Scale, Is.EqualTo(new Vector3D(70D, 80D, 90D)));
         }
 
+        /// <summary>
+        /// Test <see cref="Drawable.Equals(object)"/> method.
+        /// </summary>
+        [Test]
+        public void TestEquals()
+        {
+            var drawable1 = new Building(1, new Vector3D(1D, 2D, 3D), new Vector3D(4D, 5D, 6D), new Vector3D(7D, 8D, 9D));
+            var drawable2 = new Building(1, new Vector3D(1D, 2D, 3D), new Vector3D(4D, 5D, 6D), new Vector3D(7D, 8D, 9D));
+            var drawable3 = new Building(2, new Vector3D(1D, 2D, 3D), new Vector3D(4D, 5D, 6D), new Vector3D(7D, 8D, 9D));
+
+            Assert.IsTrue(drawable1.Equals(drawable1));
+            Assert.IsTrue(drawable1.Equals(drawable2));
+            Assert.IsFalse(drawable1.Equals(drawable3));
+        }
+
+        /// <summary>
+        /// Test <see cref="Drawable.GetHashCode"/> method.
+        /// </summary>
+        [Test]
+        public void TestGetHashCode()
+        {
+            var id = 104693;
+            var drawable = new Bench(id, new Vector3D(1D, 2D, 3D), new Vector3D(4D, 5D, 6D), new Vector3D(7D, 8D, 9D));
+
+            Assert.That(drawable.GetHashCode, Is.EqualTo(id));
+        }
+
         #endregion Methods
     }
 }

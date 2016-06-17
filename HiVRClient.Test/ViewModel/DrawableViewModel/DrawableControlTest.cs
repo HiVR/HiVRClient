@@ -71,6 +71,25 @@ namespace HiVRClient.Test.ViewModel.DrawableViewModel
             Assert.That(this.drawableControl.Scale, Is.EqualTo(new Vector3D(7D, 8D, 9D)));
         }
 
+        /// <summary>
+        /// Test <see cref="DrawableControl.UpdatePositionRotation(Vector3D, Vector3D)"/> method.
+        /// </summary>
+        [Test]
+        public void TestUpdatePositionRotation()
+        {
+            var defPos = new Vector3D(1D, 2D, 3D);
+
+            // If statement: Don't change if they are the same.
+            this.drawableControl.UpdatePositionRotation(defPos, new Vector3D(4D, -5D, 6D));
+            Assert.That(this.drawableControl.Position, Is.EqualTo(defPos));
+            Assert.That(this.drawableControl.Rotation, Is.EqualTo(new Vector3D(4D, -5D, 6D)));
+
+            // If statement: Change if they are not the same.
+            this.drawableControl.UpdatePositionRotation(new Vector3D(0D, 0D, 0D), new Vector3D(1D, 1D, 1D));
+            Assert.That(this.drawableControl.Position, Is.EqualTo(new Vector3D(0D, 0D, 0D)));
+            Assert.That(this.drawableControl.Rotation, Is.EqualTo(new Vector3D(1D, -1D, 1D)));
+        }
+
         #endregion Methods
     }
 }
