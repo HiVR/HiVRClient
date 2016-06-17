@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:view="clr-namespace:HiVRClient.View"
+             xmlns:converter="clr-namespace:HiVRClient.Converter"
              mc:Ignorable="d"
              FocusManager.FocusedElement="{Binding ElementName=Scroller}">
     <UserControl.Resources>
@@ -11,6 +11,8 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="DrawableTemplate.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <converter:MarginConverter
+                x:Key="MarginConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
 
@@ -43,7 +45,16 @@
                             VerticalAlignment="Center"
                             Width="0"
                             Height="0"
-                            RenderTransform="1 0 0 -1 0 0" />
+                            RenderTransform="1 0 0 -1 0 0">
+                            <Canvas.Margin>
+                                <MultiBinding Converter="{StaticResource MarginConverter}">
+                                    <Binding Path="LeftOffset" />
+                                    <Binding Path="BottomOffset" />
+                                    <Binding Path="RightOffset" />
+                                    <Binding Path="TopOffset" />
+                                </MultiBinding>
+                            </Canvas.Margin>
+                        </Canvas>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
