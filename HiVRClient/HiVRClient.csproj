@@ -60,6 +60,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converter\MarginConverter.cs" />
     <Compile Include="Model\DrawableModel\Bench.cs" />
     <Compile Include="Model\DrawableModel\Building.cs" />
     <Compile Include="Model\DrawableModel\Car.cs" />

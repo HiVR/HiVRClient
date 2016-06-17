@@ -5,6 +5,7 @@ namespace HiVRClient.ViewModel
 {
     using DrawableViewModel;
     using Model.Network;
+    using SerializedObjects;
     using System;
     using System.Collections.Concurrent;
     using System.Windows.Input;
@@ -16,6 +17,11 @@ namespace HiVRClient.ViewModel
     public class MapViewModel : BaseViewModel
     {
         #region Fields
+
+        /// <summary>
+        /// Scale factor of the map.
+        /// </summary>
+        private static double mapSize = 10D;
 
         /// <summary>
         /// Private instance of property below.
@@ -40,14 +46,34 @@ namespace HiVRClient.ViewModel
         #region Properties
 
         /// <summary>
-        /// Gets the size of the ground map from Unity along the x-axis.
+        /// Gets or sets the size of the ground map from Unity along the x-axis.
         /// </summary>
-        public double MapSizeX { get; } = 5000;
+        public double MapSizeX { get; set; }
 
         /// <summary>
-        /// Gets the size of the ground map from Unity along the y-axis.
+        /// Gets or sets the size of the ground map from Unity along the y-axis.
         /// </summary>
-        public double MapSizeY { get; } = 5000;
+        public double MapSizeY { get; set; }
+
+        /// <summary>
+        /// Gets or sets the left offset of the map.
+        /// </summary>
+        public double LeftOffset { get; set; }
+
+        /// <summary>
+        /// Gets or sets the top offset of the map.
+        /// </summary>
+        public double TopOffset { get; set; }
+
+        /// <summary>
+        /// Gets or sets the right offset of the map.
+        /// </summary>
+        public double RightOffset { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bottom offset of the map.
+        /// </summary>
+        public double BottomOffset { get; set; }
 
         /// <summary>
         /// Gets the collection of draw.
@@ -73,6 +99,23 @@ namespace HiVRClient.ViewModel
         /// <param name="e">the object received event</param>
         private void AddObject(object sender, ObjectReceivedEventArgs e)
         {
+            if (e.SerializableTransformObject.Type == SerializableType.Ground)
+            {
+                this.MapSizeX = e.SerializableTransformObject.Scale.X * mapSize;
+                this.MapSizeY = e.SerializableTransformObject.Scale.Z * mapSize;
+                this.LeftOffset = -e.SerializableTransformObject.Position.X;
+                this.TopOffset = -e.SerializableTransformObject.Position.Z;
+                this.RightOffset = e.SerializableTransformObject.Position.X;
+                this.BottomOffset = e.SerializableTransformObject.Position.Z;
+                this.OnPropertyChanged("MapSizeX");
+                this.OnPropertyChanged("MapSizeY");
+                this.OnPropertyChanged("LeftOffset");
+                this.OnPropertyChanged("TopOffset");
+                this.OnPropertyChanged("RightOffset");
+                this.OnPropertyChanged("BottomOffset");
+                return;
+            }
+
             if (e.SerializableTransformObject.IsStatic)
             {
                 var drawableControl = SerializableConverter.CreateDrawableControlFromSerializableObject(e.SerializableTransformObject);

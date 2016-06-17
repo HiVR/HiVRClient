@@ -14,12 +14,17 @@ namespace HiVRClient.Converter
     [ValueConversion(typeof(double), typeof(double))]
     public class ZoomConverter : IValueConverter
     {
+        #region Fields
+
         /// <summary>
         /// The zoomfactor of the scaling and position of all the Drawables.
         /// </summary>
-        private const double Zoom = 15;
+        public const double Zoom = 6;
+
+        #endregion Fields
 
         #region Methods
+
         /// <summary>
         /// Converts the value so that it zooms.
         /// </summary>
@@ -47,6 +52,7 @@ namespace HiVRClient.Converter
             double oldValue = (double)value;
             return oldValue / Zoom;
         }
+
         #endregion Methods
     }
 }
