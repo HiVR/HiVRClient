@@ -84,7 +84,6 @@
     <Compile Include="Utility\ObservableConcurrentDictionary.cs" />
     <Compile Include="Utility\SerializableConverter.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />
-    <Compile Include="Converter\ZoomConverter.cs" />
     <Compile Include="View\MapViewControl.xaml.cs">
       <DependentUpon>MapViewControl.xaml</DependentUpon>
     </Compile>

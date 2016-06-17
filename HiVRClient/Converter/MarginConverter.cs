@@ -27,10 +27,10 @@ namespace HiVRClient.Converter
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             return new Thickness(
-                System.Convert.ToDouble(values[0]) * ZoomConverter.Zoom,
-                System.Convert.ToDouble(values[1]) * ZoomConverter.Zoom,
-                System.Convert.ToDouble(values[2]) * ZoomConverter.Zoom,
-                System.Convert.ToDouble(values[3]) * ZoomConverter.Zoom);
+                System.Convert.ToDouble(values[0]),
+                System.Convert.ToDouble(values[1]),
+                System.Convert.ToDouble(values[2]),
+                System.Convert.ToDouble(values[3]));
         }
 
         /// <summary>
