@@ -126,7 +126,7 @@ namespace HiVRClient.Model.DrawableModel
         public Patient GetPatient(int id, Vector3D position, Vector3D rotation, Vector3D scale)
         {
             var correctedPosition = this.AddIndividuals(position, Patient.DefaultPosition);
-            var correctedRotation = this.AddIndividuals(rotation, Patient.DefaultRotation);
+            var correctedRotation = this.AddIndividuals(-rotation, Patient.DefaultRotation);
             var correctedScale = this.MultiplyIndividuals(scale, Patient.DefaultScale);
 
             return new Patient(id, correctedPosition, correctedRotation, correctedScale);

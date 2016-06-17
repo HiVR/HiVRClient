@@ -187,8 +187,8 @@ namespace HiVRClient.Test.Model.DrawableModel
             Assert.That(res.Position.Z, Is.EqualTo(Patient.DefaultPosition.Z + this.vector.Z));
 
             Assert.That(res.Rotation.X, Is.EqualTo(Patient.DefaultRotation.X));
-            Assert.That(res.Rotation.Y, Is.EqualTo(Patient.DefaultRotation.Y + this.vector.Y));
-            Assert.That(res.Rotation.Z, Is.EqualTo(Patient.DefaultRotation.Z + this.vector.Z));
+            Assert.That(res.Rotation.Y, Is.EqualTo(-(Patient.DefaultRotation.Y + this.vector.Y)));
+            Assert.That(res.Rotation.Z, Is.EqualTo(-(Patient.DefaultRotation.Z + this.vector.Z)));
 
             Assert.That(res.Scale.X, Is.EqualTo(0D));
             Assert.That(res.Scale.Y, Is.EqualTo(Patient.DefaultScale.Y));
