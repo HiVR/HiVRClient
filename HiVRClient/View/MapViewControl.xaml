@@ -35,8 +35,8 @@
             <ItemsControl
                 ItemsSource="{Binding Drawables.Values}"
                 ItemTemplate="{Binding}"
-                Width="{Binding MapSizeX, Converter={StaticResource ApplyZoom}}"
-                Height="{Binding MapSizeY, Converter={StaticResource ApplyZoom}}">
+                Width="{Binding MapSizeX}"
+                Height="{Binding MapSizeY}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <Canvas
@@ -57,6 +57,13 @@
                         </Canvas>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
+                <ItemsControl.LayoutTransform>
+                    <ScaleTransform
+                                    CenterX="0"
+                                    CenterY="0"
+                                    ScaleX="6"
+                                    ScaleY="6" />
+                </ItemsControl.LayoutTransform>
             </ItemsControl>
         </ScrollViewer>
     </DockPanel>
