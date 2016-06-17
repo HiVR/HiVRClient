@@ -150,7 +150,7 @@ namespace HiVRClient.Model.DrawableModel
         /// <param name="second">the second vector</param>
         /// <returns>the added vector</returns>
         private Vector3D AddIndividuals(Vector3D first, Vector3D second)
-        {   
+        {
             return new Vector3D(first.X + second.X, first.Y + second.Y, first.Z + second.Z);
         }
 
