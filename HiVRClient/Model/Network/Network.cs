@@ -18,6 +18,11 @@ namespace HiVRClient.Model.Network
         #region Fields
 
         /// <summary>
+        /// The boolean flag that determines whether the connection process is going on.
+        /// </summary>
+        private bool keepConnecting;
+
+        /// <summary>
         /// Event class to notify thread about activity.
         /// </summary>
         private ManualResetEvent allDone = new ManualResetEvent(false);
@@ -38,6 +43,7 @@ namespace HiVRClient.Model.Network
         /// <param name="port">the port to connect to</param>
         public void OpenConnection(string ip, int port)
         {
+            this.keepConnecting = true;
             Task.Run(() => this.Connect(ip, port));
         }
 
@@ -46,7 +52,7 @@ namespace HiVRClient.Model.Network
         /// </summary>
         public void CloseConnection()
         {
-            // TODO implement this
+            this.keepConnecting = false;
         }
 
         /// <summary>
@@ -56,7 +62,7 @@ namespace HiVRClient.Model.Network
         /// <param name="port">port used for making a connection</param>
         public void Connect(string ip, int port)
         {
-            while (true)
+            while (this.keepConnecting)
             {
                 Console.Out.WriteLine("Client: Connecting...");
 
