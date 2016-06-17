@@ -221,7 +221,7 @@ namespace HiVRClient.Model.Network
         /// Must be called to invoke the event.
         /// </summary>
         /// <param name="e">the event arguments</param>
-        private void OnObjectReceived(ObjectReceivedEventArgs e)
+        public void OnObjectReceived(ObjectReceivedEventArgs e)
         {
             this.ObjectReceived?.Invoke(this, e);
         }

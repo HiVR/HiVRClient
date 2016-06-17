@@ -39,14 +39,14 @@ namespace HiVRClient.Converter
             catch (InvalidCastException)
             {
                 Console.WriteLine("Expected BindingException thrown after deletion MapViewControl");
-                
+
                 // Return arbitrary Thickness.
                 return new Thickness(0, 0, 0, 0);
             }
         }
 
         /// <summary>
-        /// Not implemented
+        /// Not implemented.
         /// </summary>
         /// <param name="value">The parameter is not used.</param>
         /// <param name="targetTypes">The parameter is not used.</param>

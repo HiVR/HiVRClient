@@ -40,6 +40,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
       <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
       <Private>True</Private>
@@ -50,6 +51,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converter\MarginConverterTest.cs" />
     <Compile Include="Model\DrawableModel\BenchTest.cs" />
     <Compile Include="Model\DrawableModel\BuildingTest.cs" />
     <Compile Include="Model\DrawableModel\CarTest.cs" />
@@ -60,6 +62,7 @@
     <Compile Include="Model\DrawableModel\PatientTest.cs" />
     <Compile Include="Model\DrawableModel\TelevisionTest.cs" />
     <Compile Include="Model\Network\ObjectReceivedEventArgsTest.cs" />
+    <Compile Include="Utility\SerializableConverterTest.cs" />
     <Compile Include="ViewModel\ConnectControlViewModelTest.cs" />
     <Compile Include="ViewModel\DrawableViewModel\BenchControlTest.cs" />
     <Compile Include="ViewModel\DrawableViewModel\BuildingControlTest.cs" />
