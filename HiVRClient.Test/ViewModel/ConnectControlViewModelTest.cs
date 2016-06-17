@@ -86,6 +86,7 @@ namespace HiVRClient.Test.ViewModel
         public void TestConnectCommandExecute()
         {
             var wasCalled = false;
+            this.connectControlViewModel.Host = "127.0.0.1";
             this.connectControlViewModel.ConnectionAttempted += (sender, args) => { wasCalled = true; };
             Assert.That(wasCalled, Is.False);
 

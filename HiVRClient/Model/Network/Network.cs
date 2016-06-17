@@ -10,6 +10,7 @@ namespace HiVRClient.Model.Network
     using System.Runtime.Serialization;
     using System.Threading;
     using System.Threading.Tasks;
+    using System.Windows.Forms;
 
     /// <summary>
     /// Contains all the logic for the network layer.
@@ -36,6 +37,30 @@ namespace HiVRClient.Model.Network
         #endregion Fields
 
         #region Methods
+
+        /// <summary>
+        /// Method to transform a string ip or hostname to a valid IPAddress
+        /// </summary>
+        /// <param name="ip">string to transform</param>
+        /// <returns>valid IPAddress</returns>
+        public static IPAddress ParseIP(string ip)
+        {
+            IPAddress res = null;
+            if (ip.Length > 0 && !IPAddress.TryParse(ip, out res))
+            {
+                var listIP = Dns.GetHostAddresses(ip);
+
+                foreach (IPAddress parsedIP in listIP)
+                {
+                    if (parsedIP.AddressFamily == AddressFamily.InterNetwork)
+                    {
+                        res = parsedIP;
+                    }
+                }
+            }
+
+            return res;
+        }
 
         /// <summary>
         /// Open the connection with the environment.
@@ -74,7 +99,7 @@ namespace HiVRClient.Model.Network
                 Socket receiver = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
                 // Parse IP address
-                IPAddress validAddress = this.ParseIP(ip);
+                IPAddress validAddress = ParseIP(ip);
 
                 // Initiate the connection, once connected call the callback function "Connect".
                 receiver.BeginConnect(new IPEndPoint(validAddress, port), this.Connect, receiver);
@@ -82,22 +107,6 @@ namespace HiVRClient.Model.Network
                 // Wait until packet is received.
                 this.allDone.WaitOne();
             }
-        }
-
-        /// <summary>
-        /// Method to transform a string ip or hostname to a valid IPAddress
-        /// </summary>
-        /// <param name="ip">string to transform</param>
-        /// <returns>valid IPAddress</returns>
-        public IPAddress ParseIP(string ip)
-        {
-            IPAddress res;
-            if (!IPAddress.TryParse(ip, out res))
-            {
-                res = Dns.GetHostAddresses(ip)[1];
-            }
-
-            return res;
         }
 
         /// <summary>

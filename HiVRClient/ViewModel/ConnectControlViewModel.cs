@@ -3,7 +3,11 @@
 // </copyright>
 namespace HiVRClient.ViewModel
 {
+    using Model.Network;
     using System;
+    using System.Net;
+    using System.Net.Sockets;
+    using System.Windows.Forms;
     using System.Windows.Input;
 
     /// <summary>
@@ -62,11 +66,25 @@ namespace HiVRClient.ViewModel
         /// </summary>
         private void Connect()
         {
-            // Create a connection to the specified address.
-            NetworkManager.NetworkInstance.OpenConnection(this.Host, this.Port);
+            try
+            {
+                IPAddress ip = Network.ParseIP(this.Host);
 
-            // Actual connection logic here. The OnConnectionAttempted method should provide parameters to provide whether the connection was successful or not.
-            this.OnConnectionAttempted();
+                if (ip == null)
+                {
+                    throw new SocketException();
+                }
+
+                // Create a connection to the specified address.
+                NetworkManager.NetworkInstance.OpenConnection(this.Host, this.Port);
+
+                // Actual connection logic here. The OnConnectionAttempted method should provide parameters to provide whether the connection was successful or not.
+                this.OnConnectionAttempted();
+            }
+            catch (SocketException e)
+            {
+                MessageBox.Show("Unable to parse Host.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion Methods
