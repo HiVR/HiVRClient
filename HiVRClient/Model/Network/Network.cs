@@ -7,6 +7,7 @@ namespace HiVRClient.Model.Network
     using System;
     using System.Net;
     using System.Net.Sockets;
+    using System.Runtime.Serialization;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -184,10 +185,18 @@ namespace HiVRClient.Model.Network
         /// <param name="serializableTransform">contains an Unity object that been serialized</param>
         public void Done(SerializableTransformObject serializableTransform)
         {
-            SerializableTransformObject received = serializableTransform.DeSerialize();
-            Console.Out.WriteLine("Received transform-object with id: " + received.Id + " of type: " + received.Type);
+            try
+            {
+                SerializableTransformObject received = serializableTransform.DeSerialize();
 
-            this.OnObjectReceived(new ObjectReceivedEventArgs(received));
+                Console.Out.WriteLine("Received transform-object with id: " + received.Id + " of type: " + received.Type);
+
+                this.OnObjectReceived(new ObjectReceivedEventArgs(received));
+            }
+            catch (SerializationException e)
+            {
+                Console.Out.WriteLine("Connection was interrupted during when receiving packet.");
+            }
 
             // Signal thread to continue, it will jump back to the first while loop and starts waiting for a connection again.
             this.allDone.Set();
