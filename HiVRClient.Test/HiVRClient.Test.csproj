@@ -58,7 +58,13 @@
     <Compile Include="Model\DrawableModel\TelevisionTest.cs" />
     <Compile Include="ViewModel\ConnectControlViewModelTest.cs" />
     <Compile Include="ViewModel\DrawableViewModel\BenchControlTest.cs" />
+    <Compile Include="ViewModel\DrawableViewModel\BuildingControlTest.cs" />
+    <Compile Include="ViewModel\DrawableViewModel\CarControlTest.cs" />
+    <Compile Include="ViewModel\DrawableViewModel\CharacterControlTest.cs" />
     <Compile Include="ViewModel\DrawableViewModel\DrawableControlTest.cs" />
+    <Compile Include="ViewModel\DrawableViewModel\GardenControlTest.cs" />
+    <Compile Include="ViewModel\DrawableViewModel\PatientControlTest.cs" />
+    <Compile Include="ViewModel\DrawableViewModel\TelevisionControlTest.cs" />
     <Compile Include="ViewModel\MainViewModelTest.cs" />
     <Compile Include="ViewModel\MapViewModelTest.cs" />
     <Compile Include="ViewModel\RelayCommandTest.cs" />
