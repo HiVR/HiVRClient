@@ -52,8 +52,7 @@
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Width="0"
-                            Height="0"
-                            RenderTransform="1 0 0 -1 0 0">
+                            Height="0">
                             <Canvas.Margin>
                                 <MultiBinding Converter="{StaticResource MarginConverter}">
                                     <Binding Path="LeftOffset" />
@@ -69,8 +68,8 @@
                     <ScaleTransform
                         CenterX="0"
                         CenterY="0"
-                        ScaleX="{Binding Zoom}"
-                        ScaleY="{Binding Zoom}" />
+                        ScaleX="{Binding ZoomX}"
+                        ScaleY="{Binding ZoomY}" />
                 </ItemsControl.LayoutTransform>
             </ItemsControl>
         </ScrollViewer>

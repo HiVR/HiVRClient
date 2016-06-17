@@ -103,7 +103,7 @@ namespace HiVRClient.ViewModel
         /// <summary>
         /// Gets or sets the zoom value.
         /// </summary>
-        public double Zoom
+        public double ZoomX
         {
             get
             {
@@ -113,7 +113,21 @@ namespace HiVRClient.ViewModel
             set
             {
                 this.zoom = value;
-                this.OnPropertyChanged("Zoom");
+                this.OnPropertyChanged("ZoomX");
+            }
+        }
+
+        public double ZoomY
+        {
+            get
+            {
+                return -this.zoom;
+            }
+
+            set
+            {
+                this.zoom = -value;
+                this.OnPropertyChanged("ZoomY");
             }
         }
 
@@ -231,7 +245,7 @@ namespace HiVRClient.ViewModel
         /// <param name="zoomIn">whether to zoom in or out</param>
         private void ZoomAction(bool zoomIn)
         {
-            this.Zoom = zoomIn ? this.Zoom * zoomFactor : this.Zoom / zoomFactor;
+            zoom = zoomIn ? zoom * zoomFactor : zoom / zoomFactor;
         }
 
         #endregion Methods
