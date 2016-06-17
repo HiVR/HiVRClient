@@ -89,7 +89,8 @@ namespace HiVRClient.Utility
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Position),
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Rotation),
                             ConvertSerializableVector3ToVector3D(serializableTransformObject.Scale)));
-                    } else
+                    }
+                    else
                     {
                         return new CharacterControl(
                         drawableFactory.GetCharacter(

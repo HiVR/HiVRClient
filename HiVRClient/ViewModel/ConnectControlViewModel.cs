@@ -81,7 +81,7 @@ namespace HiVRClient.ViewModel
                 // Actual connection logic here. The OnConnectionAttempted method should provide parameters to provide whether the connection was successful or not.
                 this.OnConnectionAttempted();
             }
-            catch (SocketException e)
+            catch (SocketException)
             {
                 MessageBox.Show("Unable to parse Host.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

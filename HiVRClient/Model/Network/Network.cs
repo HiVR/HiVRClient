@@ -208,7 +208,7 @@ namespace HiVRClient.Model.Network
 
                 this.OnObjectReceived(new ObjectReceivedEventArgs(received));
             }
-            catch (SerializationException e)
+            catch (SerializationException)
             {
                 Console.Out.WriteLine("Connection was interrupted during when receiving packet.");
             }
