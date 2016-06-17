@@ -201,10 +201,6 @@ namespace HiVRClient.ViewModel
                     {
                         existing.UpdatePositionRotation(drawableControl.Position, drawableControl.Rotation);
                     }
-                    else
-                    {
-                        throw new ArgumentException("Invalid Id");
-                    }
                 }
                 else
                 {
